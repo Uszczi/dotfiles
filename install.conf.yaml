@@ -9,3 +9,4 @@
     ~/.alacritty.yml: alacritty.yml
     ~/.config/nvim: nvim
     ~/.bashrc: bashrc
+    ~/.tmux.conf: tmux.conf
