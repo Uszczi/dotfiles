@@ -7,8 +7,10 @@
 
 - link:
     ~/.alacritty.yml: alacritty.yml
-    ~/.config/nvim: nvim
     ~/.bashrc: bashrc
     ~/.tmux.conf: tmux.conf
     ~/.xinitrc: xinitrc
     ~/.doom.d: doom
+    ~/.config/fish: fish
+    ~/.config/nvim: nvim
+    ~/.config/qtile: qtile
