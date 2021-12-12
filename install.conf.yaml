@@ -10,3 +10,5 @@
     ~/.config/nvim: nvim
     ~/.bashrc: bashrc
     ~/.tmux.conf: tmux.conf
+    ~/.xinitrc: xinitrc
+    ~/.doom.d: doom
