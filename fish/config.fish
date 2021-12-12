@@ -9,6 +9,7 @@ function fish_right_prompt
 end
 
 function fish_greeting
+    random-man
 end
 
 set EDITOR "emacsclient -t -a ''"
@@ -38,7 +39,6 @@ alias pm="mypy --ignore-missing-imports"
 
 ####
 
-
 #### Some python settings
 set -gx VIRTUAL_ENV_DISABLE_PROMPT false
 set -ge _OLD_FISH_PROMPT_OVERRIDE
@@ -46,7 +46,7 @@ set -ge _OLD_VIRTUAL_PYTHONHOME
 set -ge _OLD_VIRTUAL_PATH
 ####
 
-#### Load functions that have to run automatically. 
+#### Load functions that have to run automatically.
 .  ~/.config/fish/functions/autoenv.fish
 
 fish_add_path ~/azure-functions-cli/
