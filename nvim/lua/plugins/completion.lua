@@ -5,9 +5,6 @@ cmp.setup(
         snippet = {
             expand = function(args)
                 vim.fn["vsnip#anonymous"](args.body)
-        --        require("luasnip").lsp_expand(args.body)
-        --        vim.fn["UltiSnips#Anon"](args.body)
-        --        require "snippy".expand_snippet(args.body)
             end
         },
         mapping = {
@@ -43,35 +40,33 @@ cmp.setup(
             {
                 {
                     name = "nvim_lsp",
-                   keyword_length = 1
+                    keyword_length = 1
                 },
                 {
                     name = "vsnip",
                     keyword_length = 3
-                } -- For vsnip users.
-                -- { name = 'luasnip' }, -- For luasnip users.
-                -- { name = 'ultisnips' }, -- For ultisnips users.
-                -- { name = 'snippy' }, -- For snippy users.
-            },
-            {
+                },
                 {
                     name = "buffer",
                     keyword_length = 4
-                }
+                },
+                {name = "path"}
             }
         ),
-
-formatting = {
-  format = require("lspkind").cmp_format({with_text = true, menu = ({
-      buffer = "[Buffer]",
-      nvim_lsp = "[LSP]",
-      luasnip = "[LuaSnip]",
-      nvim_lua = "[Lua]",
-      latex_symbols = "[Latex]",
-    })}),
-},
-
-
+        formatting = {
+            format = require("lspkind").cmp_format(
+                {
+                    with_text = true,
+                    menu = ({
+                        buffer = "[Buffer]",
+                        nvim_lsp = "[LSP]",
+                        luasnip = "[LuaSnip]",
+                        nvim_lua = "[Lua]",
+                        latex_symbols = "[Latex]"
+                    })
+                }
+            )
+        }
     }
 )
 
