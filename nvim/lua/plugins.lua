@@ -1,6 +1,10 @@
 local use = require("packer").use
 return require("packer").startup(
     function()
+        -- Git status column, find another plugin or different solution
+        use 'mhinz/vim-signify'
+
+
         use "vim-airline/vim-airline"
         use "vim-airline/vim-airline-themes"
         use "rbong/vim-flog"

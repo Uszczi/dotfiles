@@ -18,7 +18,7 @@ set shiftwidth=4
 set tabstop=4
 
 set hidden
-set signcolumn=no
+set signcolumn=yes
 set relativenumber
 set number
 set termguicolors
