@@ -1,0 +1,2 @@
+#! /usr/bin/bash
+fd . /usr/share/man/man1/ -t f |  awk -F '/'  '{ print $6 }' | sed 's/.gz//' | head -n 1 | xargs man | bat -P | head -n 20

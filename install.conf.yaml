@@ -14,3 +14,4 @@
     ~/.config/fish: fish
     ~/.config/nvim: nvim
     ~/.config/qtile: qtile
+    ~/path-utils: path-utils

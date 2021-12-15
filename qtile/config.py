@@ -235,6 +235,7 @@ floating_layout = layout.Floating(  # type: ignore
         Match(title="branchdialog"),  # gitk
         Match(title="pinentry"),  # GPG key password entry
         Match(wm_class="guake"),
+        Match(wm_class="1password"),
     ]
 )
 auto_fullscreen = True

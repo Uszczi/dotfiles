@@ -1,0 +1,2 @@
+python ~/path-utils/random_wallpaper.py
+nitrogen --restore &
