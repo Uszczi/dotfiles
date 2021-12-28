@@ -1,10 +1,13 @@
 local use = require("packer").use
 return require("packer").startup(
     function()
-        -- Git status column, find another plugin or different solution
-        use 'mhinz/vim-signify'
+        use "mhinz/vim-signify" -- Git status column
 
-
+        use "preservim/nerdtree"
+        use {"nvim-telescope/telescope-fzf-native.nvim", run = "make"}
+        use "nvim-treesitter/nvim-treesitter"
+        use "TimUntersberger/neogit"
+        use "sindrets/diffview.nvim"
         use "vim-airline/vim-airline"
         use "vim-airline/vim-airline-themes"
         use "rbong/vim-flog"

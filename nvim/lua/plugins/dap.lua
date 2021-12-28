@@ -14,7 +14,7 @@ local pythonPath = function()
 end;
 dap.adapters.python = {
     type = 'executable';
-    command = "/home/mat/decernis/decernis.pulseadmin/.venv/bin/python";
+    command = "/home/mat/decernis/decernis.news_ws/.venv/bin/python";
     args = { '-m', 'debugpy.adapter' };
 }
 dap.configurations.python = {

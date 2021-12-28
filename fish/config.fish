@@ -9,7 +9,6 @@ function fish_right_prompt
 end
 
 function fish_greeting
-    random-man
 end
 
 set EDITOR "emacsclient -t -a ''"

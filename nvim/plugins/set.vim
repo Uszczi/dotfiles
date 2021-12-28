@@ -22,11 +22,8 @@ set signcolumn=yes
 set relativenumber
 set number
 set termguicolors
-" set spell
-" set title
 set nowrap
-" set list
-" set listchars=tab:▸\ ,trail:·
+
 set mouse=a
 set scrolloff=8
 set sidescrolloff=8
@@ -35,6 +32,10 @@ set splitright
 set splitbelow
 set updatetime=100
 set clipboard=unnamedplus
+
+set hlsearch
+set smartcase
+set ignorecase
 
 augroup FIRST_AUTOGROUP
     autocmd!

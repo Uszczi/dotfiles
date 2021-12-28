@@ -14,6 +14,8 @@ nnoremap <leader>ej :bprevious<CR>
 nnoremap <leader>ek :bnext<CR>
 nnoremap <leader>el :tabnext<CR>
 
+nnoremap <leader>hr :so %<CR>
+
 " Do I really need them?
 nnoremap  <leader>wh <C-W>h
 nnoremap  <leader>wj <C-W>j
@@ -40,9 +42,12 @@ nnoremap <leader>dg :lua require('dapui').float_element('scopes')<CR>
 nnoremap <leader>dG :lua require('dapui').toggle('scopes')<CR>
 nnoremap <leader>dw :lua require('dapui').eval()<CR>
 vnoremap <leader>dw :lua require('dapui').eval()<CR>
+nnoremap <leader>d0 :lua require('dap.ext.vscode').load_launchjs()<CR>
+
 
 """ Fugitive
-nnoremap <leader>gg :Git<CR>
+nnoremap <leader>gG :Git<CR>
+nnoremap <leader>gg :Neogit<CR>
 nnoremap <leader>ii :Gdiffsplit<CR>
 nnoremap <leader>iu :diffget //2<CR>
 nnoremap <leader>io :diffget //3<CR>
@@ -66,11 +71,13 @@ nnoremap <silent><leader>ci :lua require("harpoon.term").sendCommand(1, 2)<CR>
 """ Telescope
 nnoremap <leader><leader> <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fF <cmd>lua require("telescope.builtin").find_files({hidden=true, no_ignore=true})<cr>
 nnoremap <leader>fG <cmd>Telescope grep_string<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <leader>fm <cmd>Telescope man_pages<cr>
 nnoremap <leader>fr <cmd>Telescope oldfiles<cr>
+nnoremap <leader>ff <cmd>Telescope git_files<cr>
 nnoremap <leader>ff <cmd>Telescope git_files<cr>
 nnoremap <leader>ft <cmd>Telescope resume<cr>
 nnoremap <leader>fe <cmd>Telescope current_buffer_fuzzy_find<cr>

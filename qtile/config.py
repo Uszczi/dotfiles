@@ -113,11 +113,10 @@ groups = [
     MyGroup(
         name="1",
         key="1",
-        layout="max",
         matches=[],
     ),
-    MyGroup(name="2", key="2", layout="max"),
-    MyGroup(name="3", key="3", layout="max"),
+    MyGroup(name="2", key="2"),
+    MyGroup(name="3", key="3"),
     MyGroup(name="4", key="4"),
     MyGroup(name="5", key="5", matches=[Match(wm_class=["spotify", "Spotify"])]),
     MyGroup(name="6", key="6"),
@@ -125,13 +124,11 @@ groups = [
     MyGroup(
         name="8",
         key="8",
-        layout="max",
         matches=[Match(wm_class=["obsidian", "obsidian"])],
     ),
     MyGroup(
         name="9",
         key="9",
-        layout="max",
         matches=[Match(wm_class=["todoist", "Todoist"])],
     ),
 ]
@@ -162,8 +159,9 @@ layout_theme = {
 }
 
 layouts = [
-    layout.MonadTall(**layout_theme),  # type: ignore
     layout.Max(**layout_theme),  # type: ignore
+    layout.Columns(**layout_theme),  # type: ignore
+    layout.MonadTall(**layout_theme),  # type: ignore
     layout.RatioTile(**layout_theme),  # type: ignore
     layout.Floating(**layout_theme),  # type: ignore
 ]
