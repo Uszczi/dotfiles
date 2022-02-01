@@ -7,11 +7,20 @@
 
 - link:
     ~/.alacritty.yml: alacritty.yml
-    ~/.bashrc: bashrc
-    ~/.tmux.conf: tmux.conf
-    ~/.xinitrc: xinitrc
-    ~/.doom.d: doom
-    ~/.config/fish: fish
-    ~/.config/nvim: nvim
-    ~/.config/qtile: qtile
-    ~/path-utils: path-utils
+    ~/wallpapers: wallpapers
+#    ~/.bashrc: bashrc
+#    ~/.tmux.conf: tmux.conf
+#    ~/.xinitrc: xinitrc
+#    ~/.doom.d: doom
+#    ~/.config/fish: fish
+#    ~/.config/nvim: nvim
+#    ~/.config/qtile: qtile
+#    ~/path-utils: path-utils
+
+
+
+# Basic software
+# alacritty
+# fish
+#
+# nitrogen
