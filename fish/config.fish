@@ -11,11 +11,11 @@ end
 function fish_greeting
 end
 
-set EDITOR "emacsclient -t -a ''"
-set VISUAL "emacsclient -c -a emacs"
+set -gx EDITOR "nvim"
+set -gx VISUAL "nvim"
 
 #### Aliases
-alias ve="source .env"
+alias ve="source .env_fish"
 alias vv=". ./.venv/bin/activate.fish & set VIRTUAL_ENV ".venv""
 alias va="ve; vv"
 

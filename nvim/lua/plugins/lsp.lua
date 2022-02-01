@@ -31,10 +31,10 @@ else
     sumneko_binary = "/usr/bin/lua-language-server"
 end
 
-require("nlua.lsp.nvim").setup(
-    require("lspconfig"),
-    {
-        cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
-        on_attach = on_attach
-    }
-)
+-- require("nlua.lsp.nvim").setup(
+--     require("lspconfig"),
+--     {
+--         cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
+--         on_attach = on_attach
+--     }
+-- )

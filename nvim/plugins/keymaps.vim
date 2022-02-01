@@ -14,7 +14,7 @@ nnoremap <leader>ej :bprevious<CR>
 nnoremap <leader>ek :bnext<CR>
 nnoremap <leader>el :tabnext<CR>
 
-nnoremap <leader>hr :so %<CR>
+nnoremap <leader>hr :call tj#save_and_exec()<CR>
 
 " Do I really need them?
 nnoremap  <leader>wh <C-W>h
@@ -22,7 +22,7 @@ nnoremap  <leader>wj <C-W>j
 nnoremap  <leader>wk <C-W>k
 nnoremap  <leader>wl <C-W>l
 
-map gf :edit <cfile><cr>
+map gf :lua GoToFile()<cr>
 
 
 """ Dap mode and dap ui
@@ -51,6 +51,9 @@ nnoremap <leader>gg :Neogit<CR>
 nnoremap <leader>ii :Gdiffsplit<CR>
 nnoremap <leader>iu :diffget //2<CR>
 nnoremap <leader>io :diffget //3<CR>
+
+nnoremap <leader>gu :SignifyHunkUndo<CR>
+nnoremap <leader>go :SignifyHunkDiff<CR>
 
 
 """ Harpoon
@@ -147,8 +150,13 @@ nnoremap [d :lua vim.lsp.diagnostic.goto_prev()<CR>
 nnoremap ]d :lua vim.lsp.diagnostic.goto_next()<CR>
 nnoremap <leader>cq :lua vim.lsp.diagnostic.set_loclist()<CR>
 
-
-
+""" Test
+nnoremap <leader>tt :TestNearest<CR>
+nnoremap <leader>tT :TestFile<CR>
+nnoremap <leader>ta :TestSuite<CR>
+nnoremap <leader>tl :TestLast<CR>
+nnoremap <leader>tg :TestVisit<CR>
+nnoremap <leader>td :lua require('dap-python').test_method()<CR>
 
 
 

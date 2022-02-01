@@ -2,6 +2,10 @@ local use = require("packer").use
 return require("packer").startup(
     function()
         use "mhinz/vim-signify" -- Git status column
+        use 'voldikss/vim-floaterm'
+
+        use 'vim-test/vim-test'
+        use 'mfussenegger/nvim-dap-python'
 
         use "preservim/nerdtree"
         use {"nvim-telescope/telescope-fzf-native.nvim", run = "make"}
@@ -52,6 +56,7 @@ return require("packer").startup(
         use {
             "hrsh7th/cmp-buffer"
         }
+        use 'hashivim/vim-terraform'
         use {
             "hrsh7th/cmp-path"
         }
@@ -62,6 +67,7 @@ return require("packer").startup(
             "hrsh7th/nvim-cmp"
         }
         use "hrsh7th/cmp-vsnip"
+        use "hrsh7th/cmp-nvim-lua"
         use "hrsh7th/vim-vsnip"
         use {
             "nvim-lua/plenary.nvim"

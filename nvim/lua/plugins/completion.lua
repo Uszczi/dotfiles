@@ -38,17 +38,15 @@ cmp.setup(
         },
         sources = cmp.config.sources(
             {
+    { name = "nvim_lua" },
                 {
                     name = "nvim_lsp",
-                    keyword_length = 1
                 },
                 {
                     name = "vsnip",
-                    keyword_length = 3
                 },
                 {
                     name = "buffer",
-                    keyword_length = 4
                 },
                 {name = "path"}
             }
@@ -61,6 +59,7 @@ cmp.setup(
                         buffer = "[Buffer]",
                         nvim_lsp = "[LSP]",
                         luasnip = "[LuaSnip]",
+        path = "[path]",
                         nvim_lua = "[Lua]",
                         latex_symbols = "[Latex]"
                     })
@@ -97,7 +96,22 @@ cmp.setup.cmdline(
                     name = "cmdline"
                 }
             }
-        )
+        ),
+
+        formatting = {
+            format = require("lspkind").cmp_format(
+                {
+                    with_text = true,
+                    menu = ({
+                        buffer = "[Buffer]",
+                        nvim_lsp = "[LSP]",
+                        luasnip = "[LuaSnip]",
+                        nvim_lua = "[Lua]",
+                        latex_symbols = "[Latex]"
+                    })
+                }
+            )
+        }
     }
 )
 
@@ -108,3 +122,32 @@ local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protoco
 require("lspconfig")["pyright"].setup {
     capabilities = capabilities
 }
+require("lspconfig")["sumneko_lua"].setup {
+    capabilities = capabilities
+}
+
+
+
+sumneko_root_path = "/usr/lib/lua-language-server"
+sumneko_binary_path = "/usr/bin/lua-language-server"
+require'lspconfig'.clangd.setup {
+  capabilities = capabilities,
+}
+require'lspconfig'.sumneko_lua.setup {
+    cmd = {sumneko_binary_path, "-E", sumneko_root_path .. "/main.lua"};
+    settings = {
+        Lua = {
+        diagnostics = {
+            -- Get the language server to recognize the `vim` global
+            globals = {'vim'},
+        },
+        -- Do not send telemetry data containing a randomized but unique identifier
+        telemetry = {
+            enable = false,
+        },
+        },
+    },
+}
+
+
+
