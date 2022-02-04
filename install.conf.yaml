@@ -13,14 +13,27 @@
 #    ~/.xinitrc: xinitrc
 #    ~/.doom.d: doom
 #    ~/.config/fish: fish
-#    ~/.config/nvim: nvim
-#    ~/.config/qtile: qtile
+    ~/.config/nvim: nvim
+    ~/.config/qtile: qtile
 #    ~/path-utils: path-utils
 
 
 
 # Basic software
+# qtile
+# git
 # alacritty
 # fish
+# oh my fish
+#
+# fd
+# ripgrep
 #
 # nitrogen
+# guake or compton
+# dmenu
+#
+#
+# docker
+# docker compose
+#
