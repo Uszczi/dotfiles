@@ -129,5 +129,10 @@ return require("packer").startup(
         use "tpope/vim-fugitive"
         --         use "simrat39/rust-tools.nvim"
         --         use "nvim-lua/popup.nvim"
+
+        --  Database connection
+        use "tpope/vim-dadbod"
+        use "kristijanhusak/vim-dadbod-ui"
+        use "kristijanhusak/vim-dadbod-completion"
     end
 )
