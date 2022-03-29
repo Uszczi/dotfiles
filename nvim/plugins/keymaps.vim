@@ -99,6 +99,7 @@ nnoremap <leader>fp :Telescope project<cr>
 nnoremap <leader>oP <cmd>:25Vexplore<cr> " TODO Write utlity for hiding this at the same key
 nnoremap <leader>op <cmd>NvimTreeToggle<cr>
 nnoremap <leader>oi <cmd>NvimTreeFindFile<cr>
+nnoremap <leader>od <cmd>DBUIToggle<cr>
 nnoremap <F5> :UndotreeToggle<CR>
 
 
