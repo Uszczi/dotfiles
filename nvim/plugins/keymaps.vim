@@ -1,24 +1,6 @@
-""" Basic
-map <SPACE> <leader>
-"
-"
-"
-"
-
-" Don't use default mappings
-let g:speeddating_no_mappings = 1
-
-" Avoid issues because of us remapping <c-a> and <c-x> below
-nnoremap <Plug>SpeedDatingFallbackUp <c-a>
-nnoremap <Plug>SpeedDatingFallbackDown <c-x>
-
-" Manually invoke speeddating in case switch didn't work
-nnoremap <c-a> :if !switch#Switch() <bar>
-      \ call speeddating#increment(v:count1) <bar> endif<cr>
-nnoremap <c-x> :if !switch#Switch({'reverse': 1}) <bar>
-      \ call speeddating#increment(-v:count1) <bar> endif<cr>
-
-
+" Don't know why doesn't work remaping in init.lua
+nnoremap <space> <Nop>
+let mapleader=" "
 
 nnoremap n nzz
 nnoremap N Nzz
@@ -30,6 +12,8 @@ inoremap <A-k> <Esc>:m . -2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 
+
+"  Do I use them
 nnoremap <leader>eh :tabprevious<CR>
 nnoremap <leader>ej :bprevious<CR>
 nnoremap <leader>ek :bnext<CR>
@@ -43,7 +27,7 @@ nnoremap  <leader>wj <C-W>j
 nnoremap  <leader>wk <C-W>k
 nnoremap  <leader>wl <C-W>l
 
-map gf :lua GoToFile()<cr>
+map gf :lua require'uszczi.go_to_file'.jump()<cr>
 
 
 """ Dap mode and dap ui
@@ -95,12 +79,15 @@ nnoremap <silent><leader>ci :lua require("harpoon.term").sendCommand(1, 2)<CR>
 """ Telescope
 nnoremap <leader><leader> <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+" TODO find a better way to including only specific type of files in telescope
+nnoremap <leader>FF <cmd>:lua require'telescope.builtin'.live_grep({additional_args=function() return {'--type=py'} end })<cr>
 nnoremap <leader>fF <cmd>lua require("telescope.builtin").find_files({hidden=true, no_ignore=true})<cr>
 nnoremap <leader>fG <cmd>Telescope grep_string<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <leader>fm <cmd>Telescope man_pages<cr>
 nnoremap <leader>fr <cmd>Telescope oldfiles<cr>
+nnoremap <leader>ff <cmd>Telescope git_files<cr>
 nnoremap <leader>ff <cmd>Telescope git_files<cr>
 nnoremap <leader>ft <cmd>Telescope resume<cr>
 nnoremap <leader>fe <cmd>Telescope current_buffer_fuzzy_find<cr>
@@ -111,6 +98,7 @@ nnoremap <leader>fp :Telescope project<cr>
 
 nnoremap <leader>oP <cmd>:25Vexplore<cr> " TODO Write utlity for hiding this at the same key
 nnoremap <leader>op <cmd>NvimTreeToggle<cr>
+nnoremap <leader>oi <cmd>NvimTreeFindFile<cr>
 nnoremap <F5> :UndotreeToggle<CR>
 
 
@@ -175,8 +163,13 @@ nnoremap <leader>tt :TestNearest<CR>
 nnoremap <leader>tT :TestFile<CR>
 nnoremap <leader>ta :TestSuite<CR>
 nnoremap <leader>tl :TestLast<CR>
-nnoremap <leader>tv :TestVisit<CR>
+nnoremap <leader>tg :TestVisit<CR>
 nnoremap <leader>td :lua require('dap-python').test_method()<CR>
 
 
-silent! call repeat#set("\<Plug>surround", v:count)
+
+
+
+""" Worktree:lua
+nnoremap <leader>tb :lua require('telescope').extensions.git_worktree.git_worktrees()<CR>
+

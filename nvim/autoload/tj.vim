@@ -1,4 +1,3 @@
-
 if !exists('*tj#save_and_exec')
   function! tj#save_and_exec() abort
     if &filetype == 'vim'
