@@ -6,6 +6,9 @@ echo $os
 
 if [[ "$os" == "ubuntu" ]]; then
     compton &
+    guake &
+    nitrogen --restore &
+    xrandr --output  "eDP-1" --right-of  "HDMI-1"
 elif [[ "$os" == "arch" ]]; then
     set-random-wallpaper
     xrandr --output "eDP1"  --right-of "HDMI2" &

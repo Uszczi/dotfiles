@@ -14,7 +14,9 @@ local pythonPath = function()
 end;
 dap.adapters.python = {
     type = 'executable';
-    command = "/home/mat/roc/cat-app/.venv/bin/python";
+    -- command = "/home/mateusz/roc/roc-factory-app/.venv/bin/python";
+    -- command = "/home/mateusz/roc/roc_order_service/.venv/bin/python";
+    command = "/home/mateusz/roc/cat-app/.venv/bin/python";
     args = { '-m', 'debugpy.adapter' };
 }
 dap.configurations.python = {
@@ -26,6 +28,7 @@ dap.configurations.python = {
 
     -- Options below are for debugpy, see https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings for supported options
     pythonPath = pythonPath;
+    justMyCode = false;
     program = "${file}"; -- This configuration will launch the current file if used.
   },
 }

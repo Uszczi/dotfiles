@@ -10,7 +10,7 @@ from text import str_formater_with_const_width
 
 mod = "mod4"
 terminal = "alacritty"
-default_browser = "google-chrome-stable"
+default_browser = "firefox -p"
 
 keys = [
     #### Basic
@@ -50,7 +50,7 @@ keys = [
     Key(
         [mod, "shift"],
         "e",
-        lazy.spawn("alacritty -e /home/mat/.config/dmscripts/start_nvim.sh"),
+        lazy.spawn("alacritty --hold -e /home/mateusz/.config/dmscripts/start_nvim.sh"),
         desc="Doom Emacs",
     ),
     KeyChord(
@@ -58,7 +58,7 @@ keys = [
         "p",
         [
             Key(
-                [], "e", lazy.spawn("dm-confedit"), desc="Choose a config file to edit"
+                [], "e", lazy.spawn("alacritty -e nvim ~/.config/nvim"), desc="Choose a config file to edit"
             ),
             Key([], "q", lazy.spawn("dm-logout"), desc="Choose a config file to edit"),
         ],
@@ -232,6 +232,7 @@ floating_layout = layout.Floating(  # type: ignore
         Match(wm_class="ssh-askpass"),  # ssh-askpass
         Match(title="branchdialog"),  # gitk
         Match(title="pinentry"),  # GPG key password entry
+        Match(title="Tip of the day "),  # DBeaver
         Match(wm_class="guake"),
         Match(wm_class="1password"),
     ]

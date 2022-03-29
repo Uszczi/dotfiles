@@ -45,4 +45,4 @@ SETUVAR fish_pager_color_completion:normal
 SETUVAR fish_pager_color_description:555\x1eyellow
 SETUVAR fish_pager_color_prefix:cyan
 SETUVAR fish_pager_color_progress:cyan
-SETUVAR fish_user_paths:/home/mat/\x2elocal/bin\x1e/home/mat/azure\x2dfunctions\x2dcli
+SETUVAR fish_user_paths:/home/mateusz/neovim/bin\x1e/home/mateusz/\x2ecargo/bin\x1e/home/mateusz/\x2elocal/bin\x1e/home/mat/\x2elocal/bin\x1e/home/mat/azure\x2dfunctions\x2dcli

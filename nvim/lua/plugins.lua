@@ -4,9 +4,15 @@ return require("packer").startup(
         use "mhinz/vim-signify" -- Git status column
         use 'voldikss/vim-floaterm'
 
+
+use "dstein64/vim-startuptime"
+
+
+        use "AndrewRadev/switch.vim"
+use "tpope/vim-speeddating"
+
         use 'vim-test/vim-test'
         use 'mfussenegger/nvim-dap-python'
-
         use "preservim/nerdtree"
         use {"nvim-telescope/telescope-fzf-native.nvim", run = "make"}
         use "nvim-treesitter/nvim-treesitter"

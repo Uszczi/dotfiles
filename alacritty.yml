@@ -95,7 +95,7 @@ font:
       # - (macOS) Menlo
       # - (Linux/BSD) monospace
       # - (Windows) Consolas
-    family: DejaVu Sans Mono 
+    family: JetBrainsMono Nerd Font
 
 
     # The `style` can be specified to pick a specific face.
@@ -836,4 +836,4 @@ key_bindings:
   #
   #
 window:
-  opacity: 0.9
+  opacity: 0.95

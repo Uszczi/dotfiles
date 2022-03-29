@@ -62,6 +62,7 @@ require "nvim-treesitter.configs".setup {
 
 -- require('dap-python').setup('~/roc/cat-app/.venv/debugpy/bin/python')
 require('dap-python').test_runner = 'pytest'
+-- require('dap-python').setup("", {justMuCode = false})
 
 
 

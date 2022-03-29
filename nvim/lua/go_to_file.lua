@@ -72,7 +72,7 @@ local function get_path_and_column(line)
         if string.find(line, "get_payload") == nil then
             path = vim.fn.getcwd() .. "/" .. path
         else
-            path = "/home/mat/roc/cat-app/tests/fixtures/data/" .. path
+            path = "/home/mateusz/roc/cat-app/tests/fixtures/data/" .. path
         end
     end
     P(path)

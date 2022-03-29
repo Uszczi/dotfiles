@@ -1,4 +1,25 @@
 """ Basic
+map <SPACE> <leader>
+"
+"
+"
+"
+
+" Don't use default mappings
+let g:speeddating_no_mappings = 1
+
+" Avoid issues because of us remapping <c-a> and <c-x> below
+nnoremap <Plug>SpeedDatingFallbackUp <c-a>
+nnoremap <Plug>SpeedDatingFallbackDown <c-x>
+
+" Manually invoke speeddating in case switch didn't work
+nnoremap <c-a> :if !switch#Switch() <bar>
+      \ call speeddating#increment(v:count1) <bar> endif<cr>
+nnoremap <c-x> :if !switch#Switch({'reverse': 1}) <bar>
+      \ call speeddating#increment(-v:count1) <bar> endif<cr>
+
+
+
 nnoremap n nzz
 nnoremap N Nzz
 
@@ -81,7 +102,6 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <leader>fm <cmd>Telescope man_pages<cr>
 nnoremap <leader>fr <cmd>Telescope oldfiles<cr>
 nnoremap <leader>ff <cmd>Telescope git_files<cr>
-nnoremap <leader>ff <cmd>Telescope git_files<cr>
 nnoremap <leader>ft <cmd>Telescope resume<cr>
 nnoremap <leader>fe <cmd>Telescope current_buffer_fuzzy_find<cr>
 nnoremap <leader>fv :lua require('my_telescope').current_directory()<cr>
@@ -155,8 +175,8 @@ nnoremap <leader>tt :TestNearest<CR>
 nnoremap <leader>tT :TestFile<CR>
 nnoremap <leader>ta :TestSuite<CR>
 nnoremap <leader>tl :TestLast<CR>
-nnoremap <leader>tg :TestVisit<CR>
+nnoremap <leader>tv :TestVisit<CR>
 nnoremap <leader>td :lua require('dap-python').test_method()<CR>
 
 
-
+silent! call repeat#set("\<Plug>surround", v:count)
