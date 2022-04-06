@@ -44,6 +44,5 @@ augroup FIRST_AUTOGROUP
     autocmd!
     autocmd BufWritePre * %s/\s\+$//e
     autocmd BufWritePre * Neoformat
-    autocmd BufEnter,BufWinEnter,TabEnter *.rs :lua require'lsp_extensions'.inlay_hints{}
 augroup END
 

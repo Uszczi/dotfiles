@@ -74,6 +74,7 @@ nnoremap <silent><leader>tu :lua require("harpoon.term").gotoTerminal(1)<CR>
 nnoremap <silent><leader>te :lua require("harpoon.term").gotoTerminal(2)<CR>
 nnoremap <silent><leader>cu :lua require("harpoon.term").sendCommand(1, 1)<CR>
 nnoremap <silent><leader>ci :lua require("harpoon.term").sendCommand(1, 2)<CR>
+nnoremap <silent><leader>co :lua require("harpoon.term").sendCommand(1, 3)<CR>
 
 
 """ Telescope
@@ -94,6 +95,7 @@ nnoremap <leader>fe <cmd>Telescope current_buffer_fuzzy_find<cr>
 nnoremap <leader>fv :lua require('my_telescope').current_directory()<cr>
 nnoremap <leader>fV :Ex<cr>
 nnoremap <leader>fp :Telescope project<cr>
+nnoremap <leader>fq :Telescope git_branches<cr>
 
 
 nnoremap <leader>oP <cmd>:25Vexplore<cr> " TODO Write utlity for hiding this at the same key
@@ -153,7 +155,7 @@ nnoremap <leader>wr <cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>
 nnoremap <leader>wl <cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>
 nnoremap <leader>D <cmd>lua vim.lsp.buf.type_definition()<CR>
 nnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
-nnoremap <leader>ca <cmd>lua vim.lsp.buf.code_action()
+nnoremap <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
 nnoremap <leader>e <cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>
 nnoremap [d :lua vim.lsp.diagnostic.goto_prev()<CR>
 nnoremap ]d :lua vim.lsp.diagnostic.goto_next()<CR>

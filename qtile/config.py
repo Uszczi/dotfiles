@@ -10,7 +10,8 @@ from text import str_formater_with_const_width
 
 mod = "mod4"
 terminal = "alacritty"
-default_browser = "firefox -p"
+# default_browser = "firefox -p"
+default_browser = "google-chrome"
 
 keys = [
     #### Basic
@@ -193,7 +194,7 @@ screens = [
                 widget.CurrentLayout(fmt=str_formater_with_const_width()),  # type: ignore
                 widget.GroupBox(),  # type: ignore
                 widget.WindowName(),  # type: ignore
-                widget.Systray(),  # type: ignore
+                widget.Systray(),  # type: ignore # TODO fix this
                 widget.Clock(format="%Y-%m-%d %a %H:%M"),  # type: ignore
                 widget.Battery(),  # type: ignore
                 widget.QuickExit(),  # type: ignore
@@ -233,11 +234,12 @@ floating_layout = layout.Floating(  # type: ignore
         Match(title="branchdialog"),  # gitk
         Match(title="pinentry"),  # GPG key password entry
         Match(title="Tip of the day "),  # DBeaver
+        Match(wm_class="DBeaver"),  # DBeaver
         Match(wm_class="guake"),
         Match(wm_class="1password"),
     ]
 )
-auto_fullscreen = True
+auto_fullscreen = False
 focus_on_window_activation = "smart"
 reconfigure_screens = True
 

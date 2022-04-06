@@ -134,5 +134,8 @@ return require("packer").startup(
         use "tpope/vim-dadbod"
         use "kristijanhusak/vim-dadbod-ui"
         use "kristijanhusak/vim-dadbod-completion"
+
+        -- Rust
+        use "simrat39/rust-tools.nvim"
     end
 )
