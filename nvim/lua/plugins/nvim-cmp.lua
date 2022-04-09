@@ -4,7 +4,7 @@ cmp.setup(
     {
         snippet = {
             expand = function(args)
-                vim.fn["vsnip#anonymous"](args.body)
+                require("luasnip").lsp_expand(args.body)
             end
         },
         mapping = {
@@ -24,7 +24,7 @@ cmp.setup(
                 }
             ),
             ["<C-y>"] = cmp.config.disable,
-            ["<C-0>"] = cmp.mapping( -- TODO test that
+            ["<C-[>"] = cmp.mapping( -- TODO test that
                 {
                     i = cmp.mapping.abort(),
                     c = cmp.mapping.close()
@@ -40,6 +40,7 @@ cmp.setup(
             {
                 {name = "nvim_lua"},
                 {name = "nvim_lsp"},
+                {name = "luasnip"},
                 {name = "vsnip"},
                 {name = "buffer"},
                 {name = "path"},
@@ -50,15 +51,15 @@ cmp.setup(
             format = require("lspkind").cmp_format(
                 {
                     before = function(entry, vim_item)
-                        -- P(entry)
-                        P(entry.source.name)
+                        -- -- P(entry)
+                        -- P(entry.source.name)
                         return vim_item
                     end,
                     with_text = true,
                     menu = ({
+                        luasnip = "[LuaSnip]",
                         buffer = "[Buffer]",
                         nvim_lsp = "[LSP]",
-                        luasnip = "[LuaSnip]",
                         path = "[path]",
                         nvim_lua = "[Lua]",
                         latex_symbols = "[Latex]",

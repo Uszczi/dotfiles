@@ -106,8 +106,8 @@ nnoremap <F5> :UndotreeToggle<CR>
 
 
 """ Quickfix and location list
-nnoremap <C-j> :cprev<CR>zz
-nnoremap <C-k> :cnext<CR>zz
+" nnoremap <C-j> :cprev<CR>zz
+" nnoremap <C-k> :cnext<CR>zz
 nnoremap <leader>j :lprev<CR>zz
 nnoremap <leader>k :lnext<CR>zz
 

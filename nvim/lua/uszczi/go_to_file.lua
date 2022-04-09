@@ -1,4 +1,3 @@
-
 -- move that to utils
 local function mysplit(inputstr, sep)
     if sep == nil then
@@ -11,7 +10,6 @@ local function mysplit(inputstr, sep)
     return t
 end
 
-
 local function get_pytest_test_column_line(path, test_name)
     local search_command = "!rg -n " .. test_name .. " " .. path
     local result = vim.api.nvim_exec(search_command, true)
@@ -20,8 +18,7 @@ local function get_pytest_test_column_line(path, test_name)
     for k, v in ipairs(result) do
         local s = string.find(v, ":def")
         if s then
-            print("ustawiam")
-           column = tonumber(mysplit(v, ":")[1])
+            column = tonumber(mysplit(v, ":")[1])
         end
     end
     return column or 1
@@ -43,10 +40,10 @@ local function get_path_and_column(line)
     local current_end = 0
     for k, v in ipairs(splited_line) do
         current_end = current_end + #v + 1
-       if  current_end > cursor[2] then
-           path_and_maybe_column = v
-           break
-       end
+        if current_end > cursor[2] then
+            path_and_maybe_column = v
+            break
+        end
     end
 
     local splited = mysplit(path_and_maybe_column, ":")
@@ -55,11 +52,11 @@ local function get_path_and_column(line)
 
     if (string.find(path, '"') ~= nil) then
         path = string.match(path, '".*"')
-        path = string.sub(path, 2,2) .. string.sub(path, 3, -2)
+        path = string.sub(path, 2, 2) .. string.sub(path, 3, -2)
         path = path:gsub("%s+", "")
     end
 
-    if (string.find(path, '^' .. "/") == nil) then
+    if (string.find(path, "^" .. "/") == nil) then
         if string.find(line, "get_payload") == nil then
             path = vim.fn.getcwd() .. "/" .. path
         else
@@ -92,9 +89,7 @@ local function jump()
 end
 
 local M = {
-    jump = jump;
+    jump = jump
 }
 
 return M
-
-
