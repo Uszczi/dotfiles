@@ -1,24 +1,22 @@
 - defaults:
     link:
-        create: true
-        relink: true
+      create: true
+      relink: true
 
-- clean: ['~', '~/.config']
+- clean: ["~", "~/.config"]
 
 - link:
     ~/.alacritty.yml: alacritty.yml
     ~/wallpapers: wallpapers
-#    ~/.bashrc: bashrc
+    #    ~/.bashrc: bashrc
     ~/.tmux.conf: tmux.conf
-#    ~/.xinitrc: xinitrc
-#    ~/.doom.d: doom
+    #    ~/.xinitrc: xinitrc
+    #    ~/.doom.d: doom
     ~/.config/fish: fish
     ~/.config/nvim: nvim
     ~/.config/qtile: qtile
-#    ~/path-utils: path-utils
-
-
-
+    #    ~/path-utils: path-utils
+    ~/.config/nnn: nnn
 # Basic software
 # qtile
 # git

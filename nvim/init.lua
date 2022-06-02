@@ -105,3 +105,4 @@ require("dapui").setup(
         windows = {indent = 1}
     }
 )
+require("nnn").setup()

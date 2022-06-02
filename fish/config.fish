@@ -11,9 +11,8 @@ end
 function fish_greeting
 end
 
-set -gx EDITOR "nvim"
-set -gx VISUAL "nvim"
-set -gx PDF_OPEN_COMMAND "firefox"
+set -gx EDITOR nvim
+set -gx VISUAL nvim
 
 #### Aliases
 alias ve="source .env_fish"
@@ -26,9 +25,9 @@ alias vi="nvim"
 alias ..="cd .."
 alias ...="cd ../.."
 
-alias ls="exa -la"
-alias la="exa -la"
-alias ll="exa -la"
+# alias ls="exa -la"
+# alias la="exa -la"
+# alias ll="exa -la"
 
 alias emacs="emacsclient -c -a emacs"
 alias fd="fdfind"
@@ -52,9 +51,47 @@ set -ge _OLD_VIRTUAL_PATH
 ####
 
 #### Load functions that have to run automatically.
-.  ~/.config/fish/functions/autoenv.fish
+. ~/.config/fish/functions/autoenv.fish
 
-fish_add_path ~/azure-functions-cli/
 fish_add_path ~/.local/bin
 fish_add_path ~/.cargo/bin
 fish_add_path ~/neovim/bin
+fish_add_path ~/dotfiles/path-utils
+
+### nnn
+alias nnn "nnn -eH"
+alias ls "nnn -edH"
+set --export NNN_FIFO "/tmp/nnn.info"
+set -gx NNN_PLUG "p:preview-tui;i:imgview;f:fzopen"
+
+function n --wraps nnn --description 'support nnn quit and change directory'
+    if test -n "$NNNLVL"
+        if [ (expr $NNNLVL + 0) -ge 1 ]
+            echo "nnn is already running"
+            return
+        end
+    end
+
+    # The behaviour is set to cd on quit (nnn checks if NNN_TMPFILE is set)
+    # If NNN_TMPFILE is set to a custom path, it must be exported for nnn to
+    # see. To cd on quit only on ^G, remove the "-x" from both lines below,
+    # without changing the paths.
+    if test -n "$XDG_CONFIG_HOME"
+        set NNN_TMPFILE "$XDG_CONFIG_HOME/nnn/.lastd"
+    else
+        set NNN_TMPFILE "$HOME/.config/nnn/.lastd"
+    end
+
+    # Unmask ^Q (, ^V etc.) (if required, see `stty -a`) to Quit nnn
+    # stty start undef
+    # stty stop undef
+    # stty lwrap undef
+    # stty lnext undef
+
+    nnn $argv
+
+    if test -e $NNN_TMPFILE
+        source $NNN_TMPFILE
+        rm $NNN_TMPFILE
+    end
+end

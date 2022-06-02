@@ -73,6 +73,10 @@ require("lspconfig")["pyright"].setup {
     capabilities = capabilities
 }
 
+require("lspconfig")["html"].setup {
+    capabilities = capabilities
+}
+
 require("lspconfig").tsserver.setup(
     {
         on_attach = function(client, bufnr)

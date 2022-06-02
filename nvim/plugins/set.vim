@@ -8,6 +8,11 @@ set wildignore+=**/android/*
 set wildignore+=**/ios/*
 set wildignore+=**/.git/*
 
+
+" Witout that bind in docker doesn't work
+" https://github.com/moby/moby/issues/15793
+set backupcopy=yes
+
 set noswapfile
 set nobackup
 set undodir=~/.vim/undodir
@@ -39,6 +44,8 @@ set completeopt=menu,menuone,noselect
 set hlsearch
 set smartcase
 set ignorecase
+
+set laststatus=3
 
 augroup FIRST_AUTOGROUP
     autocmd!

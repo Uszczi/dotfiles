@@ -3,14 +3,20 @@ return require("packer").startup(
     function()
         use "terrortylor/nvim-comment"
         use "tpope/vim-surround"
+
         use "nvim-treesitter/nvim-treesitter"
+        use "nvim-treesitter/playground"
+
         use "neovim/nvim-lspconfig"
         use "jose-elias-alvarez/null-ls.nvim"
         use "jose-elias-alvarez/nvim-lsp-ts-utils"
-
+        use "khaveesh/vim-fish-syntax"
         use "mfussenegger/nvim-dap-python"
         use "mfussenegger/nvim-dap"
         use "rcarriga/nvim-dap-ui"
+
+        use "tyru/open-browser.vim"
+        use "weirongxu/plantuml-previewer.vim"
 
         use "/home/mateusz/projects/bread-jump.nvim"
 
@@ -24,7 +30,7 @@ return require("packer").startup(
                 require "octo".setup()
             end
         }
-
+        use "tpope/vim-jdaddy"
         use "vim-airline/vim-airline"
         use "vim-airline/vim-airline-themes"
 
@@ -76,7 +82,10 @@ return require("packer").startup(
         --
         --
         --         use {"Mofiqul/dracula.nvim"}
-        --         use 'hashivim/vim-terraform'
+
+        -- Terraform
+        use "hashivim/vim-terraform"
+
         use {
             "nvim-lua/plenary.nvim"
         }
@@ -141,5 +150,12 @@ return require("packer").startup(
         -- snipets
         use "L3MON4D3/LuaSnip"
         use "saadparwaiz1/cmp_luasnip"
+
+        use {
+            "luukvbaal/nnn.nvim",
+            config = function()
+                require("nnn").setup()
+            end
+        }
     end
 )

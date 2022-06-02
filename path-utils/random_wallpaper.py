@@ -15,8 +15,8 @@ def write_new_wallpaper(file, path):
 
 
 def main():
-    nitrogen_path = "/home/mat/.config/nitrogen/bg-saved.cfg"
-    wallpapers_path = "/home/mat/anime/"
+    nitrogen_path = "/home/mateusz/.config/nitrogen/bg-saved.cfg"
+    wallpapers_path = "/home/mateusz/dotfiles/wallpapers/"
 
     with open(nitrogen_path) as f:
        nitrogen_file = f.readlines()

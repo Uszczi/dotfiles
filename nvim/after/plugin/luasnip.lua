@@ -47,7 +47,8 @@ ls.add_snippets(
     "all",
     {
         ls.parser.parse_snippet("expand", "-- this is what was expended"),
-        ls.parser.parse_snippet("pseed", 'pytest.mark.usefixtures("seed_with_function_name")')
+        ls.parser.parse_snippet("pmus", '@pytest.mark.usefixtures("seed_with_function_name")'),
+        ls.parser.parse_snippet("pmuv", '@pytest.mark.usefixtures("vcr_chargebee")')
     }
 )
 
