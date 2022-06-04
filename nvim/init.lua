@@ -22,6 +22,7 @@ require("uszczi.nvim-treesiter")
 require("uszczi.test")
 require("uszczi.nnn")
 require("uszczi.nvim-tree")
+require("uszczi.dap")
 
 -- TODO use lua style
 vim.cmd "au TextYankPost * lua vim.highlight.on_yank {on_visual = false}"
