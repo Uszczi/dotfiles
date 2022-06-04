@@ -11,9 +11,13 @@ return require("packer").startup(
         use "jose-elias-alvarez/null-ls.nvim"
         use "jose-elias-alvarez/nvim-lsp-ts-utils"
         use "khaveesh/vim-fish-syntax"
-        use "mfussenegger/nvim-dap-python"
+
+        -- Dap
         use "mfussenegger/nvim-dap"
+        use "mfussenegger/nvim-dap-python"
         use "rcarriga/nvim-dap-ui"
+        use "theHamsta/nvim-dap-virtual-text"
+        use "/nvim-telescope/telescope-dap.nvim"
 
         use "tyru/open-browser.vim"
         use "weirongxu/plantuml-previewer.vim"
@@ -147,10 +151,14 @@ return require("packer").startup(
         -- Rust
         use "simrat39/rust-tools.nvim"
 
+        -- Vue
+        use "johnsoncodehk/volar"
+
         -- snipets
         use "L3MON4D3/LuaSnip"
         use "saadparwaiz1/cmp_luasnip"
 
+        --- nnn
         use {
             "luukvbaal/nnn.nvim",
             config = function()

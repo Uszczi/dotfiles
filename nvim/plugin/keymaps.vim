@@ -33,22 +33,23 @@ map gf :lua require'uszczi.go_to_file'.jump()<cr>
 
 
 """ Dap mode and dap ui
+" TODO move that do dap
 nnoremap <silent><leader>dd :lua require('dapui').toggle()<CR>
 nnoremap <silent><leader>de :lua require('dap').toggle_breakpoint()<CR>
 nnoremap <silent><leader>df :lua require('dap').continue()<CR>
 
-nnoremap <leader>du  :lua require('dap').step_over()<CR>
-nnoremap <leader>di  :lua require('dap').step_into()<CR>
+nnoremap <leader>du  :lua require('dap').step_into()<CR>
+nnoremap <leader>di  :lua require('dap').step_over()<CR>
 nnoremap <leader>do  :lua require('dap').step_out()<CR>
 
-nnoremap <leader>dw :lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>
+nnoremap <leader>da :lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>
 nnoremap <leader>lp :lua require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
 nnoremap <leader>dr :lua require('dap').repl.open()<CR>
 nnoremap <leader>dl :lua require('dap').run_last()<CR>
+nnoremap <leader>dc :lua require('dap').run_to_cursor()<CR>
 nnoremap <leader>dg :lua require('dapui').float_element('scopes')<CR>
 nnoremap <leader>dG :lua require('dapui').toggle('scopes')<CR>
 nnoremap <leader>dw :lua require('dapui').eval()<CR>
-vnoremap <leader>dw :lua require('dapui').eval()<CR>
 nnoremap <leader>d0 :lua require('dap.ext.vscode').load_launchjs()<CR>
 
 

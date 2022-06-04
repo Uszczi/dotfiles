@@ -26,6 +26,7 @@ local my_attach = function(client, bufnr)
 end
 
 local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
 --   _
 --  | |   _   _  __ _
 --  | |  | | | |/ _` |
@@ -120,4 +121,45 @@ require("lspconfig").tsserver.setup(
 --     }
 -- }
 
+-- ______          _
+-- | ___ \        | |
+-- | |_/ /   _ ___| |_
+-- |    / | | / __| __|
+-- | |\ \ |_| \__ \ |_
+-- \_| \_\__,_|___/\__|
+--
+--
 require("rust-tools").setup({})
+
+--  _   _
+-- | | | |
+-- | | | |_   _  ___
+-- | | | | | | |/ _ \
+-- \ \_/ / |_| |  __/
+--  \___/ \__,_|\___|
+--
+--
+local util = require "lspconfig.util"
+local function get_typescript_server_path(root_dir)
+    -- local global_ts = "/home/[yourusernamehere]/.npm/lib/node_modules/typescript/lib/tsserverlibrary.js"
+    -- Alternative location if installed as root:
+    local global_ts = "/usr/local/lib/node_modules/typescript/lib/tsserverlibrary.js"
+    local found_ts = ""
+    local function check_dir(path)
+        found_ts = util.path.join(path, "node_modules", "typescript", "lib", "tsserverlibrary.js")
+        if util.path.exists(found_ts) then
+            return path
+        end
+    end
+    if util.search_ancestors(root_dir, check_dir) then
+        return found_ts
+    else
+        return global_ts
+    end
+end
+
+require "lspconfig".volar.setup {
+    on_new_config = function(new_config, new_root_dir)
+        new_config.init_options.typescript.serverPath = get_typescript_server_path(new_root_dir)
+    end
+}
