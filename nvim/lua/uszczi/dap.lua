@@ -39,8 +39,8 @@ if string.find(cwd, "/work/tails") then
             redirectOutput = true,
             pathMappings = {
                 {
-                    localRoot = "/home/mateusz/work/tails/vet",
-                    remoteRoot = "/app/vet"
+                    localRoot = "/home/mateusz/work/tails",
+                    remoteRoot = "/app"
                 }
             }
         }

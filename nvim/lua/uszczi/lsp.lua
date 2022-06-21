@@ -1,15 +1,4 @@
 local my_attach = function(client, bufnr)
-    -- Use LSP as the handler for omnifunc.
-    --    See `:help omnifunc` and `:help ins-completion` for more information.
-    -- vim.api.nvim_buf_set_option(0, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-
-    -- Use LSP as the handler for formatexpr.
-    --    See `:help formatexpr` for more information.
-    -- vim.api.nvim_buf_set_option(0, 'formatexpr', 'v:lua.vim.lsp.formatexpr()')
-
-    -- For plugins with an `on_attach` callback, call them here. For example:
-    -- require('completion').on_attach()
-
     local function buf_set_keymap(...)
         vim.api.nvim_buf_set_keymap(bufnr, ...)
     end
@@ -41,8 +30,8 @@ if platform:find("^Windows") ~= nil then
     sumneko_root_path = "C:\\lua_lsp"
     sumneko_binary_path = sumneko_root_path .. "\\bin\\Windows\\lua-language-server"
 else
-    sumneko_binary_path = "/home/mateusz/Pobrane/lua-language/bin/lua-language-server"
-    sumneko_root_path = "/home/mateusz/Pobrane/lua-language/bin"
+    sumneko_binary_path = "/home/mateusz/bin/lua-language/bin/lua-language-server"
+    sumneko_root_path = "/home/mateusz/bin/lua-language/bin"
 end
 
 require "lspconfig".sumneko_lua.setup {
@@ -78,18 +67,18 @@ require("lspconfig")["html"].setup {
     capabilities = capabilities
 }
 
-require("lspconfig").tsserver.setup(
-    {
-        on_attach = function(client, bufnr)
-            client.resolved_capabilities.document_formatting = false
-            client.resolved_capabilities.document_range_formatting = false
-            local ts_utils = require("nvim-lsp-ts-utils")
-            ts_utils.setup({})
-            ts_utils.setup_client(client)
-            my_attach(client, bufnr)
-        end
-    }
-)
+-- require("lspconfig").tsserver.setup(
+--     {
+--         on_attach = function(client, bufnr)
+--             -- client.resolved_capabilities.document_formatting = false
+--             -- client.resolved_capabilities.document_range_formatting = false
+--             local ts_utils = require("nvim-lsp-ts-utils")
+--             ts_utils.setup({})
+--             ts_utils.setup_client(client)
+--             my_attach(client, bufnr)
+--         end
+--     }
+-- )
 
 -- local opts = {
 --     tools = {
@@ -141,8 +130,6 @@ require("rust-tools").setup({})
 --
 local util = require "lspconfig.util"
 local function get_typescript_server_path(root_dir)
-    -- local global_ts = "/home/[yourusernamehere]/.npm/lib/node_modules/typescript/lib/tsserverlibrary.js"
-    -- Alternative location if installed as root:
     local global_ts = "/usr/local/lib/node_modules/typescript/lib/tsserverlibrary.js"
     local found_ts = ""
     local function check_dir(path)
@@ -159,6 +146,7 @@ local function get_typescript_server_path(root_dir)
 end
 
 require "lspconfig".volar.setup {
+    filetypes = {"typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json"},
     on_new_config = function(new_config, new_root_dir)
         new_config.init_options.typescript.serverPath = get_typescript_server_path(new_root_dir)
     end

@@ -1,6 +1,7 @@
 " TODO fix isort
 " let g:neoformat_enabled_python = ['black', 'isort']
-let g:neoformat_enabled_python = ['black']
+" let g:neoformat_enabled_python = ['black']
+let g:neoformat_enabled_python = ['']
 
 let g:neoformat_vue_vet = {
             \ 'exe': '/usr/local/bin/prettier-eslint',

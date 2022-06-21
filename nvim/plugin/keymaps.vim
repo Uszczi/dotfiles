@@ -165,12 +165,12 @@ nnoremap ]d :lua vim.lsp.diagnostic.goto_next()<CR>
 nnoremap <leader>cq :lua vim.lsp.diagnostic.set_loclist()<CR>
 
 """ Test
-nnoremap <leader>tt :TestNearest<CR>
+nnoremap <leader>tt :lua require'uszczi.testing'.test_method()<CR>
+nnoremap <leader>td :lua require'uszczi.testing'.debug_method()<CR>
 nnoremap <leader>tT :TestFile<CR>
 nnoremap <leader>ta :TestSuite<CR>
 nnoremap <leader>tl :TestLast<CR>
 nnoremap <leader>tg :TestVisit<CR>
-nnoremap <leader>td :lua require('dap-python').test_method()<CR>
 
 
 

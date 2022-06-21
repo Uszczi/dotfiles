@@ -12,6 +12,13 @@ return require("packer").startup(
         use "jose-elias-alvarez/nvim-lsp-ts-utils"
         use "khaveesh/vim-fish-syntax"
 
+        -- Tab utils
+        use "gcmt/taboo.vim"
+
+        -- LSP
+        use "nvim-lua/lsp-status.nvim"
+        use "arkav/lualine-lsp-progress"
+
         -- Dap
         use "mfussenegger/nvim-dap"
         use "mfussenegger/nvim-dap-python"
