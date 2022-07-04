@@ -14,6 +14,13 @@ end
 set -gx EDITOR nvim
 set -gx VISUAL nvim
 
+# path
+fish_add_path ~/bin
+fish_add_path ~/.local/bin
+fish_add_path ~/.cargo/bin
+fish_add_path ~/neovim/bin
+fish_add_path ~/dotfiles/path-utils
+
 #### Aliases
 alias ve="source .env_fish"
 alias vv=". ./.venv/bin/activate.fish & set VIRTUAL_ENV ".venv""
@@ -21,13 +28,12 @@ alias va="ve; vv"
 
 alias vi="nvim"
 
-
 alias ..="cd .."
 alias ...="cd ../.."
 
-# alias ls="exa -la"
-# alias la="exa -la"
-# alias ll="exa -la"
+alias ls="exa -la"
+alias la="exa -la"
+alias ll="exa -la"
 
 alias emacs="emacsclient -c -a emacs"
 alias fd="fdfind"
@@ -53,17 +59,13 @@ set -ge _OLD_VIRTUAL_PATH
 #### Load functions that have to run automatically.
 . ~/.config/fish/functions/autoenv.fish
 
-fish_add_path ~/bin
-fish_add_path ~/.local/bin
-fish_add_path ~/.cargo/bin
-fish_add_path ~/neovim/bin
-fish_add_path ~/dotfiles/path-utils
 
 ### nnn
 alias nnn "nnn -eH"
-alias ls "nnn -edH"
+# alias ls "nnn -edH"
 set --export NNN_FIFO "/tmp/nnn.info"
 set -gx NNN_PLUG "p:preview-tui;i:imgview;f:fzopen"
+
 
 function n --wraps nnn --description 'support nnn quit and change directory'
     if test -n "$NNNLVL"
