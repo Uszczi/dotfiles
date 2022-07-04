@@ -1,7 +1,5 @@
 local ls = require "luasnip"
 local types = require "luasnip.util.types"
--- expand
--- expand
 
 ls.config.set_config {
     -- This tells LuaSnip to remember to keep around the last snippet.
@@ -52,6 +50,35 @@ ls.add_snippets(
     }
 )
 
+ls.add_snippets(
+    "vue",
+    {
+        ls.parser.parse_snippet(
+            "vbase",
+            [[
+<template>
+    <div>
+    </div>
+</template>
+
+<script lang="ts">
+import Vue from "vue";
+
+export default Vue.extend({
+   name: "${0}"
+});
+</script>
+
+<style scoped>
+
+</style>
+
+        ]]
+        ),
+        ls.parser.parse_snippet("pmus", '@pytest.mark.usefixtures("seed_with_function_name")'),
+        ls.parser.parse_snippet("pmuv", '@pytest.mark.usefixtures("vcr_chargebee")')
+    }
+)
 -- <c-j> is my jump backwards key.
 -- this always moves to the previous item within the snippet
 vim.keymap.set(
@@ -80,11 +107,4 @@ vim.keymap.set(
 vim.keymap.set("i", "<c-u>", require "luasnip.extras.select_choice")
 
 vim.keymap.set("n", "<space>hs", "<cmd>source ~/.config/nvim/after/plugin/luasnip.lua<CR>")
-
-ls.snippets = {
-    all = {
-        ls.parser.parse_snippet("expand", "-- this is what was expended")
-    },
-    lua = {},
-    python = {}
-}
+vim.keymap.set("n", "<space>ha", "<cmd>e ~/dotfiles/nvim/after/plugin/luasnip.lua <CR>")

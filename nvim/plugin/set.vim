@@ -53,3 +53,8 @@ augroup FIRST_AUTOGROUP
     autocmd BufWritePre * Neoformat
 augroup END
 
+
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+" set nofoldenable
+set foldlevelstart=99

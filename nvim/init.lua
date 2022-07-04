@@ -27,3 +27,5 @@ require("private.testing")
 
 -- TODO use lua style
 vim.cmd "au TextYankPost * lua vim.highlight.on_yank {on_visual = false}"
+
+require "fidget".setup {}

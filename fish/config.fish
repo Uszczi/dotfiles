@@ -53,6 +53,7 @@ set -ge _OLD_VIRTUAL_PATH
 #### Load functions that have to run automatically.
 . ~/.config/fish/functions/autoenv.fish
 
+fish_add_path ~/bin
 fish_add_path ~/.local/bin
 fish_add_path ~/.cargo/bin
 fish_add_path ~/neovim/bin
@@ -94,4 +95,21 @@ function n --wraps nnn --description 'support nnn quit and change directory'
         source $NNN_TMPFILE
         rm $NNN_TMPFILE
     end
+end
+
+function rga-fzf
+    set RG_PREFIX 'rga --files-with-matches'
+    if test (count $argv) -gt 1
+        set RG_PREFIX "$RG_PREFIX $argv[1..-2]"
+    end
+    set -l file $file
+    set file (
+        FZF_DEFAULT_COMMAND="$RG_PREFIX '$argv[-1]'" \
+        fzf --sort \
+            --preview='test ! -z {} && \
+                rga --pretty --context 5 {q} {}' \
+            --phony -q "$argv[-1]" \
+            --bind "change:reload:$RG_PREFIX {q}" \
+            --preview-window='50%:wrap'
+    ) && echo "opening $file" && nvim "$file"
 end

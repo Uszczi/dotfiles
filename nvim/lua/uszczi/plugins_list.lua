@@ -17,7 +17,10 @@ return require("packer").startup(
 
         -- LSP
         use "nvim-lua/lsp-status.nvim"
-        use "arkav/lualine-lsp-progress"
+
+        -- Maybe check that in future
+        -- use "arkav/lualine-lsp-progress"
+        use "j-hui/fidget.nvim"
 
         -- Dap
         use "mfussenegger/nvim-dap"
@@ -160,6 +163,7 @@ return require("packer").startup(
 
         -- Vue
         use "johnsoncodehk/volar"
+        use "vuejs/vetur"
 
         -- snipets
         use "L3MON4D3/LuaSnip"

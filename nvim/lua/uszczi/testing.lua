@@ -127,6 +127,7 @@ function M.test_method()
         return
     end
 
+    P(command)
     command = "call termopen('" .. command .. "')"
     vim.api.nvim_command(command)
     vim.api.nvim_buf_set_keymap(0, "n", "q", ":q<CR>", {})
