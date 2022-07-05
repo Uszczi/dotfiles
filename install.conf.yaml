@@ -17,6 +17,7 @@
     ~/.config/qtile: qtile
     #    ~/path-utils: path-utils
     ~/.config/nnn: nnn
+    ~/.config/pylintrc: pylintrc
 # Basic software
 # qtile
 # git
@@ -33,7 +34,6 @@
 # dmenu
 # guake
 # flameshot
-#
 #
 # docker
 # docker compose
