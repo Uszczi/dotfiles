@@ -17,6 +17,7 @@ return require("packer").startup(
 
         -- LSP
         use "nvim-lua/lsp-status.nvim"
+        use "jose-elias-alvarez/null-ls.nvim"
 
         -- Maybe check that in future
         -- use "arkav/lualine-lsp-progress"

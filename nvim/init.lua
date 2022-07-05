@@ -23,6 +23,7 @@ require("uszczi.test")
 require("uszczi.nnn")
 require("uszczi.nvim-tree")
 require("uszczi.dap")
+require("uszczi.null-ls")
 require("private.testing")
 
 -- TODO use lua style

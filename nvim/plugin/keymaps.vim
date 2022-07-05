@@ -160,9 +160,9 @@ nnoremap <leader>D <cmd>lua vim.lsp.buf.type_definition()<CR>
 nnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
 nnoremap <leader>e <cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>
-nnoremap [d :lua vim.lsp.diagnostic.goto_prev()<CR>
-nnoremap ]d :lua vim.lsp.diagnostic.goto_next()<CR>
-nnoremap <leader>cq :lua vim.lsp.diagnostic.set_loclist()<CR>
+nnoremap [d :lua vim.diagnostic.goto_prev()<CR>
+nnoremap ]d :lua vim.diagnostic.goto_next()<CR>
+nnoremap <leader>cq :lua vim.diagnostic.set_loclist()<CR>
 
 """ Test
 nnoremap <leader>tt :lua require'uszczi.testing'.test_method()<CR>
