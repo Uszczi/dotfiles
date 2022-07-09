@@ -1,10 +1,10 @@
-local testing = require "uszczi.testing"
-
 local function starts_with(str, start)
     return str:sub(1, #start) == start
 end
 
-local opts = {
+M = {}
+
+M.opts = {
     registered_directory = {
         "/home/mateusz/work/tails"
     },
@@ -52,4 +52,4 @@ local opts = {
     }
 }
 
-testing.setup(opts)
+return M

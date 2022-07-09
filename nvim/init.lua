@@ -24,7 +24,8 @@ require("uszczi.nnn")
 require("uszczi.nvim-tree")
 require("uszczi.dap")
 require("uszczi.null-ls")
-require("private.testing")
+local p_testing = require("private.testing")
+require("uszczi.testing").setup(p_testing.opts)
 require("uszczi.refactoring")
 
 -- TODO use lua style
