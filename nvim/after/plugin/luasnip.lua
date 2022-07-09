@@ -27,15 +27,8 @@ vim.keymap.set(
     {"i", "s"},
     "<c-k>",
     function()
-        P("HEllo world:")
-        if (ls.expand_or_jumpable() == true) then
-            P {"prejump"}
+        if ls.expand_or_jumpable() then
             ls.expand_or_jump()
-            P("ho jump")
-        else
-            P("co kuirder")
-            ls.expand_or_jump()
-            P(ls.expand_or_jumpable())
         end
     end,
     {silent = false}
@@ -74,9 +67,7 @@ export default Vue.extend({
 </style>
 
         ]]
-        ),
-        ls.parser.parse_snippet("pmus", '@pytest.mark.usefixtures("seed_with_function_name")'),
-        ls.parser.parse_snippet("pmuv", '@pytest.mark.usefixtures("vcr_chargebee")')
+        )
     }
 )
 -- <c-j> is my jump backwards key.
@@ -93,7 +84,6 @@ vim.keymap.set(
 )
 
 -- <c-l> is selecting within a list of options.
--- This is useful for choice nodes (introduced in the forthcoming episode 2)
 vim.keymap.set(
     "i",
     "<c-l>",
@@ -108,3 +98,5 @@ vim.keymap.set("i", "<c-u>", require "luasnip.extras.select_choice")
 
 vim.keymap.set("n", "<space>hs", "<cmd>source ~/.config/nvim/after/plugin/luasnip.lua<CR>")
 vim.keymap.set("n", "<space>ha", "<cmd>e ~/dotfiles/nvim/after/plugin/luasnip.lua <CR>")
+
+require "luasnip".filetype_extend("vue", {"vue"})

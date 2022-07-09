@@ -115,3 +115,9 @@ function rga-fzf
             --preview-window='50%:wrap'
     ) && echo "opening $file" && nvim "$file"
 end
+
+# Deno
+set -gx DENO_INSTALL "/home/mateusz/.deno/"
+fish_add_path $DENO_INSTALL/bin
+
+thefuck --alias | source

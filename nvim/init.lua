@@ -25,6 +25,7 @@ require("uszczi.nvim-tree")
 require("uszczi.dap")
 require("uszczi.null-ls")
 require("private.testing")
+require("uszczi.refactoring")
 
 -- TODO use lua style
 vim.cmd "au TextYankPost * lua vim.highlight.on_yank {on_visual = false}"

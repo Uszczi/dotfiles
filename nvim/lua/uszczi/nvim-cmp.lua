@@ -53,8 +53,6 @@ cmp.setup(
             format = require("lspkind").cmp_format(
                 {
                     before = function(entry, vim_item)
-                        -- -- P(entry)
-                        -- P(entry.source.name)
                         return vim_item
                     end,
                     with_text = true,

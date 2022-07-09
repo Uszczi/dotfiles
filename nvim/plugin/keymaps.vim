@@ -160,22 +160,15 @@ nnoremap <leader>D <cmd>lua vim.lsp.buf.type_definition()<CR>
 nnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
 nnoremap <leader>e <cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>
-nnoremap [d :lua vim.diagnostic.goto_prev()<CR>
-nnoremap ]d :lua vim.diagnostic.goto_next()<CR>
 nnoremap <leader>cq :lua vim.diagnostic.set_loclist()<CR>
 
 """ Test
 nnoremap <leader>tt :lua require'uszczi.testing'.test_method()<CR>
 nnoremap <leader>td :lua require'uszczi.testing'.debug_method()<CR>
-nnoremap <leader>tT :TestFile<CR>
-nnoremap <leader>ta :TestSuite<CR>
-nnoremap <leader>tl :TestLast<CR>
-nnoremap <leader>tg :TestVisit<CR>
+nnoremap <leader>tT :lua require'uszczi.testing'.test_file()<CR>
+nnoremap <leader>tl :lua require'uszczi.testing'.last_test()<CR>
+nnoremap <leader>tg :lua require'uszczi.testing'.visit_last()<CR>
 
-
-
-
-
-""" Worktree:lua
+""" Worktree
 nnoremap <leader>tb :lua require('telescope').extensions.git_worktree.git_worktrees()<CR>
 

@@ -146,8 +146,9 @@ return require("packer").startup(
         use "hrsh7th/vim-vsnip"
 
         use "onsails/lspkind-nvim"
+        use "rafamadriz/friendly-snippets"
 
-        --         use "nvim-lua/completion-nvim"
+        use "nvim-lua/completion-nvim"
         --         use "tjdevries/nlua.nvim"
         --         use "tpope/vim-dispatch"
         use "tpope/vim-fugitive"
@@ -177,5 +178,8 @@ return require("packer").startup(
                 require("nnn").setup()
             end
         }
+
+        use "github/copilot.vim"
+        use "ThePrimeagen/refactoring.nvim"
     end
 )
