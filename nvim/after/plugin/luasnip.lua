@@ -21,28 +21,6 @@ ls.config.set_config {
     }
 }
 
--- <c-k> is my expansion key
--- this will expand the current item or jump to the next item within the snippet.
-vim.keymap.set(
-    {"i", "s"},
-    "<c-k>",
-    function()
-        if ls.expand_or_jumpable() then
-            ls.expand_or_jump()
-        end
-    end,
-    {silent = false}
-)
--- expand
-ls.add_snippets(
-    "all",
-    {
-        ls.parser.parse_snippet("expand", "-- this is what was expended"),
-        ls.parser.parse_snippet("pmus", '@pytest.mark.usefixtures("seed_with_function_name")'),
-        ls.parser.parse_snippet("pmuv", '@pytest.mark.usefixtures("vcr_chargebee")')
-    }
-)
-
 ls.add_snippets(
     "vue",
     {
@@ -70,6 +48,20 @@ export default Vue.extend({
         )
     }
 )
+
+-- <c-k> is my expansion key
+-- this will expand the current item or jump to the next item within the snippet.
+vim.keymap.set(
+    {"i", "s"},
+    "<c-k>",
+    function()
+        if ls.expand_or_jumpable() then
+            ls.expand_or_jump()
+        end
+    end,
+    {silent = false}
+)
+
 -- <c-j> is my jump backwards key.
 -- this always moves to the previous item within the snippet
 vim.keymap.set(
