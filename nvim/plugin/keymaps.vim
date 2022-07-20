@@ -161,6 +161,8 @@ nnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
 nnoremap <leader>e <cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>
 nnoremap <leader>cq :lua vim.diagnostic.set_loclist()<CR>
+nnoremap [d <cmd>lua vim.diagnostic.goto_prev()<CR>
+nnoremap ]d <cmd>lua vim.diagnostic.goto_next()<CR>
 
 """ Test
 nnoremap <leader>tt :lua require'uszczi.testing'.test_method()<CR>
@@ -172,3 +174,6 @@ nnoremap <leader>tg :lua require'uszczi.testing'.visit_last()<CR>
 """ Worktree
 nnoremap <leader>tb :lua require('telescope').extensions.git_worktree.git_worktrees()<CR>
 
+nnoremap <space>ll :lua require('uszczi.fold').fold_all_methods() <CR>
+
+nnoremap <leader>u :UndotreeShow<CR>

@@ -21,3 +21,4 @@ hi DiffText    guifg=#335C3B guibg=#fbf1c7
 hi FoldColumn ctermbg=none guibg=none
 hi SignColumn ctermbg=none guibg=none
 
+

@@ -37,7 +37,7 @@ set splitright
 set splitbelow
 set updatetime=100
 set clipboard=unnamedplus
-set colorcolumn=100
+set colorcolumn=80
 set backspace=indent,eol,start
 
 set completeopt=menu,menuone,noselect
@@ -56,5 +56,7 @@ augroup END
 
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
-" set nofoldenable
+set nofoldenable
 set foldlevelstart=99
+
+let g:airline_theme = 'base16_dracula'

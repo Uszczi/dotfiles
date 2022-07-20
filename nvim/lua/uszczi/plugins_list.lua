@@ -3,7 +3,9 @@ return require("packer").startup(
     function()
         use "terrortylor/nvim-comment"
         use "tpope/vim-surround"
+        use "tpope/vim-repeat"
 
+        use "ggandor/leap.nvim"
         use "nvim-treesitter/nvim-treesitter"
         use "nvim-treesitter/playground"
 
@@ -17,7 +19,6 @@ return require("packer").startup(
 
         -- LSP
         use "nvim-lua/lsp-status.nvim"
-        use "jose-elias-alvarez/null-ls.nvim"
 
         -- Maybe check that in future
         -- use "arkav/lualine-lsp-progress"
@@ -45,16 +46,15 @@ return require("packer").startup(
                 require "octo".setup()
             end
         }
+
         use "tpope/vim-jdaddy"
+
         use "vim-airline/vim-airline"
         use "vim-airline/vim-airline-themes"
 
         use "sbdchd/neoformat"
 
         use "TimUntersberger/neogit"
-
-        -- Colorschema
-        use "gruvbox-community/gruvbox"
 
         use "mhinz/vim-signify" -- Git status column
         --         use 'voldikss/vim-floaterm'
@@ -66,8 +66,6 @@ return require("packer").startup(
         --         use "nvim-treesitter/nvim-treesitter"
         --         use "TimUntersberger/neogit"
         --         use "sindrets/diffview.nvim"
-        --         use "vim-airline/vim-airline"
-        --         use "vim-airline/vim-airline-themes"
         --         use "rbong/vim-flog"
         --         use "tjdevries/train.nvim"
         --         use {
@@ -77,7 +75,7 @@ return require("packer").startup(
         --             end,
         --             before = "telescope.nvim"
         --         }
-        --         use "mbbill/undotree"
+        use "mbbill/undotree"
         --         use {"ellisonleao/glow.nvim"}
         --         use "ggandor/lightspeed.nvim"
         --         use "kyazdani42/nvim-web-devicons"
@@ -156,9 +154,9 @@ return require("packer").startup(
         --         use "nvim-lua/popup.nvim"
 
         --  Database connection
-        use "tpope/vim-dadbod"
-        use "kristijanhusak/vim-dadbod-ui"
-        use "kristijanhusak/vim-dadbod-completion"
+        -- use "tpope/vim-dadbod"
+        -- use "kristijanhusak/vim-dadbod-ui"
+        -- use "kristijanhusak/vim-dadbod-completion"
 
         -- Rust
         use "simrat39/rust-tools.nvim"
@@ -179,7 +177,13 @@ return require("packer").startup(
             end
         }
 
-        use "github/copilot.vim"
+        -- use "github/copilot.vim"
         use "ThePrimeagen/refactoring.nvim"
+
+        -- Colorschema
+        use "gruvbox-community/gruvbox"
+        use "folke/tokyonight.nvim"
+
+        use "lukas-reineke/indent-blankline.nvim"
     end
 )

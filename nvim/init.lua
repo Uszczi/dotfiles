@@ -28,7 +28,14 @@ local p_testing = require("private.testing")
 require("uszczi.testing").setup(p_testing.opts)
 require("uszczi.refactoring")
 
+require("plugins")
+
+require("leap").set_default_keymaps()
+
 -- TODO use lua style
 vim.cmd "au TextYankPost * lua vim.highlight.on_yank {on_visual = false}"
 
 require "fidget".setup {}
+
+-- vim.cmd("source " .. "~/dotfiles/nvim/" .. "lua/uszczi/colors/gruvbox.vim")
+require("uszczi.colors.tokyonight")

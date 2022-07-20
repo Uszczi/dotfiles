@@ -1,3 +1,4 @@
+--- TODO make it work for every server
 local my_attach = function(client, bufnr)
     local function buf_set_keymap(...)
         vim.api.nvim_buf_set_keymap(bufnr, ...)
@@ -66,6 +67,7 @@ require("lspconfig")["pyright"].setup {
 require("lspconfig")["html"].setup {
     capabilities = capabilities
 }
+require "lspconfig".tsserver.setup {}
 
 -- require("lspconfig").tsserver.setup(
 --     {
@@ -154,3 +156,5 @@ require "lspconfig".volar.setup {
 
 require "lspconfig".vuels.setup {}
 -- require "lspconfig".denols.setup {}
+--
+require "lspconfig".bashls.setup {}

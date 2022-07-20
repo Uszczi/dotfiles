@@ -45,8 +45,8 @@ cmp.setup(
                 {name = "luasnip"},
                 {name = "vsnip"},
                 {name = "buffer"},
-                {name = "path"},
-                {name = "vim-dadbod-completion"}
+                {name = "path"}
+                -- {name = "vim-dadbod-completion"}
             }
         ),
         formatting = {
@@ -62,8 +62,8 @@ cmp.setup(
                         nvim_lsp = "[LSP]",
                         path = "[path]",
                         nvim_lua = "[Lua]",
-                        latex_symbols = "[Latex]",
-                        ["vim-dadbod-completion"] = "[dadbod]"
+                        latex_symbols = "[Latex]"
+                        -- ["vim-dadbod-completion"] = "[dadbod]"
                     })
                 }
             )
