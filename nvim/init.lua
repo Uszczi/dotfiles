@@ -14,7 +14,6 @@ vim.cmd "autocmd BufWritePost uszczi/packer.lua PackerCompile"
 require("uszczi.plugins_list")
 require("uszczi.globals")
 require("uszczi.comment")
-require("uszczi.telescope")
 require("uszczi.harpoons")
 require("uszczi.lsp")
 require("uszczi.nvim-cmp")

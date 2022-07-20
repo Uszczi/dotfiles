@@ -45,6 +45,7 @@ return require("packer").startup(
                 require "octo".setup()
             end
         }
+        use "nvim-telescope/telescope-github.nvim"
 
         use "tpope/vim-jdaddy"
 
