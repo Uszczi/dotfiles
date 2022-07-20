@@ -185,5 +185,8 @@ return require("packer").startup(
         use "folke/tokyonight.nvim"
 
         use "lukas-reineke/indent-blankline.nvim"
+
+        -- Let's check if this is needed
+        use "onsails/diaglist.nvim"
     end
 )

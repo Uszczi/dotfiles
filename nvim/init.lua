@@ -28,7 +28,7 @@ local p_testing = require("private.testing")
 require("uszczi.testing").setup(p_testing.opts)
 require("uszczi.refactoring")
 
-require("plugins")
+require("modules")
 
 require("leap").set_default_keymaps()
 
