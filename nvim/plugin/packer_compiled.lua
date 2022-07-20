@@ -114,6 +114,11 @@ _G.packer_plugins = {
     path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/completion-nvim",
     url = "https://github.com/nvim-lua/completion-nvim"
   },
+  ["diaglist.nvim"] = {
+    loaded = true,
+    path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/diaglist.nvim",
+    url = "https://github.com/onsails/diaglist.nvim"
+  },
   ["fidget.nvim"] = {
     loaded = true,
     path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/fidget.nvim",
@@ -138,6 +143,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/ThePrimeagen/harpoon"
+  },
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
+  },
+  ["leap.nvim"] = {
+    loaded = true,
+    path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/leap.nvim",
+    url = "https://github.com/ggandor/leap.nvim"
   },
   ["lsp-status.nvim"] = {
     loaded = true,
@@ -209,6 +224,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-surround"] = {
+    loaded = true,
+    path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/nvim-surround",
+    url = "https://github.com/kylechui/nvim-surround"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -296,6 +316,11 @@ _G.packer_plugins = {
     path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
   },
+  undotree = {
+    loaded = true,
+    path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/undotree",
+    url = "https://github.com/mbbill/undotree"
+  },
   vetur = {
     loaded = true,
     path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/vetur",
@@ -326,6 +351,11 @@ _G.packer_plugins = {
     path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/vim-jdaddy",
     url = "https://github.com/tpope/vim-jdaddy"
   },
+  ["vim-repeat"] = {
+    loaded = true,
+    path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/vim-repeat",
+    url = "https://github.com/tpope/vim-repeat"
+  },
   ["vim-signify"] = {
     loaded = true,
     path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/vim-signify",
@@ -335,11 +365,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/vim-startuptime",
     url = "https://github.com/dstein64/vim-startuptime"
-  },
-  ["vim-surround"] = {
-    loaded = true,
-    path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/vim-surround",
-    url = "https://github.com/tpope/vim-surround"
   },
   ["vim-terraform"] = {
     loaded = true,

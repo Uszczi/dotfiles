@@ -2,7 +2,6 @@ local use = require("packer").use
 return require("packer").startup(
     function()
         use "terrortylor/nvim-comment"
-        use "tpope/vim-surround"
         use "tpope/vim-repeat"
 
         use "ggandor/leap.nvim"
@@ -185,8 +184,6 @@ return require("packer").startup(
         use "folke/tokyonight.nvim"
 
         use "lukas-reineke/indent-blankline.nvim"
-
-        -- Let's check if this is needed
-        use "onsails/diaglist.nvim"
+        use "kylechui/nvim-surround"
     end
 )
