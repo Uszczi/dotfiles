@@ -1,3 +1,4 @@
 #!/bin/bash
+
 python3 ~/dotfiles/path-utils/random_wallpaper.py
 nitrogen --restore &

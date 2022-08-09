@@ -14,7 +14,7 @@ alias ...="cd ../.."
 # Bug with todoist app at Arch Linux
 export DESKTOPINTEGRATION=false
 
-export PATH="/home/mat/path-utils:$PATH"
+export PATH="/home/mateusz/dotfiles/path-utils:$PATH"
 
 fish
 

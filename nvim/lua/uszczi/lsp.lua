@@ -155,6 +155,7 @@ require "lspconfig".volar.setup {
 }
 
 require "lspconfig".vuels.setup {}
+
 -- require "lspconfig".denols.setup {}
 --
 require "lspconfig".bashls.setup {}

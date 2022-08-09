@@ -40,12 +40,12 @@ function ColorMyPencils()
     --     }
     -- )
     --
-    -- hl(
-    --     "LineNr",
-    --     {
-    --         fg = "#5eacd3"
-    --     }
-    -- )
+    hl(
+        "LineNr",
+        {
+            fg = "#5eacd3"
+        }
+    )
     --
     -- hl(
     --     "netrwDir",
@@ -54,4 +54,5 @@ function ColorMyPencils()
     --     }
     -- )
 end
+
 ColorMyPencils()

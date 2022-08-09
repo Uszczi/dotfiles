@@ -74,6 +74,12 @@ _G.packer_plugins = {
     path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["adoc-pdf-live.nvim"] = {
+    config = { "require('adoc_pdf_live').setup()" },
+    loaded = true,
+    path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/adoc-pdf-live.nvim",
+    url = "https://github.com/marioortizmanero/adoc-pdf-live.nvim"
+  },
   ["bread-jump.nvim"] = {
     loaded = true,
     path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/bread-jump.nvim",
@@ -114,10 +120,10 @@ _G.packer_plugins = {
     path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/completion-nvim",
     url = "https://github.com/nvim-lua/completion-nvim"
   },
-  ["diaglist.nvim"] = {
+  ["diffview.nvim"] = {
     loaded = true,
-    path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/diaglist.nvim",
-    url = "https://github.com/onsails/diaglist.nvim"
+    path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/diffview.nvim",
+    url = "https://github.com/sindrets/diffview.nvim"
   },
   ["fidget.nvim"] = {
     loaded = true,
@@ -133,11 +139,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/git-worktree.nvim",
     url = "https://github.com/ThePrimeagen/git-worktree.nvim"
-  },
-  gruvbox = {
-    loaded = true,
-    path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/gruvbox",
-    url = "https://github.com/gruvbox-community/gruvbox"
   },
   harpoon = {
     loaded = true,
@@ -301,6 +302,11 @@ _G.packer_plugins = {
     path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
     url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
   },
+  ["telescope-github.nvim"] = {
+    loaded = true,
+    path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/telescope-github.nvim",
+    url = "https://github.com/nvim-telescope/telescope-github.nvim"
+  },
   ["telescope-project.nvim"] = {
     loaded = true,
     path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/telescope-project.nvim",
@@ -326,6 +332,11 @@ _G.packer_plugins = {
     path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/vetur",
     url = "https://github.com/vuejs/vetur"
   },
+  ["vim-abolish"] = {
+    loaded = true,
+    path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/vim-abolish",
+    url = "https://github.com/tpope/vim-abolish"
+  },
   ["vim-airline"] = {
     loaded = true,
     path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/vim-airline",
@@ -335,6 +346,21 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/vim-airline-themes",
     url = "https://github.com/vim-airline/vim-airline-themes"
+  },
+  ["vim-dadbod"] = {
+    loaded = true,
+    path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/vim-dadbod",
+    url = "https://github.com/tpope/vim-dadbod"
+  },
+  ["vim-dadbod-completion"] = {
+    loaded = true,
+    path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/vim-dadbod-completion",
+    url = "https://github.com/kristijanhusak/vim-dadbod-completion"
+  },
+  ["vim-dadbod-ui"] = {
+    loaded = true,
+    path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/vim-dadbod-ui",
+    url = "https://github.com/kristijanhusak/vim-dadbod-ui"
   },
   ["vim-fish-syntax"] = {
     loaded = true,
@@ -376,6 +402,11 @@ _G.packer_plugins = {
     path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/vim-test",
     url = "https://github.com/vim-test/vim-test"
   },
+  ["vim-visual-star-search"] = {
+    loaded = true,
+    path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/vim-visual-star-search",
+    url = "https://github.com/nelstrom/vim-visual-star-search"
+  },
   ["vim-vsnip"] = {
     loaded = true,
     path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/vim-vsnip",
@@ -407,6 +438,10 @@ time([[Config for which-key.nvim]], false)
 time([[Config for octo.nvim]], true)
 try_loadstring("\27LJ\2\n2\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\tocto\frequire\0", "config", "octo.nvim")
 time([[Config for octo.nvim]], false)
+-- Config for: adoc-pdf-live.nvim
+time([[Config for adoc-pdf-live.nvim]], true)
+require('adoc_pdf_live').setup()
+time([[Config for adoc-pdf-live.nvim]], false)
 if should_profile then save_profiles() end
 
 end)

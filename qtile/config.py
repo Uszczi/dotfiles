@@ -59,7 +59,10 @@ keys = [
         "p",
         [
             Key(
-                [], "e", lazy.spawn("alacritty -e nvim ~/.config/nvim"), desc="Choose a config file to edit"
+                [],
+                "e",
+                lazy.spawn("alacritty -e nvim ~/.config/nvim"),
+                desc="Choose a config file to edit",
             ),
             Key([], "q", lazy.spawn("dm-logout"), desc="Choose a config file to edit"),
         ],
@@ -180,7 +183,9 @@ screens = [
                 widget.CurrentLayout(fmt=str_formater_with_const_width()),  # type: ignore
                 widget.GroupBox(),  # type: ignore
                 widget.WindowName(),  # type: ignore
-                # widget.Prompt(),
+                # Uncomment when working on single monitor.
+                # TODO maybe I can fix that.
+                # widget.Systray(),  # type: ignore
                 widget.Clock(format="%Y-%m-%d %a %H:%M"),  # type: ignore
                 widget.Battery(),  # type: ignore
                 widget.QuickExit(),  # type: ignore
@@ -194,7 +199,7 @@ screens = [
                 widget.CurrentLayout(fmt=str_formater_with_const_width()),  # type: ignore
                 widget.GroupBox(),  # type: ignore
                 widget.WindowName(),  # type: ignore
-                widget.Systray(),  # type: ignore # TODO fix this
+                widget.Systray(),  # type: ignore
                 widget.Clock(format="%Y-%m-%d %a %H:%M"),  # type: ignore
                 widget.Battery(),  # type: ignore
                 widget.QuickExit(),  # type: ignore

@@ -1,8 +1,6 @@
 #! /bin/bash
 
 os=$(cat /etc/*-release | rg ^ID= | awk -F '=' '{print $2}')
-echo $os
-
 
 if [[ "$os" == "ubuntu" ]]; then
     compton &

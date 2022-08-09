@@ -65,7 +65,8 @@ return require("packer").startup(
         use {"nvim-telescope/telescope-fzf-native.nvim", run = "make"}
         --         use "nvim-treesitter/nvim-treesitter"
         --         use "TimUntersberger/neogit"
-        --         use "sindrets/diffview.nvim"
+        use "sindrets/diffview.nvim"
+
         --         use "rbong/vim-flog"
         --         use "tjdevries/train.nvim"
         --         use {
@@ -150,13 +151,11 @@ return require("packer").startup(
         --         use "tjdevries/nlua.nvim"
         --         use "tpope/vim-dispatch"
         use "tpope/vim-fugitive"
-        --         use "simrat39/rust-tools.nvim"
-        --         use "nvim-lua/popup.nvim"
 
         --  Database connection
-        -- use "tpope/vim-dadbod"
-        -- use "kristijanhusak/vim-dadbod-ui"
-        -- use "kristijanhusak/vim-dadbod-completion"
+        use "tpope/vim-dadbod"
+        use "kristijanhusak/vim-dadbod-ui"
+        use "kristijanhusak/vim-dadbod-completion"
 
         -- Rust
         use "simrat39/rust-tools.nvim"
@@ -177,14 +176,16 @@ return require("packer").startup(
             end
         }
 
-        -- use "github/copilot.vim"
         use "ThePrimeagen/refactoring.nvim"
 
         -- Colorschema
-        use "gruvbox-community/gruvbox"
+        -- use "gruvbox-community/gruvbox"
         use "folke/tokyonight.nvim"
 
         use "lukas-reineke/indent-blankline.nvim"
         use "kylechui/nvim-surround"
+
+        use "nelstrom/vim-visual-star-search"
+        use "tpope/vim-abolish"
     end
 )

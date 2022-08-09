@@ -14,7 +14,7 @@ require("nvim-surround").setup(
             delete = "ds",
             change = "cs"
         },
-        delimiters = {
+        surround = {
             pairs = {
                 ["("] = {"( ", " )"},
                 [")"] = {"(", ")"},
