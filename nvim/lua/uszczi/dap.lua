@@ -30,22 +30,20 @@ dap.adapters.generic_remote = function(callback, config)
 end
 
 local cwd = vim.fn.getcwd()
-if string.find(cwd, "/work/tails") then
-    dap.configurations.python = {
-        {
-            type = "generic_remote",
-            name = "Generic remote",
-            request = "attach",
-            redirectOutput = true,
-            pathMappings = {
-                {
-                    localRoot = "/home/mateusz/work/tails",
-                    remoteRoot = "/app"
-                }
+dap.configurations.python = {
+    {
+        type = "generic_remote",
+        name = "Generic remote",
+        request = "attach",
+        redirectOutput = true,
+        pathMappings = {
+            {
+                localRoot = "/home/mateusz/work/tails",
+                remoteRoot = "/app"
             }
         }
     }
-end
+}
 
 require("dapui").setup(
     {

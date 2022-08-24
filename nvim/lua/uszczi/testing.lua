@@ -233,6 +233,35 @@ function M.test_file()
     M.call_command(command, vim.fn.executable("%:t"))
 end
 
+function M.test_debug_file()
+    local pwd = vim.fn.getcwd()
+
+    if not M.is_registered_directory(pwd) then
+        vim.api.nvim_command("TestFile")
+        return
+    end
+
+    local path = vim.fn.expand("%:p")
+    M.last_file = path
+    path = string.gsub(path, pwd .. "/", "")
+
+    local command
+    for _, value in ipairs(M.opts.testing_commands) do
+        command = value(path)
+        if command then
+            break
+        end
+    end
+
+    if command == nil then
+        M.last_test()
+        return
+    end
+
+    M.last_command = {command = command, name = vim.fn.executable("%:t")}
+    M.call_command(command, vim.fn.executable("%:t"))
+end
+
 function M.setup(opts)
     M.opts = opts
     M.last_command = nil

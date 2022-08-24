@@ -47,8 +47,6 @@ return require("packer").startup(
         }
         use "nvim-telescope/telescope-github.nvim"
 
-        use "tpope/vim-jdaddy"
-
         use "vim-airline/vim-airline"
         use "vim-airline/vim-airline-themes"
 
@@ -151,6 +149,7 @@ return require("packer").startup(
         --         use "tjdevries/nlua.nvim"
         --         use "tpope/vim-dispatch"
         use "tpope/vim-fugitive"
+        use "tpope/vim-jdaddy"
 
         --  Database connection
         use "tpope/vim-dadbod"
@@ -187,5 +186,6 @@ return require("packer").startup(
 
         use "nelstrom/vim-visual-star-search"
         use "tpope/vim-abolish"
+        use "tricktux/pomodoro.vim"
     end
 )
