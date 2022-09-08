@@ -177,3 +177,5 @@ nnoremap <leader>tb :lua require('telescope').extensions.git_worktree.git_worktr
 nnoremap <space>ll :lua require('uszczi.fold').fold_all_methods() <CR>
 
 nnoremap <leader>u :UndotreeShow<CR>
+
+nnoremap <space>dt :lua require('uszczi.lukas-diagnostics').line_diagnostics() <CR>

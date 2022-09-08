@@ -187,5 +187,7 @@ return require("packer").startup(
         use "nelstrom/vim-visual-star-search"
         use "tpope/vim-abolish"
         use "tricktux/pomodoro.vim"
+
+        use "nicwest/vim-camelsnek"
     end
 )
