@@ -120,6 +120,7 @@ end
 set -gx DENO_INSTALL "/home/mateusz/.deno/"
 fish_add_path $DENO_INSTALL/bin
 
+
 thefuck --alias | source
 
 
@@ -131,3 +132,5 @@ set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
 # the following to ~/.config/fish/config.fish:
 
 pyenv init - | source
+
+alias anki="~/src/anki-2.1.54-linux-qt6/anki"
