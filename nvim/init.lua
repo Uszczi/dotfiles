@@ -12,6 +12,8 @@ vim.cmd [[packadd packer.nvim]]
 vim.cmd "autocmd BufWritePost uszczi/packer.lua PackerCompile"
 
 require("uszczi.plugins_list")
+require("uszczi.auto-run-command")
+require("uszczi.scrapy-run")
 require("uszczi.globals")
 require("uszczi.comment")
 require("uszczi.harpoons")

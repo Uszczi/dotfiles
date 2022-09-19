@@ -21,33 +21,33 @@ ls.config.set_config {
     }
 }
 
-ls.add_snippets(
-    "vue",
-    {
-        ls.parser.parse_snippet(
-            "vbase",
-            [[
-<template>
-    <div>
-    </div>
-</template>
-
-<script lang="ts">
-import Vue from "vue";
-
-export default Vue.extend({
-   name: "${0}"
-});
-</script>
-
-<style scoped>
-
-</style>
-
-        ]]
-        )
-    }
-)
+-- ls.add_snippets(
+--     "vue",
+--     {
+--         ls.parser.parse_snippet(
+--             "vbase",
+--             [[
+-- <template>
+--     <div>
+--     </div>
+-- </template>
+--
+-- <script lang="ts">
+-- import Vue from "vue";
+--
+-- export default Vue.extend({
+--    name: "${0}"
+-- });
+-- </script>
+--
+-- <style scoped>
+--
+-- </style>
+--
+--         ]]
+--         )
+--     }
+-- )
 
 -- <c-k> is my expansion key
 -- this will expand the current item or jump to the next item within the snippet.
