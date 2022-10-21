@@ -138,6 +138,7 @@ return require("packer").startup(
         use "hrsh7th/cmp-path"
         use "hrsh7th/cmp-cmdline"
         use "hrsh7th/nvim-cmp"
+        use "hrsh7th/cmp-nvim-lsp-signature-help"
 
         use "hrsh7th/cmp-vsnip"
         use "hrsh7th/vim-vsnip"
@@ -181,7 +182,7 @@ return require("packer").startup(
         -- use "gruvbox-community/gruvbox"
         use "folke/tokyonight.nvim"
 
-        use "lukas-reineke/indent-blankline.nvim"
+        -- use "lukas-reineke/indent-blankline.nvim"
         use "kylechui/nvim-surround"
 
         use "nelstrom/vim-visual-star-search"
@@ -189,5 +190,7 @@ return require("packer").startup(
         use "tricktux/pomodoro.vim"
 
         use "nicwest/vim-camelsnek"
+        use "nelstrom/vim-visual-star-search"
+        use "nvim-treesitter/nvim-treesitter"
     end
 )

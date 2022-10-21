@@ -49,6 +49,7 @@ set laststatus=3
 
 augroup FIRST_AUTOGROUP
     autocmd!
+    autocmd BufFilePre  * TSEnable highlight
     autocmd BufWritePre * %s/\s\+$//e
     autocmd BufWritePre * Neoformat
 augroup END
@@ -60,3 +61,5 @@ set nofoldenable
 set foldlevelstart=99
 
 let g:airline_theme = 'base16_dracula'
+
+au FileType dap-repl lua require('dap.ext.autocompl').attach()

@@ -36,6 +36,7 @@ cmp.setup(
         },
         sources = cmp.config.sources(
             {
+                {name = "nvim_lsp_signature_help"},
                 {name = "nvim_lua"},
                 {name = "nvim_lsp"},
                 {name = "luasnip"},
@@ -59,6 +60,7 @@ cmp.setup(
                         path = "[path]",
                         nvim_lua = "[Lua]",
                         latex_symbols = "[Latex]",
+                        nvim_lsp_signature_help = "[nvim_lsp_signature_help]",
                         ["vim-dadbod-completion"] = "[dadbod]"
                     })
                 }

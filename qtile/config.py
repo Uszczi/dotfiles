@@ -183,12 +183,13 @@ screens = [
                 widget.CurrentLayout(fmt=str_formater_with_const_width()),  # type: ignore
                 widget.GroupBox(),  # type: ignore
                 widget.WindowName(),  # type: ignore
-                # Uncomment when working on single monitor.
-                # TODO maybe I can fix that.
-                # widget.Systray(),  # type: ignore
+                # Multi window Systray doesn't work
+                widget.Systray(),  # type: ignore
                 widget.Clock(format="%Y-%m-%d %a %H:%M"),  # type: ignore
                 widget.Battery(),  # type: ignore
                 widget.QuickExit(),  # type: ignore
+                # widget.CPUGraph(),
+                # widget.Memory(),
             ],
             24,
         ),
@@ -199,7 +200,7 @@ screens = [
                 widget.CurrentLayout(fmt=str_formater_with_const_width()),  # type: ignore
                 widget.GroupBox(),  # type: ignore
                 widget.WindowName(),  # type: ignore
-                widget.Systray(),  # type: ignore
+                # widget.Systray(),  # type: ignore
                 widget.Clock(format="%Y-%m-%d %a %H:%M"),  # type: ignore
                 widget.Battery(),  # type: ignore
                 widget.QuickExit(),  # type: ignore

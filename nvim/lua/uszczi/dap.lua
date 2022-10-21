@@ -42,6 +42,13 @@ dap.configurations.python = {
         --         remoteRoot = "/app"
         --     }
         -- }
+    },
+    {
+        type = "python",
+        request = "launch",
+        name = "Launch file",
+        program = "${file}",
+        pythonPath = pythonPath()
     }
 }
 
@@ -60,8 +67,8 @@ require("dapui").setup(
             },
             {
                 elements = {
-                    "repl",
-                    "console"
+                    "repl"
+                    -- "console"
                 },
                 size = 10,
                 position = "bottom"

@@ -50,5 +50,4 @@ M.line_diagnostics = function()
     end
 end
 
-P("adf")
 return M

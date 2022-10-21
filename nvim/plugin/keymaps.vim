@@ -35,6 +35,7 @@ map gf :lua require'uszczi.go_to_file'.jump()<cr>
 """ Dap mode and dap ui
 " TODO move that do dap
 nnoremap <silent><leader>dd :lua require('dapui').toggle()<CR>
+vnoremap <M-k> <Cmd>lua require("dapui").eval()<CR>
 nnoremap <silent><leader>de :lua require('dap').toggle_breakpoint()<CR>
 nnoremap <silent><leader>df :lua require('dap').continue()<CR>
 
@@ -47,6 +48,7 @@ nnoremap <leader>lp :lua require('dap').set_breakpoint(nil, nil, vim.fn.input('L
 nnoremap <leader>dr :lua require('dap').repl.open()<CR>
 nnoremap <leader>dl :lua require('dap').run_last()<CR>
 nnoremap <leader>dc :lua require('dap').run_to_cursor()<CR>
+
 nnoremap <leader>dg :lua require('dapui').float_element('scopes')<CR>
 nnoremap <leader>dG :lua require('dapui').toggle('scopes')<CR>
 nnoremap <leader>dw :lua require('dapui').eval()<CR>

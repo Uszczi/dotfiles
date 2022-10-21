@@ -1,7 +1,3 @@
-if status is-interactive
-    # Commands to run in interactive sessions can go here
-end
-
 function fish_mode_prompt
 end
 
@@ -21,6 +17,7 @@ fish_add_path ~/.cargo/bin
 fish_add_path ~/neovim/bin
 fish_add_path ~/dotfiles/path-utils
 fish_add_path /usr/local/go/bin
+fish_add_path ~/BurpSuiteCommunity
 #### Aliases
 alias ve="source .env_fish"
 alias vv=". ./.venv/bin/activate.fish & set VIRTUAL_ENV ".venv""
