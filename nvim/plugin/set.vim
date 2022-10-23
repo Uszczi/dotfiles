@@ -37,7 +37,7 @@ set splitright
 set splitbelow
 set updatetime=100
 set clipboard=unnamedplus
-set colorcolumn=80
+set colorcolumn=120
 set backspace=indent,eol,start
 
 set completeopt=menu,menuone,noselect
