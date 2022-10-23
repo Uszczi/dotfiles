@@ -141,3 +141,4 @@ require("rust-tools").setup({})
 require "lspconfig".vuels.setup {}
 require "lspconfig".bashls.setup {}
 require("lspconfig").tailwindcss.setup {}
+require "lspconfig".dockerls.setup {}
