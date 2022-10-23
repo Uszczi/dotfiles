@@ -168,14 +168,6 @@ return require("packer").startup(
         use "L3MON4D3/LuaSnip"
         use "saadparwaiz1/cmp_luasnip"
 
-        --- nnn
-        use {
-            "luukvbaal/nnn.nvim",
-            config = function()
-                require("nnn").setup()
-            end
-        }
-
         use "ThePrimeagen/refactoring.nvim"
 
         -- Colorschema

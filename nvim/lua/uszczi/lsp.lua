@@ -112,24 +112,6 @@ require "lspconfig".tsserver.setup {}
 --     }
 -- }
 
--- ______          _
--- | ___ \        | |
--- | |_/ /   _ ___| |_
--- |    / | | / __| __|
--- | |\ \ |_| \__ \ |_
--- \_| \_\__,_|___/\__|
---
---
-require("rust-tools").setup({})
-
---  _   _
--- | | | |
--- | | | |_   _  ___
--- | | | | | | |/ _ \
--- \ \_/ / |_| |  __/
---  \___/ \__,_|\___|
---
---
 local util = require "lspconfig.util"
 local function get_typescript_server_path(root_dir)
     local global_ts = "/usr/local/lib/node_modules/typescript/lib/tsserverlibrary.js"
@@ -154,8 +136,8 @@ require "lspconfig".volar.setup {
     end
 }
 
-require "lspconfig".vuels.setup {}
-
 -- require "lspconfig".denols.setup {}
---
+require("rust-tools").setup({})
+require "lspconfig".vuels.setup {}
 require "lspconfig".bashls.setup {}
+require("lspconfig").tailwindcss.setup {}
