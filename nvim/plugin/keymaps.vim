@@ -23,13 +23,7 @@ nnoremap <leader>el :tabnext<CR>
 
 nnoremap <leader>hr :call tj#save_and_exec()<CR>
 
-" Do I really need them?
-nnoremap  <leader>wh <C-W>h
-nnoremap  <leader>wj <C-W>j
-nnoremap  <leader>wk <C-W>k
-nnoremap  <leader>wl <C-W>l
-
-map gf :lua require'uszczi.go_to_file'.jump()<cr>
+" map gf :lua require'uszczi.go_to_file'.jump()<cr>
 
 
 """ Dap mode and dap ui
