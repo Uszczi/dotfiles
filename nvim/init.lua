@@ -40,3 +40,5 @@ require "fidget".setup {}
 
 -- vim.cmd("source " .. "~/dotfiles/nvim/" .. "lua/uszczi/colors/gruvbox.vim")
 require("uszczi.colors.tokyonight")
+
+require("nvim-autopairs").setup {}
