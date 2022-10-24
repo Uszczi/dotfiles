@@ -8,7 +8,10 @@ vim.cmd [[packadd packer.nvim]]
 local use = require("packer").use
 return require("packer").startup(
     function()
+        --- DONE
+        --- TODO
         use "terrortylor/nvim-comment"
+
         use "tpope/vim-repeat"
 
         use "ggandor/leap.nvim"
