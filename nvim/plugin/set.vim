@@ -8,7 +8,6 @@ set wildignore+=**/android/*
 set wildignore+=**/ios/*
 set wildignore+=**/.git/*
 
-
 " Witout that bind in docker doesn't work
 " https://github.com/moby/moby/issues/15793
 set backupcopy=yes
@@ -61,6 +60,6 @@ set foldexpr=nvim_treesitter#foldexpr()
 set nofoldenable
 set foldlevelstart=99
 
-let g:airline_theme = 'base16_dracula'
+let g:airline_theme = 'base16_dracula' "" Move that from here, maybe move to lua line
 
 au FileType dap-repl lua require('dap.ext.autocompl').attach()
