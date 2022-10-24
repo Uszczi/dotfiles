@@ -7,8 +7,6 @@ require("uszczi.surround")
 -- Theme
 require("uszczi.theme.tokyonight")
 
--- OLD
-require("uszczi.auto-run-command")
 require("uszczi.scrapy-run")
 require("uszczi.globals")
 require("uszczi.comment")
@@ -28,7 +26,6 @@ require("uszczi.telescope")
 
 require("leap").set_default_keymaps()
 
--- TODO use lua style
 vim.cmd "au TextYankPost * lua vim.highlight.on_yank {on_visual = false}"
 
 require "fidget".setup {}
