@@ -1,4 +1,3 @@
-require("uszczi.plugins")
 require("uszczi.auto-run-command")
 require("uszczi.scrapy-run")
 require("uszczi.globals")
@@ -15,8 +14,6 @@ require("uszczi.dap")
 require("uszczi.null-ls")
 require("uszczi.lukas-diagnostics")
 require("uszczi.refactoring")
-require("uszczi.blankline")
-require("uszczi.surround")
 require("uszczi.telescope")
 
 require("leap").set_default_keymaps()
@@ -26,6 +23,11 @@ vim.cmd "au TextYankPost * lua vim.highlight.on_yank {on_visual = false}"
 
 require "fidget".setup {}
 
-require("uszczi.colors.tokyonight")
+-- New init
+require("uszczi.plugins")
 
-require("nvim-autopairs").setup {}
+require("uszczi.nvim-autopairs")
+require("uszczi.surround")
+
+-- Theme
+require("uszczi.theme.tokyonight")

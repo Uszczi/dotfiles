@@ -181,7 +181,6 @@ return require("packer").startup(
         -- use "gruvbox-community/gruvbox"
         use "folke/tokyonight.nvim"
 
-        -- use "lukas-reineke/indent-blankline.nvim"
         use "kylechui/nvim-surround"
 
         use "nelstrom/vim-visual-star-search"
