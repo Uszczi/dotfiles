@@ -184,5 +184,7 @@ return require("packer").startup(
         use "nicwest/vim-camelsnek"
         use "nelstrom/vim-visual-star-search"
         use "nvim-treesitter/nvim-treesitter"
+
+        use "windwp/nvim-autopairs"
     end
 )
