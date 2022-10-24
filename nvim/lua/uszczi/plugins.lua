@@ -4,6 +4,7 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 end
 
 vim.cmd [[packadd packer.nvim]]
+vim.cmd "autocmd BufWritePost uszczi/packer.lua PackerCompile"
 
 local use = require("packer").use
 return require("packer").startup(
@@ -13,6 +14,7 @@ return require("packer").startup(
         use "nvim-lua/popup.nvim"
         use "tpope/vim-repeat"
         use "mhinz/vim-signify" -- Git status column
+        use "tpope/vim-fugitive"
         use "onsails/lspkind-nvim"
         use "sbdchd/neoformat"
 
