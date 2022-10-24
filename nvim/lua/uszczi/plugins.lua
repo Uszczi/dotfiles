@@ -8,37 +8,42 @@ vim.cmd [[packadd packer.nvim]]
 local use = require("packer").use
 return require("packer").startup(
     function()
-        --- DONE
-        --- TODO
-        use "terrortylor/nvim-comment"
+        use "wbthomason/packer.nvim"
 
         use "tpope/vim-repeat"
 
-        use "ggandor/leap.nvim"
+        use "terrortylor/nvim-comment"
+        use "windwp/nvim-autopairs"
+
+        use "ggandor/leap.nvim" -- s find
+
+        -- treesitter
         use "nvim-treesitter/nvim-treesitter"
         use "nvim-treesitter/playground"
 
+        -- LSP
+        -- use "nvim-lua/lsp-status.nvim"
+        -- use "nvim-lualine/lualine.nvim"
+        -- use "arkav/lualine-lsp-progress"
+        use "j-hui/fidget.nvim"
+
+        -- For testing or other purpose
+        use "gcmt/taboo.vim" -- for my testing playground
+
+        --- TODO
         use "neovim/nvim-lspconfig"
         use "jose-elias-alvarez/null-ls.nvim"
         use "jose-elias-alvarez/nvim-lsp-ts-utils"
         use "khaveesh/vim-fish-syntax"
 
         -- Tab utils
-        use "gcmt/taboo.vim"
-
-        -- LSP
-        use "nvim-lua/lsp-status.nvim"
-
-        -- Maybe check that in future
-        -- use "arkav/lualine-lsp-progress"
-        use "j-hui/fidget.nvim"
 
         -- Dap
         use "mfussenegger/nvim-dap"
         use "mfussenegger/nvim-dap-python"
         use "rcarriga/nvim-dap-ui"
         use "theHamsta/nvim-dap-virtual-text"
-        use "/nvim-telescope/telescope-dap.nvim"
+        use "nvim-telescope/telescope-dap.nvim"
 
         use "tyru/open-browser.vim"
         use "weirongxu/plantuml-previewer.vim"
@@ -192,8 +197,5 @@ return require("packer").startup(
 
         use "nicwest/vim-camelsnek"
         use "nelstrom/vim-visual-star-search"
-        use "nvim-treesitter/nvim-treesitter"
-
-        use "windwp/nvim-autopairs"
     end
 )

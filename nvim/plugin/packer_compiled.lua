@@ -129,11 +129,6 @@ _G.packer_plugins = {
     path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/diffview.nvim",
     url = "https://github.com/sindrets/diffview.nvim"
   },
-  ["fidget.nvim"] = {
-    loaded = true,
-    path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/fidget.nvim",
-    url = "https://github.com/j-hui/fidget.nvim"
-  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -153,11 +148,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/leap.nvim",
     url = "https://github.com/ggandor/leap.nvim"
-  },
-  ["lsp-status.nvim"] = {
-    loaded = true,
-    path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/lsp-status.nvim",
-    url = "https://github.com/nvim-lua/lsp-status.nvim"
   },
   ["lspkind-nvim"] = {
     loaded = true,
@@ -255,6 +245,11 @@ _G.packer_plugins = {
     path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/open-browser.vim",
     url = "https://github.com/tyru/open-browser.vim"
   },
+  ["packer.nvim"] = {
+    loaded = true,
+    path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/packer.nvim",
+    url = "https://github.com/wbthomason/packer.nvim"
+  },
   ["plantuml-previewer.vim"] = {
     loaded = true,
     path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/plantuml-previewer.vim",
@@ -298,7 +293,7 @@ _G.packer_plugins = {
   ["telescope-dap.nvim"] = {
     loaded = true,
     path = "/home/mateusz/.local/share/nvim/site/pack/packer/start/telescope-dap.nvim",
-    url = "https://github.com//nvim-telescope/telescope-dap.nvim"
+    url = "https://github.com/nvim-telescope/telescope-dap.nvim"
   },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,
