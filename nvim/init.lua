@@ -3,7 +3,7 @@ require("uszczi.plugins")
 
 require("uszczi.nvim-autopairs")
 require("uszczi.surround")
-
+require("uszczi.lualine")
 require("uszczi.neovim")
 
 -- Theme

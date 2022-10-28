@@ -46,7 +46,7 @@ return require("packer").startup(
 
         -- LSP
         -- use "nvim-lua/lsp-status.nvim"
-        -- use "nvim-lualine/lualine.nvim"
+        use "nvim-lualine/lualine.nvim"
         -- use "arkav/lualine-lsp-progress"
         use "j-hui/fidget.nvim"
         use "neovim/nvim-lspconfig"
