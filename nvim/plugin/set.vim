@@ -60,6 +60,4 @@ set foldexpr=nvim_treesitter#foldexpr()
 set nofoldenable
 set foldlevelstart=99
 
-let g:airline_theme = 'base16_dracula' "" Move that from here, maybe move to lua line
-
 au FileType dap-repl lua require('dap.ext.autocompl').attach()

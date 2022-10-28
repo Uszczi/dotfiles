@@ -77,9 +77,6 @@ return require("packer").startup(
         use "tyru/open-browser.vim"
         use "tyru/open-browser-github.vim"
 
-        use "vim-airline/vim-airline"
-        use "vim-airline/vim-airline-themes"
-
         use "kyazdani42/nvim-tree.lua"
         use "kyazdani42/nvim-web-devicons"
 
