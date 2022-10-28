@@ -50,19 +50,11 @@ cmp.setup(
             format = require("lspkind").cmp_format(
                 {
                     before = function(entry, vim_item)
+                        vim_item.menu = entry.source:get_debug_name()
                         return vim_item
                     end,
                     with_text = true,
-                    menu = ({
-                        luasnip = "[LuaSnip]",
-                        buffer = "[Buffer]",
-                        nvim_lsp = "[LSP]",
-                        path = "[path]",
-                        nvim_lua = "[Lua]",
-                        latex_symbols = "[Latex]",
-                        nvim_lsp_signature_help = "[nvim_lsp_signature_help]",
-                        ["vim-dadbod-completion"] = "[dadbod]"
-                    })
+                    menu = nil
                 }
             )
         }
@@ -98,14 +90,12 @@ cmp.setup.cmdline(
         formatting = {
             format = require("lspkind").cmp_format(
                 {
+                    before = function(entry, vim_item)
+                        vim_item.menu = entry.source:get_debug_name()
+                        return vim_item
+                    end,
                     with_text = true,
-                    menu = ({
-                        buffer = "[Buffer]",
-                        nvim_lsp = "[LSP]",
-                        luasnip = "[LuaSnip]",
-                        nvim_lua = "[Lua]",
-                        latex_symbols = "[Latex]"
-                    })
+                    menu = nil
                 }
             )
         }
