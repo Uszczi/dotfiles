@@ -4,6 +4,8 @@ require("uszczi.plugins")
 require("uszczi.nvim-autopairs")
 require("uszczi.surround")
 
+require("uszczi.neovim")
+
 -- Theme
 require("uszczi.theme.tokyonight")
 

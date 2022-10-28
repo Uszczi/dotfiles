@@ -51,7 +51,8 @@ nnoremap <leader>d0 :lua require('dap.ext.vscode').load_launchjs()<CR>
 
 """ Fugitive
 nnoremap <leader>gG :Git<CR>
-nnoremap <leader>gg :Neogit<CR>
+" nnoremap <leader>gg :Neogit<CR>
+nnoremap <leader>gg :lua require("neogit").open()<CR>
 nnoremap <leader>ii :Gdiffsplit<CR>
 nnoremap <leader>iu :diffget //2<CR>
 nnoremap <leader>io :diffget //3<CR>

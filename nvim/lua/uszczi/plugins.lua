@@ -104,9 +104,9 @@ return require("packer").startup(
         use "hrsh7th/vim-vsnip"
 
         -- Snipets
-        -- use "L3MON4D3/LuaSnip"
-        -- use "rafamadriz/friendly-snippets"
-        -- use "saadparwaiz1/cmp_luasnip"
+        use "L3MON4D3/LuaSnip"
+        use "rafamadriz/friendly-snippets"
+        use "saadparwaiz1/cmp_luasnip"
 
         --use "tpope/vim-abolish"
         --use "ThePrimeagen/git-worktree.nvim"
