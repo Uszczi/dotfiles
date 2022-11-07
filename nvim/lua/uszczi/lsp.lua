@@ -142,3 +142,4 @@ require "lspconfig".vuels.setup {}
 require "lspconfig".bashls.setup {}
 require("lspconfig").tailwindcss.setup {}
 require "lspconfig".dockerls.setup {}
+require "lspconfig".prismals.setup {}

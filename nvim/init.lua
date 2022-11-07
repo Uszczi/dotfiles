@@ -1,6 +1,8 @@
 -- New init
 require("uszczi.plugins")
 
+require("uszczi.lsp.mason")
+
 require("uszczi.nvim-autopairs")
 require("uszczi.surround")
 require("uszczi.lualine")

@@ -109,5 +109,8 @@ return require("packer").startup(
         --use "ThePrimeagen/git-worktree.nvim"
         use "sindrets/diffview.nvim"
         use "khaveesh/vim-fish-syntax"
+
+        use "williamboman/mason.nvim"
+        use "williamboman/mason-lspconfig.nvim"
     end
 )
