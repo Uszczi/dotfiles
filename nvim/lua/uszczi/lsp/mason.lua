@@ -30,7 +30,7 @@ mason_lspconfig.setup(
             -- "html",
             -- "yamlls",
             -- "dockerls",
-            -- "tailwindcss",
+            "tailwindcss",
             -- "jsonls",
             "prismals"
         },

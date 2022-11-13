@@ -112,5 +112,6 @@ return require("packer").startup(
 
         use "williamboman/mason.nvim"
         use "williamboman/mason-lspconfig.nvim"
+        use "kdheepak/lazygit.nvim"
     end
 )

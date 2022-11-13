@@ -60,4 +60,19 @@ set foldexpr=nvim_treesitter#foldexpr()
 set nofoldenable
 set foldlevelstart=99
 
-au FileType dap-repl lua require('dap.ext.autocompl').attach()
+" au FileType dap-repl lua require('dap.ext.autocompl').attach()
+" au WinLeave lazygit lua require('dasdfasdfap.ext.autocompl').attach()
+" au BufLeave lazygit lua require('dasdfasdfap.ext.autocompl').attach()
+" au BufDelete lazygit lua require('dasdfasdfap.ext.autocompl').attach()
+
+
+if has('nvim') && executable('nvr')
+  let $GIT_EDITOR = "nvr -cc split --remote-wait +'set bufhidden=wipe'"
+endif
+"
+"
+" if has('nvim') && executable('nvr')
+"   let $GIT_EDITOR = "nvr --remote +'set bufhidden=wipe'"
+" endif
+"
+autocmd FileType gitcommit,gitrebase,gitconfig set bufhidden=delete

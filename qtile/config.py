@@ -163,7 +163,12 @@ layout_theme = {
 }
 
 layouts = [
-    layout.Max(**layout_theme),  # type: ignore
+    layout.Max(
+        **{
+            "border_focus": "e1acff",
+            "border_normal": "1D2330",
+        }
+    ),  # type: ignore
     layout.Columns(**layout_theme),  # type: ignore
     layout.MonadTall(**layout_theme),  # type: ignore
     layout.RatioTile(**layout_theme),  # type: ignore
@@ -212,12 +217,12 @@ screens = [
 
 # Drag floating layouts.
 mouse = [
-    Drag(
-        [mod],
-        "Button1",
-        lazy.window.set_position_floating(),
-        start=lazy.window.get_position(),
-    ),
+    # Drag(
+    #     [mod],
+    #     "Button1",
+    #     lazy.window.set_position_floating(),
+    #     start=lazy.window.get_position(),
+    # ),
     Drag(
         [mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()
     ),

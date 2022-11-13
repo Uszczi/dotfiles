@@ -5,24 +5,15 @@ let mapleader=" "
 nnoremap n nzz
 nnoremap N Nzz
 
-nnoremap <A-j> :m . +1<CR>==
-nnoremap <A-k> :m . -2<CR>==
-inoremap <A-j> <Esc>:m . +1<CR>==gi
-inoremap <A-k> <Esc>:m . -2<CR>==gi
-vnoremap <A-j> :m '>+1<CR>gv=gv
-vnoremap <A-k> :m '<-2<CR>gv=gv
+
+" nnoremap <C-u> <C-u>zz
+" nnoremap <C-d> <C-d>zz
 
 imap jk <Esc>
 tnoremap jk <C-\><C-N>
 
-"  Do I use them
-nnoremap <leader>eh :tabprevious<CR>
-nnoremap <leader>ej :bprevious<CR>
-nnoremap <leader>ek :bnext<CR>
-nnoremap <leader>el :tabnext<CR>
 
 nnoremap <leader>hr :call tj#save_and_exec()<CR>
-
 " map gf :lua require'uszczi.go_to_file'.jump()<cr>
 
 
@@ -50,9 +41,11 @@ nnoremap <leader>d0 :lua require('dap.ext.vscode').load_launchjs()<CR>
 
 
 """ Fugitive
-nnoremap <leader>gG :Git<CR>
+" nnoremap <leader>gg :Git<CR>
 " nnoremap <leader>gg :Neogit<CR>
-nnoremap <leader>gg :lua require("neogit").open()<CR>
+" nnoremap <leader>gg :lua require("neogit").open()<CR>
+nnoremap <leader>gg :LazyGit<CR>
+"
 nnoremap <leader>ii :Gdiffsplit<CR>
 nnoremap <leader>iu :diffget //2<CR>
 nnoremap <leader>io :diffget //3<CR>
