@@ -106,12 +106,19 @@ return require("packer").startup(
         use "saadparwaiz1/cmp_luasnip"
 
         --use "tpope/vim-abolish"
-        --use "ThePrimeagen/git-worktree.nvim"
+        use "ThePrimeagen/git-worktree.nvim"
         use "sindrets/diffview.nvim"
         use "khaveesh/vim-fish-syntax"
 
         use "williamboman/mason.nvim"
         use "williamboman/mason-lspconfig.nvim"
         use "kdheepak/lazygit.nvim"
+
+        use {
+            "pwntester/octo.nvim",
+            config = function()
+                require "octo".setup()
+            end
+        }
     end
 )

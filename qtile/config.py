@@ -14,96 +14,58 @@ terminal = "alacritty"
 default_browser = "google-chrome"
 
 keys = [
-    #### Basic
-    Key([mod, "shift"], "b", lazy.hide_show_bar("bottom"), desc="Toggle menu bar."),
-    Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
-    Key([mod, "control"], "r", lazy.restart(), desc="Restart Qtile"),
-    Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    #### Switch between windows
+    # Layouts
+    Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
     Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
     Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
     Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
-    ##### Move windows
-    Key(
-        [mod, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"
-    ),
-    Key(
-        [mod, "shift"],
-        "l",
-        lazy.layout.shuffle_right(),
-        desc="Move window to the right",
-    ),
-    Key([mod, "shift"], "j", lazy.layout.shuffle_down(), desc="Move window down"),
-    Key([mod, "shift"], "k", lazy.layout.shuffle_up(), desc="Move window up"),
+    # Position
+    Key([mod, "shift"], "h", lazy.layout.shuffle_left()),
+    Key([mod, "shift"], "l", lazy.layout.shuffle_right()),
+    Key([mod, "shift"], "j", lazy.layout.shuffle_down()),
+    Key([mod, "shift"], "k", lazy.layout.shuffle_up()),
+    # Size
+    Key([mod, "control"], "h", lazy.layout.grow_left()),
+    Key([mod, "control"], "l", lazy.layout.grow_right()),
+    Key([mod, "control"], "j", lazy.layout.grow_down()),
+    Key([mod, "control"], "k", lazy.layout.grow_up()),
+    Key([mod], "n", lazy.layout.normalize()),
+    # Qtile
+    Key([mod, "control"], "r", lazy.restart(), desc="Restart Qtile"),
+    Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
+    ####
+    Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
+    Key([mod, "shift"], "b", lazy.hide_show_bar("bottom"), desc="Toggle menu bar."),
     #### Apps
-    Key([mod], "b", lazy.spawn(default_browser), desc="Run default browser"),
-    Key([mod], "i", lazy.spawn("guake"), desc="Toggle Guake"),
-    Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
-    #    Key([mod], "r", lazy.spawncmd()desc="Spawn a command using a prompt widget",
-    Key(
-        [mod],
-        "r",
-        lazy.spawn("dmenu_run"),
-        desc="Spawn a command using a prompt widget",
-    ),
-    Key(
-        [mod, "shift"],
-        "e",
-        lazy.spawn("alacritty --hold -e /home/mateusz/.config/dmscripts/start_nvim.sh"),
-        desc="Doom Emacs",
-    ),
-    KeyChord(
-        [mod],
-        "p",
-        [
-            Key(
-                [],
-                "e",
-                lazy.spawn("alacritty -e nvim ~/.config/nvim"),
-                desc="Choose a config file to edit",
-            ),
-            Key([], "q", lazy.spawn("dm-logout"), desc="Choose a config file to edit"),
-        ],
-    ),
-    #### Resizing windows
-    Key([mod, "control"], "h", lazy.layout.grow_left(), desc="Grow window to the left"),
-    Key(
-        [mod, "control"], "l", lazy.layout.grow_right(), desc="Grow window to the right"
-    ),
-    Key([mod, "control"], "j", lazy.layout.grow_down(), desc="Grow window down"),
-    Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
-    Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
-    #### Layouts
-    Key(
-        [mod, "shift"],
-        "Return",
-        lazy.layout.toggle_split(),
-        desc="Toggle between split and unsplit sides of stack",
-    ),
-    Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
-    KeyChord(
-        [mod],
-        "o",
-        [
-            Key(
-                [],
-                "m",
-                lazy.to_layout_index(1),
-            ),
-            Key(
-                [],
-                "b",
-                lazy.to_layout_index(0),
-            ),
-        ],
-    ),
+    Key([mod], "b", lazy.spawn(default_browser)),
+    Key([mod], "i", lazy.spawn("guake")),
+    Key([mod], "Return", lazy.spawn(terminal)),
+    Key([mod], "r", lazy.spawn("dmenu_run")),
+    Key([mod, "shift"], "s", lazy.spawn("flameshot gui")),
+    # KeyChord(
+    #     [mod],
+    #     "o",
+    #     [
+    #         Key(
+    #             [],
+    #             "m",
+    #             lazy.to_layout_index(1),
+    #         ),
+    #         Key(
+    #             [],
+    #             "b",
+    #             lazy.to_layout_index(0),
+    #         ),
+    #     ],
+    # ),
     #### Monitors
     Key([mod], "comma", lazy.prev_screen(), desc="Move focus to prev monitor"),
     Key([mod], "period", lazy.next_screen(), desc="Move focus to next monitor"),
-    #### Various apss
-    Key([mod, "shift"], "s", lazy.spawn("flameshot gui"), desc="Spawn FlameShot Gui"),
+    # Media buttons
+    Key([], "XF86AudioPause", lazy.spawn("playerctl pause")),
+    Key([], "XF86AudioPlay", lazy.spawn("playerctl play")),
 ]
 
 
@@ -185,7 +147,7 @@ screens = [
     Screen(
         bottom=bar.Bar(
             [
-                widget.CurrentLayout(fmt=str_formater_with_const_width()),  # type: ignore
+                widget.CurrentLayout(),  # type: ignore
                 widget.GroupBox(),  # type: ignore
                 widget.WindowName(),  # type: ignore
                 # Multi window Systray doesn't work
@@ -215,14 +177,7 @@ screens = [
     ),
 ]
 
-# Drag floating layouts.
 mouse = [
-    # Drag(
-    #     [mod],
-    #     "Button1",
-    #     lazy.window.set_position_floating(),
-    #     start=lazy.window.get_position(),
-    # ),
     Drag(
         [mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()
     ),

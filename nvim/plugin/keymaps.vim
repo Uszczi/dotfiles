@@ -163,6 +163,7 @@ nnoremap <leader>tg :lua require'uszczi.testing'.visit_last()<CR>
 
 """ Worktree
 nnoremap <leader>tb :lua require('telescope').extensions.git_worktree.git_worktrees()<CR>
+nnoremap <leader>tv :lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>
 
 nnoremap <space>ll :lua require('uszczi.fold').fold_all_methods() <CR>
 

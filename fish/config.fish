@@ -122,12 +122,8 @@ thefuck --alias | source
 
 
 
-set -Ux PYENV_ROOT $HOME/.pyenv
-set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
-
-# Load pyenv automatically by appending
-# the following to ~/.config/fish/config.fish:
-
+# set -Ux PYENV_ROOT $HOME/.pyenv
+# set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
 # pyenv init - | source
 
 alias anki="~/src/anki-2.1.54-linux-qt6/anki"
