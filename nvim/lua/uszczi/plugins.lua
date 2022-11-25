@@ -114,11 +114,6 @@ return require("packer").startup(
         use "williamboman/mason-lspconfig.nvim"
         use "kdheepak/lazygit.nvim"
 
-        use {
-            "pwntester/octo.nvim",
-            config = function()
-                require "octo".setup()
-            end
-        }
+        use "pwntester/octo.nvim"
     end
 )

@@ -9,6 +9,7 @@ require("uszczi.lualine")
 
 require("uszczi.neovim")
 require("uszczi.lazy-git")
+require("uszczi.octo")
 
 -- Theme
 require("uszczi.theme.tokyonight")
