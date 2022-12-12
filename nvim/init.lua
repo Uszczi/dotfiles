@@ -1,4 +1,3 @@
--- New init
 require("uszczi.plugins")
 
 require("uszczi.lsp.mason")
@@ -15,6 +14,8 @@ require("uszczi.octo")
 require("uszczi.theme.tokyonight")
 
 require("uszczi.scrapy-run")
+require("uszczi.scrapy-debug")
+
 require("uszczi.globals")
 require("uszczi.comment")
 require("uszczi.harpoons")
@@ -23,7 +24,6 @@ require("uszczi.nvim-cmp")
 require("uszczi.nvim-treesiter")
 require("uszczi.test")
 require("uszczi.camelsnek")
-require("uszczi.debug_scrapy")
 require("uszczi.nvim-tree")
 require("uszczi.dap")
 require("uszczi.null-ls")

@@ -1,7 +1,7 @@
-local query =
-    vim.treesitter.parse_query(
-    "python",
-    [[
+local get_query = function()
+    return vim.treesitter.parse_query(
+        "python",
+        [[
         (expression_statement
             (assignment
                 left: (identifier) @field_name (#eq? @field_name "name")
@@ -9,7 +9,8 @@ local query =
             )
         )
     ]]
-)
+    )
+end
 
 local get_root = function(bufnr)
     local parser = vim.treesitter.get_parser(bufnr, "python", {})
@@ -22,7 +23,7 @@ local run = function(output_bufnr)
     local root = get_root(bufnr)
 
     local name = nil
-    for _, node in query:iter_captures(root, bufnr, 0, -1) do
+    for _, node in get_query():iter_captures(root, bufnr, 0, -1) do
         name = vim.treesitter.get_node_text(node, bufnr)
     end
 
