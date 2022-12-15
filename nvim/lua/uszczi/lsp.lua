@@ -60,10 +60,6 @@ require "lspconfig".sumneko_lua.setup {
     }
 }
 
-require("lspconfig")["pyright"].setup {
-    capabilities = capabilities
-}
-
 require("lspconfig")["html"].setup {
     capabilities = capabilities
 }
@@ -143,3 +139,29 @@ require "lspconfig".bashls.setup {}
 require("lspconfig").tailwindcss.setup {}
 require "lspconfig".dockerls.setup {}
 require "lspconfig".prismals.setup {}
+
+-- Python
+require("lspconfig").pylsp.setup {
+    settings = {
+        pylsp = {
+            plugins = {
+                pycodestyle = {
+                    maxLineLength = 120,
+                    ignore = {
+                        "E303", -- too many blank lines
+                        "W293", -- blank line contains whitespace
+                        "E261", -- two whitespaces before comment
+                        "W503" -- break before binary operator
+                    }
+                }
+            }
+        }
+    }
+}
+
+require("lspconfig").pyright.setup {}
+
+-- C#
+-- require "lspconfig".csharp_ls.setup {}
+-- require("lspconfig")["omnisharp-mono"].setup {}
+require("lspconfig")["omnisharp"].setup {}

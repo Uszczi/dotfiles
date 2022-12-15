@@ -36,3 +36,7 @@ require("leap").set_default_keymaps()
 vim.cmd "au TextYankPost * lua vim.highlight.on_yank {on_visual = false}"
 
 require "fidget".setup {}
+
+-- if pcall(require, "noice") then
+--   return
+-- end

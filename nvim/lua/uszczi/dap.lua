@@ -29,7 +29,6 @@ dap.adapters.generic_remote = function(callback, config)
     )
 end
 
-local cwd = vim.fn.getcwd()
 dap.configurations.python = {
     {
         type = "generic_remote",

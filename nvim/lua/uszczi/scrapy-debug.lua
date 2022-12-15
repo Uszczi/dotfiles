@@ -3,26 +3,25 @@ local run_debuger = function(name)
     local j =
         require("plenary.job"):new {
         command = "python",
-        args = args
-        -- on_exit = function()
-        -- print("on_exit")
-        -- end,
-        -- on_stdout = function(j, return_val)
-        --     print(return_val)
-        --     print(P(j:result()))
-        -- end,
-        -- on_stderr = function()
-        -- print("on_stderr")
-        -- print(return_val)
-        -- end,
-        -- start = function()
-        -- print("start")
-        -- print(return_val)
-        -- end,
-        -- on_error = function()
-        -- print("on_error")
-        -- print(return_val)
-        -- end
+        args = args,
+        on_exit = function(e)
+            print("on_exit")
+            P(e)
+        end,
+        on_stdout = function(j, return_val)
+            print(return_val)
+            print(P(j:result()))
+        end,
+        on_stderr = function(e)
+            print("on_stderr")
+            P(e)
+        end,
+        start = function()
+            print("start")
+        end,
+        on_error = function()
+            print("on_error")
+        end
     }
     return j:start()
 end

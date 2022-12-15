@@ -32,7 +32,8 @@ mason_lspconfig.setup(
             -- "dockerls",
             "tailwindcss",
             -- "jsonls",
-            "prismals"
+            "prismals",
+            "pylsp"
         },
         automatic_installation = true
     }

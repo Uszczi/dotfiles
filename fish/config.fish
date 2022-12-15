@@ -18,6 +18,7 @@ fish_add_path ~/neovim/bin
 fish_add_path ~/dotfiles/path-utils
 fish_add_path /usr/local/go/bin
 fish_add_path ~/BurpSuiteCommunity
+fish_add_path ~/src/xpdf-tools-linux-4.04/bin64
 #### Aliases
 alias ve="source .env_fish"
 alias vv=". ./.venv/bin/activate.fish & set VIRTUAL_ENV ".venv""

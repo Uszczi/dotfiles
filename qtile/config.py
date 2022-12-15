@@ -9,7 +9,8 @@ from libqtile.lazy import lazy
 from text import str_formater_with_const_width
 
 mod = "mod4"
-terminal = "alacritty"
+# terminal = "alacritty"
+terminal = "kitty"
 # default_browser = "firefox -p"
 default_browser = "google-chrome"
 
