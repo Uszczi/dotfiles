@@ -2,6 +2,7 @@
 
 rm -f "/tmp/sesionizer"
 
+echo "/home/mateusz/" >> /tmp/sesionizer
 echo "/home/mateusz/work/reg/regspiders/" >> /tmp/sesionizer
 echo "/home/mateusz/Downloads" >> /tmp/sesionizer
 echo "/home/mateusz/work/reg" >> /tmp/sesionizer
