@@ -34,7 +34,8 @@ dap.configurations.python = {
         type = "generic_remote",
         name = "Generic remote",
         request = "attach",
-        redirectOutput = true
+        redirectOutput = true,
+        justMyCode = false
         -- pathMappings = {
         --     {
         --         localRoot = "/home/mateusz/work/tails",
