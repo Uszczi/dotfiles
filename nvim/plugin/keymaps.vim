@@ -30,7 +30,7 @@ nnoremap <leader>do  :lua require('dap').step_out()<CR>
 
 nnoremap <leader>da :lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>
 nnoremap <leader>lp :lua require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
-nnoremap <leader>dr :lua require('dap').repl.open()<CR>
+nnoremap <leader>dr :lua require('dap').repl.toggle()<CR>
 nnoremap <leader>dl :lua require('dap').run_last()<CR>
 nnoremap <leader>dc :lua require('dap').run_to_cursor()<CR>
 
@@ -42,9 +42,9 @@ nnoremap <leader>d0 :lua require('dap.ext.vscode').load_launchjs()<CR>
 
 """ Fugitive
 " nnoremap <leader>gg :Git<CR>
-" nnoremap <leader>gg :Neogit<CR>
+nnoremap <leader>gg :Neogit<CR>
 " nnoremap <leader>gg :lua require("neogit").open()<CR>
-nnoremap <leader>gg :LazyGit<CR>
+" nnoremap <leader>gg :LazyGit<CR>
 "
 nnoremap <leader>ii :Gdiffsplit<CR>
 nnoremap <leader>iu :diffget //2<CR>
