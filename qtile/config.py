@@ -42,7 +42,7 @@ keys = [
     #### Apps
     Key([mod], "b", lazy.spawn(default_browser)),
     Key([mod], "i", lazy.spawn("guake")),
-    Key([mod], "Return", lazy.spawn(terminal)),
+    Key([mod], "Return", lazy.spawn("/home/mateusz/.local/kitty.app/bin/kitty")),
     Key([mod], "r", lazy.spawn("dmenu_run")),
     Key([mod, "shift"], "s", lazy.spawn("flameshot gui")),
     # KeyChord(

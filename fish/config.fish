@@ -14,6 +14,7 @@ set -gx VISUAL nvim
 fish_add_path ~/bin
 fish_add_path ~/.local/bin
 fish_add_path ~/.cargo/bin
+fish_add_path ~/go/bin
 fish_add_path ~/neovim/bin
 fish_add_path ~/dotfiles/path-utils
 fish_add_path ~/dotfiles/dotfiles-private/bin
@@ -48,6 +49,9 @@ alias pm="mypy --ignore-missing-imports"
 ####
 alias lg="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(red)%h%C(r) —— %C(bold blue)%an%C(r): %C(white)%s%C(r) %C(dim white) %C(bold green)(%ar)%C(r) %C(bold yellow)%d%C(r)' --all"
 
+
+alias icat="/home/mateusz/.local/kitty.app/bin/kitty +kitten icat"
+alias kittydiff="/home/mateusz/.local/kitty.app/bin/kitty +kitten diff"
 #### Some python settings
 set -gx VIRTUAL_ENV_DISABLE_PROMPT false
 set -ge _OLD_FISH_PROMPT_OVERRIDE
