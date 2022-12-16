@@ -165,3 +165,7 @@ require("lspconfig").pyright.setup {}
 -- require "lspconfig".csharp_ls.setup {}
 -- require("lspconfig")["omnisharp-mono"].setup {}
 require("lspconfig")["omnisharp"].setup {}
+
+-- GO
+require "lspconfig".golangci_lint_ls.setup {}
+require "lspconfig".gopls.setup {}
