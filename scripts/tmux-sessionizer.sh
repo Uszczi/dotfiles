@@ -7,14 +7,9 @@ echo "/home/mateusz/work/reg/regspiders/" >> /tmp/sesionizer
 echo "/home/mateusz/Downloads" >> /tmp/sesionizer
 echo "/home/mateusz/work/reg" >> /tmp/sesionizer
 echo "/home/mateusz/work/reg2" >> /tmp/sesionizer
-echo "/home/mateusz/work/tails/" >> /tmp/sesionizer
-echo "/home/mateusz/work/tails/vet/" >> /tmp/sesionizer
-echo "/home/mateusz/work/tails/vet/web/frontend/v2/customers/" >> /tmp/sesionizer
-echo "/home/mateusz/work/tails/vet/web/frontend/vets/" >> /tmp/sesionizer
-echo "/home/mateusz/work/tails/vet/web/frontend/customers/" >> /tmp/sesionizer
-echo "/home/mateusz/work/tails/vet/web/frontend/admin/" >> /tmp/sesionizer
 echo "/home/mateusz/dotfiles/" >> /tmp/sesionizer
 echo "/home/mateusz/dotfiles/nvim" >> /tmp/sesionizer
+echo "/home/mateusz/dotfiles/dotfiles-private" >> /tmp/sesionizer
 fdfind . ~/projects --type directory --max-depth 2 >> /tmp/sesionizer
 fdfind . ~/src --type directory --max-depth 2 >> /tmp/sesionizer
 
