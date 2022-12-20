@@ -13,7 +13,7 @@ echo "/home/mateusz/dotfiles/dotfiles-private" >> /tmp/sesionizer
 fdfind . ~/projects --type directory --max-depth 2 >> /tmp/sesionizer
 fdfind . ~/src --type directory --max-depth 2 >> /tmp/sesionizer
 
-selected=$(cat /tmp/sesionizer | fzf)
+selected=$(cat /tmp/sesionizer | fzf --preview 'exa -la {}')
 
 selected_name=$(basename "$selected" | tr . _)
 tmux_running=$(pgrep tmux)

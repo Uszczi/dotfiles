@@ -3,7 +3,7 @@
 # TODO fix me
 cd "/home/mateusz/work/reg2/dev"
 
-selected=$(git worktree list | fzf)
+selected=$(git worktree list | fzf --preview 'exa -la {}')
 # I have no idea how it works.
 selected=($selected)
 
