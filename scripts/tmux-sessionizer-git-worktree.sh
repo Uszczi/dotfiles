@@ -3,16 +3,19 @@
 # TODO fix me
 cd "/home/mateusz/work/reg2/dev"
 
-selected=$(git worktree list | fzf --preview 'echo {} | exa -la')
+selected=$(git worktree list | fzf --preview "git worktree list | fzf --preview 'echo {} | awk \'{print $1}\' | xargs git -C {1} log HEAD~30..HEAD --graph --decorate --oneline")
 # I have no idea how it works.
 selected=($selected)
+if [[ -z $selected ]]; then
+    exit 0
+fi
 
 selected_name=$(basename "$selected" | tr . _)
 tmux_running=$(pgrep tmux)
 
+
 if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
     tmux new-session -s $selected_name -c $selected
-    echo $selected
     exit 0
 fi
 
