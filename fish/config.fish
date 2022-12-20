@@ -119,17 +119,12 @@ function rga-fzf
     ) && echo "opening $file" && nvim "$file"
 end
 
-# Deno
 set -gx DENO_INSTALL "/home/mateusz/.deno/"
 fish_add_path $DENO_INSTALL/bin
 
-
 thefuck --alias | source
 
-
-
-# set -Ux PYENV_ROOT $HOME/.pyenv
-# set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
-# pyenv init - | source
-
 alias anki="~/src/anki-2.1.54-linux-qt6/anki"
+
+bind \cBf -M insert ~/dotfiles/scripts/tmux-sessionizer.sh
+bind \cBe -M insert ~/dotfiles/scripts/tmux-sessionizer-git-worktree.sh
