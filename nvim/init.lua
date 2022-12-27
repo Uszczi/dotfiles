@@ -29,7 +29,6 @@ require("uszczi.dap")
 require("uszczi.null-ls")
 require("uszczi.lukas-diagnostics")
 require("uszczi.refactoring")
-require("uszczi.telescope")
 
 require("leap").set_default_keymaps()
 
