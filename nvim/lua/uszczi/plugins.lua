@@ -123,5 +123,7 @@ return require("packer").startup(
             end
         }
         use "fladson/vim-kitty"
+        use "wikitopian/hardmode"
+        use "thinca/vim-quickrun"
     end
 )
