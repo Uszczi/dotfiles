@@ -10,6 +10,11 @@ local use = require("packer").use
 return require("packer").startup(
     function()
         use "wbthomason/packer.nvim"
+
+        -- Theme
+        use "navarasu/onedark.nvim" -- Theme inspired by Atom
+
+        --
         use "nvim-lua/plenary.nvim"
         use "nvim-lua/popup.nvim"
         use "tpope/vim-repeat"

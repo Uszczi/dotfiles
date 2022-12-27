@@ -22,19 +22,6 @@ mason.setup(
 
 mason_lspconfig.setup(
     {
-        ensure_installed = {
-            -- "bashls",
-            "sumneko_lua",
-            -- "pyright",
-            -- "tsserver",
-            -- "html",
-            -- "yamlls",
-            -- "dockerls",
-            "tailwindcss",
-            -- "jsonls",
-            "prismals",
-            "pylsp"
-        },
         automatic_installation = true
     }
 )
