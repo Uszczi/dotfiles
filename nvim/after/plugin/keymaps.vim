@@ -13,8 +13,21 @@ imap jk <Esc>
 tnoremap jk <C-\><C-N>
 
 
-nnoremap <leader>hr :call tj#save_and_exec()<CR>
-" map gf :lua require'uszczi.go_to_file'.jump()<cr>
+
+if !exists('*keymaps#save_and_exec')
+  function! keymaps#save_and_exec() abort
+    if &filetype == 'vim'
+      :silent! write
+      :source %
+    elseif &filetype == 'lua'
+      :silent! write
+      :luafile %
+    endif
+
+    return
+  endfunction
+endif
+nnoremap <leader>hr :call keymaps#save_and_exec()<CR>
 
 
 """ Dap mode and dap ui
@@ -40,12 +53,6 @@ nnoremap <leader>dw :lua require('dapui').eval()<CR>
 nnoremap <leader>d0 :lua require('dap.ext.vscode').load_launchjs()<CR>
 
 
-""" Fugitive
-" nnoremap <leader>gg :Git<CR>
-nnoremap <leader>gg :Neogit<CR>
-" nnoremap <leader>gg :lua require("neogit").open()<CR>
-" nnoremap <leader>gg :LazyGit<CR>
-"
 nnoremap <leader>ii :Gdiffsplit<CR>
 nnoremap <leader>iu :diffget //2<CR>
 nnoremap <leader>io :diffget //3<CR>
