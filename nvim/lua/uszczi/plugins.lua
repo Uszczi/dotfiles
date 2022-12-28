@@ -44,6 +44,11 @@ return require("packer").startup(
         -- Treesitter
         use "nvim-treesitter/nvim-treesitter"
         use "nvim-treesitter/playground"
+        use {
+            -- Additional text objects via treesitter
+            "nvim-treesitter/nvim-treesitter-textobjects",
+            after = "nvim-treesitter"
+        }
 
         --
         use "jose-elias-alvarez/null-ls.nvim"
