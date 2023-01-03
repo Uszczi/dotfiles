@@ -39,7 +39,7 @@ keys = [
     ####
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "shift"], "b", lazy.hide_show_bar("bottom"), desc="Toggle menu bar."),
-    #### Apps
+    # Apps
     Key([mod], "b", lazy.spawn(default_browser)),
     Key([mod], "i", lazy.spawn("guake")),
     Key([mod], "Return", lazy.spawn("/home/mateusz/.local/kitty.app/bin/kitty")),
@@ -61,7 +61,7 @@ keys = [
     #         ),
     #     ],
     # ),
-    #### Monitors
+    # Monitors
     Key([mod], "comma", lazy.prev_screen(), desc="Move focus to prev monitor"),
     Key([mod], "period", lazy.next_screen(), desc="Move focus to next monitor"),
     # Media buttons
