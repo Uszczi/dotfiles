@@ -135,5 +135,6 @@ return require("packer").startup(
         use "fladson/vim-kitty"
         use "wikitopian/hardmode"
         use "thinca/vim-quickrun"
+        use "folke/zen-mode.nvim"
     end
 )
