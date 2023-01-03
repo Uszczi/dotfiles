@@ -109,6 +109,7 @@ return require("packer").startup(
         use "hrsh7th/cmp-nvim-lsp-signature-help"
         use "hrsh7th/cmp-vsnip"
         use "hrsh7th/vim-vsnip"
+        use "rafamadriz/friendly-snippets"
 
         -- Snipets
         use "L3MON4D3/LuaSnip"

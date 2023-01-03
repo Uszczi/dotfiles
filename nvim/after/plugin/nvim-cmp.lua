@@ -13,14 +13,8 @@ cmp.setup(
         mapping = {
             ["<C-n>"] = cmp.mapping(cmp.mapping.select_next_item(), {"i", "c"}),
             ["<C-p>"] = cmp.mapping(cmp.mapping.select_prev_item(), {"i", "c"}),
-            ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4)),
-            ["<C-f>"] = cmp.mapping(
-                cmp.mapping.scroll_docs(4),
-                {
-                    "i",
-                    "c"
-                }
-            ),
+            ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+            ["<C-f>"] = cmp.mapping.scroll_docs(4),
             ["<C-y>"] = cmp.config.disable,
             ["<C-[>"] = cmp.mapping( -- TODO test that
                 {
@@ -36,11 +30,11 @@ cmp.setup(
         },
         sources = cmp.config.sources(
             {
+                {name = "luasnip"},
                 {name = "nvim_lsp_signature_help"},
                 {name = "nvim_lua"},
                 {name = "nvim_lsp"},
-                {name = "luasnip"},
-                {name = "vsnip"},
+                -- {name = "vsnip"},
                 {name = "buffer"},
                 {name = "path"},
                 {name = "vim-dadbod-completion"}
@@ -62,12 +56,11 @@ cmp.setup(
 )
 
 cmp.setup.cmdline(
-    "/",
+    {"/", "?"},
     {
+        mapping = cmp.mapping.preset.cmdline(),
         sources = {
-            {
-                name = "buffer"
-            }
+            {name = "buffer"}
         }
     }
 )
@@ -101,3 +94,5 @@ cmp.setup.cmdline(
         }
     }
 )
+
+require("luasnip/loaders/from_vscode").lazy_load()
