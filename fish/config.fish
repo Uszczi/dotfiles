@@ -122,6 +122,7 @@ end
 set -gx DENO_INSTALL "/home/mateusz/.deno/"
 fish_add_path $DENO_INSTALL/bin
 
+# TODO some how improve error message about missing thefuck
 thefuck --alias | source
 
 alias anki="~/src/anki-2.1.54-linux-qt6/anki"
