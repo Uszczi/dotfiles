@@ -3,7 +3,8 @@
       create: true
       relink: true
 
-- clean: ["C:\\Users\\mateu", "C:\\Users\\mateu\\AppData\\Local\\nvim"]
+- clean: ["~", "~\\AppData\\Local\\"]
 
 - link:
-    C:\Users\mateu\AppData\Local\nvim: nvim
+    ~\AppData\Local\nvim: nvim
+    '~\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\autostart.ahk': ./windows/autostart.ahk
