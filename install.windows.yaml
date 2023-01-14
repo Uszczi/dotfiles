@@ -1,0 +1,9 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- clean: ["C:\\Users\\mateu", "C:\\Users\\mateu\\AppData\\Local\\nvim"]
+
+- link:
+    C:\Users\mateu\AppData\Local\nvim: nvim
