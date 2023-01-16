@@ -8,3 +8,4 @@
 - link:
     ~\AppData\Local\nvim: nvim
     '~\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\autostart.ahk': ./windows/autostart.ahk
+    '~\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1': ./windows/PowerShell_profile.ps1
