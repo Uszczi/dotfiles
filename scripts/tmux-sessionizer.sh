@@ -2,14 +2,11 @@
 
 rm -f "/tmp/sesionizer"
 
-echo "/home/mateusz/" >> /tmp/sesionizer
-echo "/home/mateusz/work/reg/regspiders/" >> /tmp/sesionizer
-echo "/home/mateusz/Downloads" >> /tmp/sesionizer
-echo "/home/mateusz/work/reg" >> /tmp/sesionizer
-echo "/home/mateusz/work/reg2" >> /tmp/sesionizer
-echo "/home/mateusz/dotfiles/" >> /tmp/sesionizer
-echo "/home/mateusz/dotfiles/nvim" >> /tmp/sesionizer
-echo "/home/mateusz/dotfiles/dotfiles-private" >> /tmp/sesionizer
+echo "$HOME/" >> /tmp/sesionizer
+echo "$HOME/dotfiles/" >> /tmp/sesionizer
+echo "$HOME/dotfiles/nvim" >> /tmp/sesionizer
+echo "$HOME/dotfiles/dotfiles-private" >> /tmp/sesionizer
+
 fdfind . ~/projects --type directory --max-depth 2 >> /tmp/sesionizer
 fdfind . ~/src --type directory --max-depth 2 >> /tmp/sesionizer
 

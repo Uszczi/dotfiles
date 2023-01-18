@@ -21,38 +21,9 @@ fish_add_path ~/dotfiles/dotfiles-private/bin
 fish_add_path /usr/local/go/bin
 fish_add_path ~/BurpSuiteCommunity
 fish_add_path ~/src/xpdf-tools-linux-4.04/bin64
-#### Aliases
-alias ve="source .env_fish"
-alias vv=". ./.venv/bin/activate.fish & set VIRTUAL_ENV ".venv""
-alias va="ve; vv"
-
-alias vi="nvim"
-
-alias ..="cd .."
-alias ...="cd ../.."
-
-alias ls="exa -la"
-alias la="exa -la"
-alias ll="exa -la"
-
-alias emacs="emacsclient -c -a emacs"
-alias fd="fdfind"
-
-alias aa=". ./.env.fish"
-
-# Python
-alias pa="autoflake --in-place --recursive --remove-all-unused-imports --ignore-init-module-imports --remove-duplicate-keys --remove-unused-variables"
-alias pi="isort"
-alias pb="black"
-alias pm="mypy --ignore-missing-imports"
-
-####
-alias lg="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(red)%h%C(r) —— %C(bold blue)%an%C(r): %C(white)%s%C(r) %C(dim white) %C(bold green)(%ar)%C(r) %C(bold yellow)%d%C(r)' --all"
 
 
-alias icat="/home/mateusz/.local/kitty.app/bin/kitty +kitten icat"
-alias kittydiff="/home/mateusz/.local/kitty.app/bin/kitty +kitten diff"
-#### Some python settings
+###
 set -gx VIRTUAL_ENV_DISABLE_PROMPT false
 set -ge _OLD_FISH_PROMPT_OVERRIDE
 set -ge _OLD_VIRTUAL_PYTHONHOME
@@ -129,3 +100,26 @@ alias anki="~/src/anki-2.1.54-linux-qt6/anki"
 
 bind \cBf -M insert ~/dotfiles/scripts/tmux-sessionizer.sh
 bind \cBe -M insert ~/dotfiles/scripts/tmux-sessionizer-git-worktree.sh
+
+#### Aliases
+alias ..="cd .."
+alias ...="cd ../.."
+
+alias ls="exa -la"
+alias la="exa -la"
+alias ll="exa -la"
+
+alias ve="source .env_fish"
+alias vv=". ./.venv/bin/activate.fish & set VIRTUAL_ENV ".venv""
+alias va="ve; vv"
+
+alias vi="nvim"
+alias emacs="emacsclient -c -a emacs"
+alias fd="fdfind"
+alias pa="autoflake --in-place --recursive --remove-all-unused-imports --ignore-init-module-imports --remove-duplicate-keys --remove-unused-variables"
+alias lg="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(red)%h%C(r) —— %C(bold blue)%an%C(r): %C(white)%s%C(r) %C(dim white) %C(bold green)(%ar)%C(r) %C(bold yellow)%d%C(r)' --all"
+alias icat="/home/mateusz/.local/kitty.app/bin/kitty +kitten icat"
+alias kittydiff="/home/mateusz/.local/kitty.app/bin/kitty +kitten diff"
+
+# WSL
+alias wsln="/mnt/c/MinGW/bin/wsl-notify-send.exe "
