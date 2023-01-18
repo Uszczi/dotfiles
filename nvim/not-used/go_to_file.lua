@@ -1,8 +1,6 @@
 -- move that to utils
 local function mysplit(inputstr, sep)
-    if sep == nil then
-        sep = "%s"
-    end
+    if sep == nil then sep = "%s" end
     local t = {}
     for str in string.gmatch(inputstr, "([^" .. sep .. "]+)") do
         table.insert(t, str)
@@ -17,9 +15,7 @@ local function get_pytest_test_column_line(path, test_name)
     local column = nil
     for k, v in ipairs(result) do
         local s = string.find(v, ":def")
-        if s then
-            column = tonumber(mysplit(v, ":")[1])
-        end
+        if s then column = tonumber(mysplit(v, ":")[1]) end
     end
     return column or 1
 end
@@ -88,8 +84,6 @@ local function jump()
     vim.api.nvim_win_set_cursor(0, {column, 1})
 end
 
-local M = {
-    jump = jump
-}
+local M = {jump = jump}
 
 return M

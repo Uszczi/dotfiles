@@ -1,7 +1,9 @@
 local run_debuger = function(name)
-    local args = {"-m", "debugpy", "--listen", "127.0.0.1:5678", "--wait-for-client", "-m", "scrapy", "crawl", name}
-    local j =
-        require("plenary.job"):new {
+    local args = {
+        "-m", "debugpy", "--listen", "127.0.0.1:5678", "--wait-for-client",
+        "-m", "scrapy", "crawl", name
+    }
+    local j = require("plenary.job"):new{
         command = "python",
         args = args,
         on_exit = function(e)
@@ -16,28 +18,21 @@ local run_debuger = function(name)
             print("on_stderr")
             P(e)
         end,
-        start = function()
-            print("start")
-        end,
-        on_error = function()
-            print("on_error")
-        end
+        start = function() print("start") end,
+        on_error = function() print("on_error") end
     }
     return j:start()
 end
 
 local get_query = function()
-    return vim.treesitter.parse_query(
-        "python",
-        [[
+    return vim.treesitter.parse_query("python", [[
         (expression_statement
             (assignment
                 left: (identifier) @field_name (#eq? @field_name "name")
                 right: (string) @name
             )
         )
-    ]]
-    )
+    ]])
 end
 
 local get_root = function(bufnr)
@@ -60,10 +55,4 @@ local debug = function(bufnr)
     print("debuger started")
 end
 
-vim.api.nvim_create_user_command(
-    "ScrapyDebug",
-    function()
-        debug()
-    end,
-    {}
-)
+vim.api.nvim_create_user_command("ScrapyDebug", function() debug() end, {})

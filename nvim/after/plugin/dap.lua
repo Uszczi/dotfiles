@@ -20,13 +20,7 @@ dap.adapters.python = {
 }
 
 dap.adapters.generic_remote = function(callback, config)
-    callback(
-        {
-            type = "server",
-            host = "127.0.0.1",
-            port = 5678
-        }
-    )
+    callback({type = "server", host = "127.0.0.1", port = 5678})
 end
 
 dap.configurations.python = {
@@ -42,8 +36,7 @@ dap.configurations.python = {
         --         remoteRoot = "/app"
         --     }
         -- }
-    },
-    {
+    }, {
         type = "python",
         request = "launch",
         name = "Launch file",
@@ -52,56 +45,39 @@ dap.configurations.python = {
     }
 }
 
-require("dapui").setup(
-    {
-        layouts = {
-            {
-                elements = {
-                    "scopes",
-                    "breakpoints",
-                    "stacks",
-                    "watches"
-                },
-                size = 40,
-                position = "left"
+require("dapui").setup({
+    layouts = {
+        {
+            elements = {"scopes", "breakpoints", "stacks", "watches"},
+            size = 40,
+            position = "left"
+        }, {
+            elements = {
+                "repl"
+                -- "console"
             },
-            {
-                elements = {
-                    "repl"
-                    -- "console"
-                },
-                size = 10,
-                position = "bottom"
-            }
+            size = 10,
+            position = "bottom"
         }
     }
-)
+})
 
 dap.adapters.delve = {
     type = "server",
     port = "${port}",
-    executable = {
-        command = "dlv",
-        args = {"dap", "-l", "127.0.0.1:${port}"}
-    }
+    executable = {command = "dlv", args = {"dap", "-l", "127.0.0.1:${port}"}}
 }
 
 -- https://github.com/go-delve/delve/blob/master/Documentation/usage/dlv_dap.md
 dap.configurations.go = {
-    {
-        type = "delve",
-        name = "Debug",
-        request = "launch",
-        program = "${file}"
-    },
+    {type = "delve", name = "Debug", request = "launch", program = "${file}"},
     {
         type = "delve",
         name = "Debug test", -- configuration for debugging test files
         request = "launch",
         mode = "test",
         program = "${file}"
-    },
-    -- works with go.mod packages and sub packages
+    }, -- works with go.mod packages and sub packages
     {
         type = "delve",
         name = "Debug test (go.mod)",

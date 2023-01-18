@@ -1,31 +1,23 @@
 local api = vim.api
 
 local function prune_nil(items)
-    return vim.tbl_filter(
-        function(x)
-            return x
-        end,
-        items
-    )
+    return vim.tbl_filter(function(x) return x end, items)
 end
 
-local function starts_with(str, start)
-    return str:sub(1, #start) == start
-end
+local function starts_with(str, start) return str:sub(1, #start) == start end
 
 local function get_nodes(query_text, predicate)
     local end_row = api.nvim_win_get_cursor(0)[1]
     local ft = api.nvim_buf_get_option(0, "filetype")
-    assert(ft == "python", "test_method of dap-python only works for python files, not " .. ft)
+    assert(ft == "python",
+           "test_method of dap-python only works for python files, not " .. ft)
     local query = vim.treesitter.parse_query(ft, query_text)
     assert(query, "Could not parse treesitter query. Cannot find test")
     local parser = vim.treesitter.get_parser(0)
     local root = (parser:parse()[1]):root()
     local nodes = {}
     for _, node in query:iter_captures(root, 0, 0, end_row) do
-        if predicate(node) then
-            table.insert(nodes, node)
-        end
+        if predicate(node) then table.insert(nodes, node) end
     end
     return nodes
 end
@@ -35,23 +27,15 @@ local function get_function_nodes()
     (function_definition
       name: (identifier) @name) @definition.function
   ]]
-    return get_nodes(
-        query_text,
-        function(node)
-            return node:type() == "identifier"
-        end
-    )
+    return get_nodes(query_text,
+                     function(node) return node:type() == "identifier" end)
 end
 
 local function get_node_text(node)
     local row1, col1, row2, col2 = node:range()
-    if row1 == row2 then
-        row2 = row2 + 1
-    end
+    if row1 == row2 then row2 = row2 + 1 end
     local lines = api.nvim_buf_get_lines(0, row1, row2, true)
-    if #lines == 1 then
-        return (lines[1]):sub(col1 + 1, col2)
-    end
+    if #lines == 1 then return (lines[1]):sub(col1 + 1, col2) end
     return table.concat(lines, "\n")
 end
 
@@ -81,9 +65,7 @@ local function closest_above_cursor(nodes)
             local text = get_node_text(node)
 
             if node_row1 > result_row1 then
-                if starts_with(text, "test_") then
-                    result = node
-                end
+                if starts_with(text, "test_") then result = node end
             end
         end
     end
@@ -120,9 +102,7 @@ end
 function M.is_registered_directory(pwd)
     local finded = false
     for _, value in pairs(M.opts.registered_directory) do
-        if value == pwd then
-            finded = true
-        end
+        if value == pwd then finded = true end
     end
     return finded
 end
@@ -147,14 +127,13 @@ function M.test_method()
     M.last_file = path
 
     path = string.gsub(path, pwd .. "/", "")
-    local test_path = table.concat(prune_nil({path, class, function_name}), "::")
+    local test_path =
+        table.concat(prune_nil({path, class, function_name}), "::")
 
     local command
     for _, value in ipairs(M.opts.testing_commands) do
         command = value(test_path)
-        if command then
-            break
-        end
+        if command then break end
     end
 
     if command == nil then
@@ -186,14 +165,13 @@ function M.debug_method()
     M.last_file = path
 
     path = string.gsub(path, pwd .. "/", "")
-    local test_path = table.concat(prune_nil({path, class, function_name}), "::")
+    local test_path =
+        table.concat(prune_nil({path, class, function_name}), "::")
 
     local command
     for _, value in ipairs(M.opts.debug_commands) do
         command = value(test_path)
-        if command then
-            break
-        end
+        if command then break end
     end
     if command == nil then
         M.last_test()
@@ -219,9 +197,7 @@ function M.test_file()
     local command
     for _, value in ipairs(M.opts.testing_commands) do
         command = value(path)
-        if command then
-            break
-        end
+        if command then break end
     end
 
     if command == nil then
@@ -248,9 +224,7 @@ function M.test_debug_file()
     local command
     for _, value in ipairs(M.opts.testing_commands) do
         command = value(path)
-        if command then
-            break
-        end
+        if command then break end
     end
 
     if command == nil then
@@ -268,6 +242,8 @@ function M.setup(opts)
     M.last_file = nil
 end
 
-vim.keymap.set("n", "<space>ht", "<cmd>e ~/dotfiles/nvim/lua/uszczi/testing.lua <CR>")
-vim.keymap.set("n", "<space>hT", "<cmd>e ~/dotfiles/nvim/lua/private/testing.lua <CR>")
+vim.keymap.set("n", "<space>ht",
+               "<cmd>e ~/dotfiles/nvim/lua/uszczi/testing.lua <CR>")
+vim.keymap.set("n", "<space>hT",
+               "<cmd>e ~/dotfiles/nvim/lua/private/testing.lua <CR>")
 return M

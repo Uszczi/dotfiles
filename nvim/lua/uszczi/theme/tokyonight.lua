@@ -5,23 +5,10 @@ function ColorMyPencils()
 
     vim.cmd("colorscheme " .. vim.g.uszczi_colorscheme)
 
-    local hl = function(thing, opts)
-        vim.api.nvim_set_hl(0, thing, opts)
-    end
+    local hl = function(thing, opts) vim.api.nvim_set_hl(0, thing, opts) end
 
-    hl(
-        "ColorColumn",
-        {
-            ctermbg = 0,
-            bg = "#555555"
-        }
-    )
-    hl(
-        "LineNr",
-        {
-            fg = "#5eacd3"
-        }
-    )
+    hl("ColorColumn", {ctermbg = 0, bg = "#555555"})
+    hl("LineNr", {fg = "#5eacd3"})
 end
 
 ColorMyPencils()

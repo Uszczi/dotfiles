@@ -1,15 +1,12 @@
 local get_query = function()
-    return vim.treesitter.parse_query(
-        "python",
-        [[
+    return vim.treesitter.parse_query("python", [[
         (expression_statement
             (assignment
                 left: (identifier) @field_name (#eq? @field_name "name")
                 right: (string) @name
             )
         )
-    ]]
-    )
+    ]])
 end
 
 local get_root = function(bufnr)
@@ -37,27 +34,20 @@ local run = function(output_bufnr)
     end
 
     vim.api.nvim_buf_set_lines(output_bufnr, 0, -1, false, {""})
-    vim.fn.jobstart(
-        command,
-        {
-            stdout_buffered = true,
-            on_stdout = append_data,
-            on_stderr = append_data
-        }
-    )
+    vim.fn.jobstart(command, {
+        stdout_buffered = true,
+        on_stdout = append_data,
+        on_stderr = append_data
+    })
 end
 
 local output_bufnr = nil
 
-vim.api.nvim_create_user_command(
-    "ScrapyRun",
-    function()
-        if output_bufnr == nil then
-            output_bufnr = vim.fn.input("Buffnr: ")
-            output_bufnr = tonumber(output_bufnr)
-        end
+vim.api.nvim_create_user_command("ScrapyRun", function()
+    if output_bufnr == nil then
+        output_bufnr = vim.fn.input("Buffnr: ")
+        output_bufnr = tonumber(output_bufnr)
+    end
 
-        run(output_bufnr)
-    end,
-    {}
-)
+    run(output_bufnr)
+end, {})
