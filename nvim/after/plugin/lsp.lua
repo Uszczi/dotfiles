@@ -9,21 +9,24 @@ local my_attach = function(client, bufnr)
     buf_set_keymap("n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
     buf_set_keymap("n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>", opts)
     buf_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-    buf_set_keymap("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+    buf_set_keymap("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>",
+                   opts)
     buf_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
     buf_set_keymap("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
     buf_set_keymap("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
 end
 
-local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp
+                                                                      .protocol
+                                                                      .make_client_capabilities())
 
 -- Lua
-require "lspconfig".sumneko_lua.setup {}
-
-require("lspconfig")["html"].setup {
-    capabilities = capabilities
+require"lspconfig".sumneko_lua.setup {
+    settings = {Lua = {diagnostics = {globals = {'vim'}}}}
 }
-require "lspconfig".tsserver.setup {}
+
+require("lspconfig")["html"].setup {capabilities = capabilities}
+require"lspconfig".tsserver.setup {}
 
 -- require("lspconfig").tsserver.setup(
 --     {
@@ -70,13 +73,13 @@ require "lspconfig".tsserver.setup {}
 
 local util = require "lspconfig.util"
 local function get_typescript_server_path(root_dir)
-    local global_ts = "/usr/local/lib/node_modules/typescript/lib/tsserverlibrary.js"
+    local global_ts =
+        "/usr/local/lib/node_modules/typescript/lib/tsserverlibrary.js"
     local found_ts = ""
     local function check_dir(path)
-        found_ts = util.path.join(path, "node_modules", "typescript", "lib", "tsserverlibrary.js")
-        if util.path.exists(found_ts) then
-            return path
-        end
+        found_ts = util.path.join(path, "node_modules", "typescript", "lib",
+                                  "tsserverlibrary.js")
+        if util.path.exists(found_ts) then return path end
     end
     if util.search_ancestors(root_dir, check_dir) then
         return found_ts
@@ -85,20 +88,23 @@ local function get_typescript_server_path(root_dir)
     end
 end
 
-require "lspconfig".volar.setup {
-    filetypes = {"typescript", "javascript", "javascriptreact", "typescriptreact", "vue"},
+require"lspconfig".volar.setup {
+    filetypes = {
+        "typescript", "javascript", "javascriptreact", "typescriptreact", "vue"
+    },
     on_new_config = function(new_config, new_root_dir)
-        new_config.init_options.typescript.serverPath = get_typescript_server_path(new_root_dir)
+        new_config.init_options.typescript.serverPath =
+            get_typescript_server_path(new_root_dir)
     end
 }
 
 -- require "lspconfig".denols.setup {}
 require("rust-tools").setup({})
-require "lspconfig".vuels.setup {}
-require "lspconfig".bashls.setup {}
+require"lspconfig".vuels.setup {}
+require"lspconfig".bashls.setup {}
 require("lspconfig").tailwindcss.setup {}
-require "lspconfig".dockerls.setup {}
-require "lspconfig".prismals.setup {}
+require"lspconfig".dockerls.setup {}
+require"lspconfig".prismals.setup {}
 
 -- Python
 require("lspconfig").pylsp.setup {
@@ -127,5 +133,5 @@ require("lspconfig").pyright.setup {}
 require("lspconfig")["omnisharp"].setup {}
 
 -- GO
-require "lspconfig".golangci_lint_ls.setup {}
-require "lspconfig".gopls.setup {}
+require"lspconfig".golangci_lint_ls.setup {}
+require"lspconfig".gopls.setup {}
