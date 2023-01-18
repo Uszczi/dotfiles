@@ -17,48 +17,8 @@ end
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
---   _
---  | |   _   _  __ _
---  | |  | | | |/ _` |
---  | |__| |_| | (_| |
---  |_____\__,_|\__,_|
---
-local sumneko_root_path
-local sumneko_binary_path
-
-local platform = vim.loop.os_uname().sysname
-if platform:find("^Windows") ~= nil then
-    sumneko_root_path = "C:\\lua_lsp"
-    sumneko_binary_path = sumneko_root_path .. "\\bin\\Windows\\lua-language-server"
-else
-    sumneko_binary_path = "/home/mateusz/bin/lua-language/bin/lua-language-server"
-    sumneko_root_path = "/home/mateusz/bin/lua-language/bin"
-end
-
-require "lspconfig".sumneko_lua.setup {
-    on_attach = my_attach,
-    cmd = {sumneko_binary_path, "-E", sumneko_root_path .. "/main.lua"},
-    capabilities = capabilities,
-    settings = {
-        Lua = {
-            runtime = {
-                path = vim.split(package.path, ";")
-            },
-            diagnostics = {
-                globals = {"vim"}
-            },
-            telemetry = {
-                enable = false
-            },
-            workspace = {
-                library = {
-                    [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-                    [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true
-                }
-            }
-        }
-    }
-}
+-- Lua
+require "lspconfig".sumneko_lua.setup {}
 
 require("lspconfig")["html"].setup {
     capabilities = capabilities
