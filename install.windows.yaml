@@ -6,6 +6,6 @@
 - clean: ["~", "~\\AppData\\Local\\"]
 
 - link:
-    ~\AppData\Local\nvim: nvim
+    ~\AppData\Local\nvim: nvim-new
     '~\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\autostart.ahk': ./windows/autostart.ahk
     '~\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1': ./windows/PowerShell_profile.ps1
