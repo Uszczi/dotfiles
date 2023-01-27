@@ -4,6 +4,7 @@ local ls = require("luasnip")
 local c = ls.choice_node
 local t = ls.text_node
 local s = ls.snippet
+local fmt = require("luasnip.extras.fmt").fmt
 
 -- https://github.com/L3MON4D3/LuaSnip/blob/b5a72f1fbde545be101fcd10b70bcd51ea4367de/Examples/snippets.lua#L517
 
@@ -34,6 +35,10 @@ ls.add_snippets("all", {
         t('custom_settings = {"HTTPCACHE_ENABLED": True}'),
         t('"HTTPCACHE_ENABLED": True')
     }))
+})
+
+ls.add_snippets("all", {
+    s("notion", {t({"[Notion]()", "[Excel]()", "", "Local: 12", "AWS: 12"})})
 })
 
 vim.keymap.set("n", "<leader>hs",

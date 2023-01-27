@@ -123,3 +123,22 @@ alias kittydiff="/home/mateusz/.local/kitty.app/bin/kitty +kitten diff"
 
 # WSL
 alias wsln="/mnt/c/MinGW/bin/wsl-notify-send.exe "
+
+
+
+function switch_make
+    set -l cmd (commandline -b)
+    if string match -r "make scrape" "$cmd" &>/dev/null
+        fish_commandline_prepend "make scrape"
+        fish_commandline_prepend "make deploy"
+
+    else if string match -r "make deploy" "$cmd" &>/dev/null
+        fish_commandline_prepend "make deploy"
+        fish_commandline_prepend "make scrape"
+    else
+        fish_commandline_prepend "make scrape"
+    end
+
+end
+
+bind \eq switch_make
