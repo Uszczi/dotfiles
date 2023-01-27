@@ -134,4 +134,6 @@ return require("packer").startup(function()
     use "wikitopian/hardmode"
     use "thinca/vim-quickrun"
     use "folke/zen-mode.nvim"
+
+    use "dstein64/vim-startuptime"
 end)
