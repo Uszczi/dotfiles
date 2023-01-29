@@ -16,3 +16,4 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({"ThePrimeagen/harpoon", {"navarasu/onedark.nvim", init=function() vim.cmd [[colorscheme onedark]] end}, {"dstein64/vim-startuptime", cmd="StartupTime"}, "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"}, {})
 
+
