@@ -20,7 +20,6 @@ vim.o.updatetime = 250
 vim.wo.signcolumn = 'yes'
 
 vim.o.termguicolors = true
--- vim.cmd [[colorscheme onedark]]
 
 vim.o.completeopt = 'menuone,noselect'
 
