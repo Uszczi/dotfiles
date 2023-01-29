@@ -6,7 +6,7 @@
 - clean: ["~", "~/.config"]
 
 - link:
-    C:\Users\mateu\AppData\Local\nvim: nvim
+    ~/.config/nvim: nvim
     # ~/.alacritty.yml: alacritty.yml
     # ~/wallpapers: wallpapers
     # #    ~/.bashrc: bashrc
