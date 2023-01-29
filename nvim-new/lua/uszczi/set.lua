@@ -22,7 +22,6 @@ vim.wo.signcolumn = 'yes'
 vim.o.termguicolors = true
 vim.cmd [[colorscheme onedark]]
 
--- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 
 vim.g.mapleader = ' '
@@ -32,3 +31,11 @@ vim.g.maplocalleader = ' '
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 50
+
+vim.o.clipboard = "unnamedplus"
+vim.opt.colorcolumn = "120"
+
+
+vim.o.expandtab = true
+vim.o.shiftwidth = 4
+vim.o.tabstop = 4
