@@ -10,6 +10,9 @@ set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 set('n', '<leader>hn', ":Ex $HOME/dotfiles/nvim-new<CR>", { silent = true })
 set('n', '<leader>hh', ":so %<CR>", { silent = false })
 
+
+set('n', '<leader>op', ":Ex<CR>", { silent = false })
+
 -- Telescope
 set('n', '<leader><leader>', "<cmd>lua require('telescope.builtin').find_files({hidden=true, no_ignore=true})<cr>", { silent = false })
 
