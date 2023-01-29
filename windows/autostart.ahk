@@ -7,7 +7,9 @@
 }
 
 #Enter:: {
-  RunWait('wt.exe -p "Windows PowerShell"')
+
+RunWait('wt.exe -p "Windows PowerShell"')
+
 }
 
 #+Enter:: {
