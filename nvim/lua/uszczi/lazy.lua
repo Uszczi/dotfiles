@@ -16,6 +16,11 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup(
     {
+        -- Window
+        "nvim-lualine/lualine.nvim",
+        "lukas-reineke/indent-blankline.nvim",
+        -- Typing
+        "numToStr/Comment.nvim",
         -- Telescope
         "nvim-telescope/telescope.nvim",
         "nvim-telescope/telescope-symbols.nvim",
@@ -43,6 +48,7 @@ require("lazy").setup(
         },
         -- Git
         "TimUntersberger/neogit",
+        "lewis6991/gitsigns.nvim",
         -- LSP
         "neovim/nvim-lspconfig",
         "williamboman/mason.nvim",
@@ -58,14 +64,10 @@ require("lazy").setup(
         "hrsh7th/nvim-cmp",
         "saadparwaiz1/cmp_luasnip",
         "L3MON4D3/LuaSnip",
-        -- SPEND MORE TIME ON THEM
-        "tpope/vim-rhubarb",
-        "lewis6991/gitsigns.nvim",
-        "nvim-lualine/lualine.nvim",
-        "lukas-reineke/indent-blankline.nvim",
-        "numToStr/Comment.nvim",
-        "tpope/vim-sleuth",
-        "hrsh7th/cmp-nvim-lsp-signature-help"
+        "hrsh7th/cmp-nvim-lsp-signature-help",
+        -- TPope
+        -- This plugin automatically adjusts 'shiftwidth' and 'expandtab' heuristically based on the current file
+        "tpope/vim-sleuth"
     },
     {}
 )
