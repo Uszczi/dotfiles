@@ -6,7 +6,7 @@
 - clean: ["~", "~/.config"]
 
 - link:
-    ~/.config/nvim: "nvim-new"
+    ~/.config/nvim: nvim
     # ~/.alacritty.yml: alacritty.yml
     ~/wallpapers: wallpapers
     # #    ~/.bashrc: bashrc
