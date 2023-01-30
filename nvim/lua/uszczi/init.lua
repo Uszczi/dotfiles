@@ -3,18 +3,6 @@ require "uszczi.lazy"
 
 require "uszczi.remap"
 
-local highlight_group = vim.api.nvim_create_augroup("YankHighlight", {clear = true})
-vim.api.nvim_create_autocmd(
-    "TextYankPost",
-    {
-        callback = function()
-            vim.highlight.on_yank()
-        end,
-        group = highlight_group,
-        pattern = "*"
-    }
-)
-
 -- Set lualine as statusline
 -- See `:help lualine.txt`
 require("lualine").setup {
