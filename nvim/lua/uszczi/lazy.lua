@@ -16,6 +16,8 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup(
     {
+        -- Telescope
+        "nvim-telescope/telescope-symbols.nvim",
         -- Theme
         {
             "navarasu/onedark.nvim",
