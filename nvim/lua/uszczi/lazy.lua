@@ -22,6 +22,7 @@ require("lazy").setup(
         -- Typing
         "kylechui/nvim-surround",
         "numToStr/Comment.nvim",
+        "mbbill/undotree",
         -- Telescope
         "nvim-telescope/telescope.nvim",
         "nvim-telescope/telescope-symbols.nvim",
