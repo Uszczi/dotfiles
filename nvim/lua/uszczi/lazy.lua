@@ -17,6 +17,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup(
     {
         -- Telescope
+        "nvim-telescope/telescope.nvim",
         "nvim-telescope/telescope-symbols.nvim",
         -- Theme
         {
@@ -27,7 +28,6 @@ require("lazy").setup(
         },
         -- Navigation
         "ThePrimeagen/harpoon",
-        "nvim-telescope/telescope.nvim",
         -- Dependencies
         "nvim-lua/plenary.nvim",
         -- Formating
