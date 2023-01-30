@@ -60,7 +60,6 @@ require("lazy").setup(
         "lukas-reineke/indent-blankline.nvim",
         "numToStr/Comment.nvim",
         "tpope/vim-sleuth",
-        {"nvim-telescope/telescope.nvim", branch = "0.1.x", requires = {"nvim-lua/plenary.nvim"}},
         {"nvim-telescope/telescope-fzf-native.nvim", run = "make", cond = vim.fn.executable "make" == 1}
     },
     {}
