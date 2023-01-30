@@ -11,10 +11,16 @@ if [[ "$os" == "ubuntu" ]]; then
 elif [[ "$os" == "arch" ]]; then
     xrandr --output "eDP1" --right-of "HDMI2" &
 
-
-
     set-random-wallpaper
+
+
+
+
+
+
+
+
     # /bin/emacs  --daemon &
-    guake &
+                    guake &
     sudo systemctl start docker.service
 fi
