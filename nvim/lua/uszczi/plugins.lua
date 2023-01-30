@@ -136,4 +136,5 @@ return require("packer").startup(function()
     use "folke/zen-mode.nvim"
 
     use "dstein64/vim-startuptime"
+    use {"tjdevries/sg.nvim", build = "cargo build --workspace"}
 end)
