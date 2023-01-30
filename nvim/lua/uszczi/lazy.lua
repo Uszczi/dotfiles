@@ -39,7 +39,6 @@ require("lazy").setup(
         },
         -- Git
         "TimUntersberger/neogit",
-        "olacin/telescope-gitmoji.nvim",
         -- SPEND MORE TIME ON THEM
         --
         "neovim/nvim-lspconfig",
