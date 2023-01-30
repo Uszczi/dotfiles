@@ -13,14 +13,7 @@ elif [[ "$os" == "arch" ]]; then
 
     set-random-wallpaper
 
-
-
-
-
-
-
-
     # /bin/emacs  --daemon &
-                    guake &
+    guake &
     sudo systemctl start docker.service
 fi
