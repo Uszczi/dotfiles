@@ -9,7 +9,7 @@ set(
 set("n", "<leader>fg", ":Telescope live_grep<CR>")
 
 -- "nvim-telescope/telescope-symbols.nvim"
-set({"v", "n"}, "<C-y>", ":lua require'telescope.builtin'.symbols{ sources = {'gitmoji'} }<CR>")
+set({"n"}, "<C-y>", "<cmd>:lua require'telescope.builtin'.symbols{ sources = {'gitmoji'} }<CR>")
 
 -- VSCode NeoVim extension
 if vim.g.vscode then
