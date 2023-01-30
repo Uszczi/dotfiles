@@ -1,4 +1,8 @@
 local set = vim.keymap.set
+local telescope = require("telescope")
+
+telescope.setup {}
+require("telescope").load_extension("fzf")
 
 set(
     "n",

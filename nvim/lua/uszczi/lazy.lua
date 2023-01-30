@@ -19,6 +19,7 @@ require("lazy").setup(
         -- Telescope
         "nvim-telescope/telescope.nvim",
         "nvim-telescope/telescope-symbols.nvim",
+        {"nvim-telescope/telescope-fzf-native.nvim", build = "make"},
         -- Theme
         {
             "navarasu/onedark.nvim",
@@ -73,8 +74,7 @@ require("lazy").setup(
         "L3MON4D3/LuaSnip",
         "rafamadriz/friendly-snippets",
         "saadparwaiz1/cmp_luasnip",
-        "onsails/lspkind-nvim",
-        {"nvim-telescope/telescope-fzf-native.nvim", run = "make", cond = vim.fn.executable "make" == 1}
+        "onsails/lspkind-nvim"
     },
     {}
 )
