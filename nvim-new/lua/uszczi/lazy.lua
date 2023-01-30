@@ -47,7 +47,6 @@ require("lazy").setup(
         "j-hui/fidget.nvim",
         -- Additional lua configuration, makes nvim stuff amazing
         "folke/neodev.nvim",
-        "hrsh7th/nvim-cmp",
         "hrsh7th/cmp-nvim-lsp",
         "L3MON4D3/LuaSnip",
         "saadparwaiz1/cmp_luasnip",
@@ -60,6 +59,19 @@ require("lazy").setup(
         "lukas-reineke/indent-blankline.nvim",
         "numToStr/Comment.nvim",
         "tpope/vim-sleuth",
+        "hrsh7th/cmp-nvim-lsp",
+        "hrsh7th/cmp-buffer",
+        "hrsh7th/cmp-path",
+        "hrsh7th/cmp-cmdline",
+        "hrsh7th/nvim-cmp",
+        "hrsh7th/cmp-nvim-lsp-signature-help",
+        "hrsh7th/cmp-vsnip",
+        "hrsh7th/vim-vsnip",
+        "rafamadriz/friendly-snippets",
+        "L3MON4D3/LuaSnip",
+        "rafamadriz/friendly-snippets",
+        "saadparwaiz1/cmp_luasnip",
+        "onsails/lspkind-nvim",
         {"nvim-telescope/telescope-fzf-native.nvim", run = "make", cond = vim.fn.executable "make" == 1}
     },
     {}
