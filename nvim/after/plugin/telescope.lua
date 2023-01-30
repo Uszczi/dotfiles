@@ -7,13 +7,22 @@ require("telescope").load_extension("fzf")
 set(
     "n",
     "<leader><leader>",
-    "<cmd>lua require('telescope.builtin').find_files({hidden=true, no_ignore=true})<cr>",
+    function()
+        require("telescope.builtin").find_files({hidden = true, no_ignore = true})
+    end,
     {silent = false}
 )
-set("n", "<leader>fg", ":Telescope live_grep<CR>")
+set("n", "<leader>fg", require("telescope.builtin").live_grep)
+set("n", "<leader>?", require("telescope.builtin").oldfiles)
 
 -- "nvim-telescope/telescope-symbols.nvim"
-set({"n"}, "<C-y>", "<cmd>:lua require'telescope.builtin'.symbols{ sources = {'gitmoji'} }<CR>")
+set(
+    "n",
+    "<C-y>",
+    function()
+        require("telescope.builtin").symbols {sources = {"gitmoji"}}
+    end
+)
 
 -- VSCode NeoVim extension
 if vim.g.vscode then
