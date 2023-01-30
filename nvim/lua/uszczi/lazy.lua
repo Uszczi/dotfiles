@@ -20,6 +20,9 @@ require("lazy").setup(
         "nvim-telescope/telescope.nvim",
         "nvim-telescope/telescope-symbols.nvim",
         {"nvim-telescope/telescope-fzf-native.nvim", build = "make"},
+        -- Treesitter
+        "nvim-treesitter/nvim-treesitter",
+        "nvim-treesitter/nvim-treesitter-textobjects",
         -- Theme
         {
             "navarasu/onedark.nvim",
@@ -40,41 +43,29 @@ require("lazy").setup(
         },
         -- Git
         "TimUntersberger/neogit",
-        -- SPEND MORE TIME ON THEM
-        --
+        -- LSP
         "neovim/nvim-lspconfig",
-        -- Automatically install LSPs to stdpath for neovim
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
-        -- Useful status updates for LSP
         "j-hui/fidget.nvim",
-        -- Additional lua configuration, makes nvim stuff amazing
         "folke/neodev.nvim",
+        -- CMP
+        "onsails/lspkind-nvim",
         "hrsh7th/cmp-nvim-lsp",
-        "L3MON4D3/LuaSnip",
+        "hrsh7th/cmp-buffer",
+        "hrsh7th/cmp-path",
+        "hrsh7th/cmp-cmdline",
+        "hrsh7th/nvim-cmp",
         "saadparwaiz1/cmp_luasnip",
-        "nvim-treesitter/nvim-treesitter",
-        "nvim-treesitter/nvim-treesitter-textobjects",
-        "tpope/vim-fugitive",
+        "L3MON4D3/LuaSnip",
+        -- SPEND MORE TIME ON THEM
         "tpope/vim-rhubarb",
         "lewis6991/gitsigns.nvim",
         "nvim-lualine/lualine.nvim",
         "lukas-reineke/indent-blankline.nvim",
         "numToStr/Comment.nvim",
         "tpope/vim-sleuth",
-        "hrsh7th/cmp-nvim-lsp",
-        "hrsh7th/cmp-buffer",
-        "hrsh7th/cmp-path",
-        "hrsh7th/cmp-cmdline",
-        "hrsh7th/nvim-cmp",
-        "hrsh7th/cmp-nvim-lsp-signature-help",
-        "hrsh7th/cmp-vsnip",
-        "hrsh7th/vim-vsnip",
-        "rafamadriz/friendly-snippets",
-        "L3MON4D3/LuaSnip",
-        "rafamadriz/friendly-snippets",
-        "saadparwaiz1/cmp_luasnip",
-        "onsails/lspkind-nvim"
+        "hrsh7th/cmp-nvim-lsp-signature-help"
     },
     {}
 )
