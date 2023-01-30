@@ -8,10 +8,10 @@ repos:
       - id: end-of-file-fixer
       - id: check-yaml
       - id: check-added-large-files
-  - repo: https://github.com/pecigonzalo/pre-commit-shfmt
-    rev: v2.1.0
+  - repo: https://github.com/cisagov/pre-commit-shfmt
+    rev: v0.0.2
     hooks:
-      - id: shell-fmt
+      - id: shfmt
         args:
           - -i
           - "2"

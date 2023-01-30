@@ -10,7 +10,6 @@ alias ls='ls --color=auto'
 alias ..="cd .."
 alias ...="cd ../.."
 
-
 # Bug with todoist app at Arch Linux
 export DESKTOPINTEGRATION=false
 
@@ -19,4 +18,3 @@ export PATH="/home/mateusz/src/anki-2.1.54-linux-qt6:$PATH"
 export PATH="/home/mateusz/BurpSuiteCommunity:$PATH"
 
 fish
-
