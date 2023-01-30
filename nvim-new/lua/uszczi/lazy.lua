@@ -31,7 +31,9 @@ require("lazy").setup(
         -- Formating
         "sbdchd/neoformat",
         -- Debug
-        {"dstein64/vim-startuptime", cmd = "StartupTime"}
+        {"dstein64/vim-startuptime", cmd = "StartupTime"},
+        -- Git 
+        "TimUntersberger/neogit"
     },
     {}
 )
