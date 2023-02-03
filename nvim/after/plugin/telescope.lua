@@ -18,6 +18,7 @@ set(
 )
 set("n", "<leader>fg", require("telescope.builtin").live_grep)
 set("n", "<leader>?", require("telescope.builtin").oldfiles)
+set("n", "<leader>fr", require("telescope.builtin").resume)
 
 -- nvim-telescope/telescope-symbols.nvim
 set(
