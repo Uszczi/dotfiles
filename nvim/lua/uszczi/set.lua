@@ -39,3 +39,4 @@ vim.o.tabstop = 4
 
 vim.o.splitbelow = true
 vim.o.splitright = true
+vim.o.wrap = false
