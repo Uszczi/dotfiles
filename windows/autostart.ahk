@@ -58,7 +58,7 @@ RunWait('wt.exe -p "Windows PowerShell"')
   RunWait("C:\Users\mateu\projects\circulate\circulate.exe switch-to-workspace 6",, "Hide")
 }
 
-#o:: {
+!o:: {
   RunWait("C:\Users\mateu\projects\circulate\circulate.exe debug-workspace",, "Hide")
 }
 
