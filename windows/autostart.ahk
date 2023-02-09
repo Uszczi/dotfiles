@@ -6,6 +6,7 @@
   WinClose("A")
 }
 
+
 #Enter:: {
 
 RunWait('wt.exe -p "Windows PowerShell"')
@@ -63,7 +64,7 @@ RunWait('wt.exe -p "Windows PowerShell"')
 }
 
 #t:: {
-  RunWait("C:\Users\mateu\projects\circulate\circulate.exe toogle",, "Hide")
+  RunWait("C:\Users\mateu\projects\circulate\circulate.exe clear-workspace",, "Hide")
 }
 !c:: {
   RunWait("C:\Users\mateu\projects\circulate\circulate.exe set-layout columns",, "Hide")

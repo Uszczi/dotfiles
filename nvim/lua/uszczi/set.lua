@@ -43,4 +43,5 @@ vim.o.wrap = false
 
 vim.cmd [[ :set noswapfile ]]
 vim.o.backup = false
+vim.o.writebackup = false
 vim.o.undofile = true
