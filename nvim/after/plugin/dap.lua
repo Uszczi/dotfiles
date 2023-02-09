@@ -3,14 +3,7 @@ local dap = require("dap")
 require("nvim-dap-virtual-text").setup({})
 
 local pythonPath = function()
-    local cwd = vim.fn.getcwd()
-    if vim.fn.executable(cwd .. "/venv/bin/python") == 1 then
-        return cwd .. "/venv/bin/python"
-    elseif vim.fn.executable(cwd .. "/.venv/bin/python") == 1 then
-        return cwd .. "/.venv/bin/python"
-    else
-        return "/usr/bin/python3.10"
-    end
+    return "python"
 end
 
 dap.adapters.python = {
@@ -36,7 +29,8 @@ dap.configurations.python = {
         request = "launch",
         name = "Launch file",
         program = "${file}",
-        pythonPath = pythonPath()
+        pythonPath = pythonPath(),
+        justMyCode = false
     }
 }
 
@@ -67,7 +61,10 @@ dap.configurations.go = {
     }
 }
 
-vim.keymap.set("n", "<leader>dw", ":lua require'dapui'.eval()<CR>", {silent = true})
+vim.keymap.set({"n", "v"}, "<leader>dw", ":lua require'dapui'.eval()<CR>", {silent = true})
+vim.keymap.set("n", "<leader>dd", ":lua require'dapui'.open()<CR>", {silent = true})
+vim.keymap.set("v", "<M-k>", ":lua require'dapui'.eval()<CR>", {silent = true})
 
 vim.keymap.set("n", "<leader>de", ":lua require'dap'.toggle_breakpoint()<CR>", {silent = true})
 vim.keymap.set("n", "<leader>df", ":lua require'dap'.continue()<CR>", {silent = true})
+vim.keymap.set("n", "<leader>dc", ":lua require'dap'.run_to_cursor()<CR>", {silent = true})
