@@ -8,9 +8,7 @@
 
 
 #Enter:: {
-
 RunWait('wt.exe -p "Windows PowerShell"')
-
 }
 
 #+Enter:: {
@@ -78,6 +76,13 @@ RunWait('wt.exe -p "Windows PowerShell"')
 !p:: {
   RunWait("C:\Users\mateu\projects\circulate\circulate.exe set-layout previous",, "Hide")
 }
+!l:: {
+  RunWait("circulate.exe focus next",, "Hide")
+}
+!h:: {
+  RunWait("circulate.exe focus previous",, "Hide")
+}
+
 
 toggleViewWindow(regex) {
   SetTitleMatchMode "RegEx"
@@ -98,3 +103,11 @@ toggleViewWindow(regex) {
 #9:: {
   toggleViewWindow(".*- Obsidian v.*")
 }
+
+circulateID := WinExist("ahk_exe circulate.exe")
+if !circulateID {
+  RunWait("C:\Users\mateu\projects\circulate\circulate.exe start")
+} 
+
+
+
