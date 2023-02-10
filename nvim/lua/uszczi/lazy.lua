@@ -50,6 +50,9 @@ require("lazy").setup(
             "dstein64/vim-startuptime",
             cmd = "StartupTime"
         },
+        "mfussenegger/nvim-dap",
+        "rcarriga/nvim-dap-ui",
+        "theHamsta/nvim-dap-virtual-text",
         -- Git
         "TimUntersberger/neogit",
         "lewis6991/gitsigns.nvim",
