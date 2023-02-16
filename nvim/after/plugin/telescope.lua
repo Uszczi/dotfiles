@@ -17,6 +17,7 @@ set(
     {silent = false}
 )
 set("n", "<leader>fg", require("telescope.builtin").live_grep)
+set({"n", "v"}, "<leader>fG", require("telescope.builtin").grep_string)
 set("n", "<leader>?", require("telescope.builtin").oldfiles)
 set("n", "<leader>fr", require("telescope.builtin").resume)
 

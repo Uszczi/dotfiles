@@ -57,6 +57,28 @@ RunWait('wt.exe -p "Windows PowerShell"')
   RunWait("C:\Users\mateu\projects\circulate\circulate.exe switch-to-workspace 6",, "Hide")
 }
 
+#+&:: {
+  RunWait("C:\Users\mateu\projects\circulate\circulate.exe move-to-workspace 6",, "Hide")
+}
+#7:: {
+  RunWait("C:\Users\mateu\projects\circulate\circulate.exe switch-to-workspace 7",, "Hide")
+}
+
+#+*:: {
+  RunWait("C:\Users\mateu\projects\circulate\circulate.exe move-to-workspace 8",, "Hide")
+}
+#8:: {
+  RunWait("C:\Users\mateu\projects\circulate\circulate.exe switch-to-workspace 8",, "Hide")
+}
+
+
+#+(:: {
+  RunWait("C:\Users\mateu\projects\circulate\circulate.exe move-to-workspace 8",, "Hide")
+}
+#9:: {
+  RunWait("C:\Users\mateu\projects\circulate\circulate.exe switch-to-workspace 9",, "Hide")
+}
+
 !o:: {
   RunWait("C:\Users\mateu\projects\circulate\circulate.exe debug-workspace",, "Hide")
 }
@@ -84,25 +106,25 @@ RunWait('wt.exe -p "Windows PowerShell"')
 }
 
 
-toggleViewWindow(regex) {
-  SetTitleMatchMode "RegEx"
-  UniqueID := WinActive(regex)
-
-  if (UniqueID == 0) {
-    WinShow(regex)
-    WinActivate(regex)
-  } else {
-    WinHide(UniqueID)
-  }
-}
-
-#8:: {
-  toggleViewWindow(".* Todoist")
-}
-
-#9:: {
-  toggleViewWindow(".*- Obsidian v.*")
-}
+/* toggleViewWindow(regex) { */
+/*   SetTitleMatchMode "RegEx" */
+/*   UniqueID := WinActive(regex) */
+/**/
+/*   if (UniqueID == 0) { */
+/*     WinShow(regex) */
+/*     WinActivate(regex) */
+/*   } else { */
+/*     WinHide(UniqueID) */
+/*   } */
+/* } */
+/**/
+/* #8:: { */
+/*   toggleViewWindow(".* Todoist") */
+/* } */
+/**/
+/* #9:: { */
+/*   toggleViewWindow(".*- Obsidian v.*") */
+/* } */
 
 circulateID := WinExist("ahk_exe circulate.exe")
 if !circulateID {
@@ -110,4 +132,8 @@ if !circulateID {
 } 
 
 
+#HotIf WinActive("Windows PowerShell") 
+^W:: {
+Send("^{Backspace}")
 
+}

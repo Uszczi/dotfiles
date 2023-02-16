@@ -23,14 +23,6 @@ dap.configurations.python = {
         request = "attach",
         redirectOutput = true,
         justMyCode = false
-    },
-    {
-        type = "python",
-        request = "launch",
-        name = "Launch file",
-        program = "${file}",
-        pythonPath = pythonPath(),
-        justMyCode = false
     }
 }
 
@@ -62,9 +54,19 @@ dap.configurations.go = {
 }
 
 vim.keymap.set({"n", "v"}, "<leader>dw", ":lua require'dapui'.eval()<CR>", {silent = true})
-vim.keymap.set("n", "<leader>dd", ":lua require'dapui'.open()<CR>", {silent = true})
+vim.keymap.set(
+    "n",
+    "<leader>dd",
+    function()
+        require "dapui".toggle()
+    end,
+    {silent = true}
+)
+
 vim.keymap.set("v", "<M-k>", ":lua require'dapui'.eval()<CR>", {silent = true})
 
 vim.keymap.set("n", "<leader>de", ":lua require'dap'.toggle_breakpoint()<CR>", {silent = true})
 vim.keymap.set("n", "<leader>df", ":lua require'dap'.continue()<CR>", {silent = true})
 vim.keymap.set("n", "<leader>dc", ":lua require'dap'.run_to_cursor()<CR>", {silent = true})
+
+require("dap-python").setup()

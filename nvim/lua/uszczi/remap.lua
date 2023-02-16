@@ -8,8 +8,6 @@ set("n", "j", "v:count == 0 ? 'gj' : 'j'", {expr = true, silent = true})
 set("n", "<leader>hn", ":Ex $HOME/dotfiles/nvim-new<CR>", {silent = true})
 set("n", "<leader>hh", ":so %<CR>", {silent = false})
 
-set("n", "<leader>op", ":Ex<CR>", {silent = false})
-
 set("n", "[d", vim.diagnostic.goto_prev)
 set("n", "]d", vim.diagnostic.goto_next)
 set("n", "<leader>e", vim.diagnostic.open_float)

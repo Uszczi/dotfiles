@@ -32,7 +32,8 @@ require("lazy").setup(
         -- Treesitter
         "nvim-treesitter/nvim-treesitter",
         "nvim-treesitter/nvim-treesitter-textobjects",
-        -- Theme
+        -- Look
+        "nvim-tree/nvim-web-devicons",
         {
             "navarasu/onedark.nvim",
             init = function()
@@ -41,6 +42,7 @@ require("lazy").setup(
         },
         -- Navigation
         "ThePrimeagen/harpoon",
+        "nvim-tree/nvim-tree.lua",
         -- Dependencies
         "nvim-lua/plenary.nvim",
         -- Formating
@@ -53,6 +55,7 @@ require("lazy").setup(
         "mfussenegger/nvim-dap",
         "rcarriga/nvim-dap-ui",
         "theHamsta/nvim-dap-virtual-text",
+        "mfussenegger/nvim-dap-python",
         -- Git
         "TimUntersberger/neogit",
         "lewis6991/gitsigns.nvim",

@@ -45,3 +45,6 @@ vim.cmd [[ :set noswapfile ]]
 vim.o.backup = false
 vim.o.writebackup = false
 vim.o.undofile = true
+
+vim.o.ff = "unix"
+vim.cmd [[ :set ff=unix ]]
