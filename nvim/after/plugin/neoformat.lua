@@ -7,7 +7,7 @@ vim.api.nvim_create_autocmd(
     "BufWritePre",
     {
         callback = function()
-            vim.cmd [[ undojoin | Neoformat ]]
+            vim.cmd [[ Neoformat ]]
         end,
         group = format_group,
         pattern = "*"
