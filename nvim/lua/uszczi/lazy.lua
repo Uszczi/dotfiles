@@ -33,6 +33,7 @@ require("lazy").setup(
         "nvim-treesitter/nvim-treesitter",
         "nvim-treesitter/nvim-treesitter-textobjects",
         -- Look
+        "xiyaowong/nvim-transparent",
         "nvim-tree/nvim-web-devicons",
         {
             "navarasu/onedark.nvim",
