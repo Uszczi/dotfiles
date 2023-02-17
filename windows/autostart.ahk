@@ -95,6 +95,9 @@ RunWait('wt.exe -p "Windows PowerShell"')
 !n:: {
   RunWait("C:\Users\mateu\projects\circulate\circulate.exe set-layout next",, "Hide")
 }
+!f:: {
+  RunWait("C:\Users\mateu\projects\circulate\circulate.exe set-layout floating",, "Hide")
+}
 !p:: {
   RunWait("C:\Users\mateu\projects\circulate\circulate.exe set-layout previous",, "Hide")
 }
@@ -132,8 +135,7 @@ if !circulateID {
 } 
 
 
-#HotIf WinActive("Windows PowerShell") 
+/* #HotIf WinActive("Windows PowerShell") 
 ^W:: {
 Send("^{Backspace}")
-
-}
+} */
