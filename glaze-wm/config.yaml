@@ -1,6 +1,6 @@
 gaps:
   inner_gap: 20
-  outer_gap: 20
+  outer_gap: 10
 
 general:
   # Whether to show floating windows as always on top.
@@ -78,23 +78,23 @@ window_rules:
 keybindings:
   # Shift focus in a given direction.
   - command: "focus left"
-    bindings: ["Alt+H", "Alt+Left"]
+    bindings: ["Alt+H"]
   - command: "focus right"
-    bindings: ["Alt+L", "Alt+Right"]
+    bindings: ["Alt+L"]
   - command: "focus up"
-    bindings: ["Alt+K", "Alt+Up"]
+    bindings: ["Alt+K"]
   - command: "focus down"
-    bindings: ["Alt+J", "Alt+Down"]
+    bindings: ["Alt+J"]
 
   # Move focused window in a given direction.
   - command: "move left"
-    bindings: ["Alt+Shift+H", "Alt+Shift+Left"]
+    bindings: ["Alt+Shift+H"]
   - command: "move right"
-    bindings: ["Alt+Shift+L", "Alt+Shift+Right"]
+    bindings: ["Alt+Shift+L"]
   - command: "move up"
-    bindings: ["Alt+Shift+K", "Alt+Shift+Up"]
+    bindings: ["Alt+Shift+K"]
   - command: "move down"
-    bindings: ["Alt+Shift+J", "Alt+Shift+Down"]
+    bindings: ["Alt+Shift+J"]
 
   # Resize focused window by a percentage or pixel amount.
   - command: "resize width -2%"
@@ -128,7 +128,7 @@ keybindings:
 
   # Close focused window.
   - command: "close"
-    binding: "Alt+Q"
+    binding: "Alt+W"
 
   # Kill GlazeWM process safely.
   - command: "exit wm"
@@ -179,3 +179,6 @@ keybindings:
     binding: "Alt+Shift+8"
   - commands: ["move to workspace 9", "focus workspace 9"]
     bindings: ["Alt+Shift+9"]
+
+  - command: "exec wt.exe"
+    binding: "Alt+Enter"
