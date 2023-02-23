@@ -44,6 +44,7 @@ end
 
 local servers = {
     pyright = {},
+    ruff_lsp = {},
     lua_ls = {
         Lua = {
             workspace = {checkThirdParty = false},
