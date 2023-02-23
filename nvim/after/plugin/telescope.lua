@@ -4,8 +4,10 @@ local telescope = require("telescope")
 telescope.setup {}
 
 if vim.fn.has("unix") == 1 then
-    require("telescope").load_extension("fzf")
+    telescope.load_extension("fzf")
 end
+
+telescope.load_extension("dap")
 
 set("n", "<leader><leader>", require("telescope.builtin").find_files, {silent = false})
 set(

@@ -29,6 +29,7 @@ require("lazy").setup(
         "nvim-telescope/telescope-symbols.nvim",
         {"nvim-telescope/telescope-fzf-native.nvim", build = "make"},
         "nvim-telescope/telescope-project.nvim",
+        "nvim-telescope/telescope-dap.nvim",
         -- Treesitter
         "nvim-treesitter/nvim-treesitter",
         "nvim-treesitter/nvim-treesitter-textobjects",
