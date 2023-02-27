@@ -126,9 +126,9 @@ keybindings:
   - command: "set minimized"
     binding: "Alt+M"
 
-  # Close focused window.
-  - command: "close"
-    binding: "Alt+W"
+  # # Close focused window.
+  # - command: "close"
+  #   binding: "Alt+W"
 
   # Kill GlazeWM process safely.
   - command: "exit wm"

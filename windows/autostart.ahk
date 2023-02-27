@@ -5,6 +5,9 @@
 #w:: {
   WinClose("A")
 }
+!w:: {
+  WinClose("A")
+}
 
 #Enter:: {
 RunWait('wt.exe -p "Windows PowerShell"')
