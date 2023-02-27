@@ -7,6 +7,10 @@ sudo apt install -y curl make cmake ninja-build gettext libtool-bin cmake g++ pk
 sudo apt install -y thefuck exa python3-pip suckless-tools fd-find ripgrep tmux nitrogen fzf gh
 
 
+sudo snap install todoist
+sudo snap refresh
+
+
 if [ ! -e ~/src/neovim ] 
 then
     git clone https://www.github.com/neovim/neovim ~/src/neovim
