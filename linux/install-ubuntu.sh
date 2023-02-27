@@ -3,7 +3,7 @@
 sudo apt update
 sudo apt upgrade
 
-sudo apt install -y curl make cmake ninja-build gettext libtool-bin cmake g++ pkg-config unzip 
+sudo apt install -y curl make cmake ninja-build gettext libtool-bin cmake g++ pkg-config unzip libsqlite3-dev
 sudp apt install -y libssl-dev liblzma-dev libffi-dev # pyenv
 sudo apt install -y thefuck exa python3-pip suckless-tools fd-find ripgrep tmux nitrogen fzf
 
