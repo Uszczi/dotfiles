@@ -4,7 +4,7 @@ sudo apt update
 sudo apt upgrade
 
 sudo apt install -y curl make cmake ninja-build gettext libtool-bin cmake g++ pkg-config unzip 
-sudo apt install -y thefuck exa python3-pip suckless-tools fd-find ripgrep tmux
+sudo apt install -y thefuck exa python3-pip suckless-tools fd-find ripgrep tmux nitrogen
 
 
 if [ ! -e ~/src/neovim ] 
