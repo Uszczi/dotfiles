@@ -68,5 +68,6 @@ vim.keymap.set("v", "<M-k>", ":lua require'dapui'.eval()<CR>", {silent = true})
 vim.keymap.set("n", "<leader>de", ":lua require'dap'.toggle_breakpoint()<CR>", {silent = true})
 vim.keymap.set("n", "<leader>df", ":lua require'dap'.continue()<CR>", {silent = true})
 vim.keymap.set("n", "<leader>dc", ":lua require'dap'.run_to_cursor()<CR>", {silent = true})
+vim.keymap.set("n", "<leader>do", ":lua require'dap'.step_over()<CR>", {silent = true})
 
 require("dap-python").setup()
