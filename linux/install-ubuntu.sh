@@ -43,10 +43,18 @@ then
 fi
 
 
-if [ ! -e /home/mat/.local/kitty.app/bin/kitty ]
+if [ ! -e ~/.local/kitty.app/bin/kitty ]
 then
     curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 fi
+
+
+if [ ! -e ~/.pyenv/bin/pyenv ]
+then
+    curl https://pyenv.run | bash
+fi
+
+
 
 cd ~/dotfiles
 python3 dotbot/bin/dotbot -c install.conf.yaml
