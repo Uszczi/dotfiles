@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# TODO fix me
-cd "$HOME/projects/reg/dev"
+cd "$HOME/work/dev"
 
 selected=$(git worktree list | fzf --preview "git worktree list | fzf --preview 'echo {} | awk \'{print $1}\' | xargs git -C {1} log HEAD~30..HEAD --graph --decorate --oneline")
 # I have no idea how it works.
