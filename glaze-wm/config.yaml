@@ -1,6 +1,6 @@
 gaps:
   inner_gap: 20
-  outer_gap: 20
+  outer_gap: 10
 
 general:
   # Whether to show floating windows as always on top.
@@ -53,6 +53,7 @@ workspaces:
   - name: "7"
   - name: "8"
   - name: "9"
+  - name: "sd"
 
 window_rules:
   # Task Manager requires admin privileges to manage and should be ignored unless running
@@ -71,42 +72,29 @@ window_rules:
   - command: "move to workspace 4"
     match_process_name: "slack"
 
-binding_modes:
-  - name: "resize"
-    keybindings:
-      # Resize focused window by a percentage or pixel amount.
-      - command: "resize width -2%"
-        bindings: ["H", "Left"]
-      - command: "resize width +2%"
-        bindings: ["L", "Right"]
-      - command: "resize height +2%"
-        bindings: ["K", "Up"]
-      - command: "resize height -2%"
-        bindings: ["J", "Down"]
-      # Press enter/escape to return to default keybindings.
-      - command: "binding mode none"
-        bindings: ["Escape", "Enter"]
+  - command: "move to workspace sd"
+    match_process_name: "/(Spotify)|(Discord)/"
 
 keybindings:
   # Shift focus in a given direction.
   - command: "focus left"
-    bindings: ["Alt+H", "Alt+Left"]
+    bindings: ["Alt+H"]
   - command: "focus right"
-    bindings: ["Alt+L", "Alt+Right"]
+    bindings: ["Alt+L"]
   - command: "focus up"
-    bindings: ["Alt+K", "Alt+Up"]
+    bindings: ["Alt+K"]
   - command: "focus down"
-    bindings: ["Alt+J", "Alt+Down"]
+    bindings: ["Alt+J"]
 
   # Move focused window in a given direction.
   - command: "move left"
-    bindings: ["Alt+Shift+H", "Alt+Shift+Left"]
+    bindings: ["Alt+Shift+H"]
   - command: "move right"
-    bindings: ["Alt+Shift+L", "Alt+Shift+Right"]
+    bindings: ["Alt+Shift+L"]
   - command: "move up"
-    bindings: ["Alt+Shift+K", "Alt+Shift+Up"]
+    bindings: ["Alt+Shift+K"]
   - command: "move down"
-    bindings: ["Alt+Shift+J", "Alt+Shift+Down"]
+    bindings: ["Alt+Shift+J"]
 
   # Resize focused window by a percentage or pixel amount.
   - command: "resize width -2%"
@@ -117,11 +105,6 @@ keybindings:
     binding: "Alt+O"
   - command: "resize height -2%"
     binding: "Alt+I"
-
-  # As an alternative to the resize keybindings above, resize mode enables resizing via
-  # HJKL or arrow keys. The binding mode is defined above with the name "resize".
-  - command: "binding mode resize"
-    binding: "Alt+R"
 
   # Change tiling direction. This determines where new tiling windows will be inserted.
   - command: "tiling direction toggle"
@@ -145,7 +128,7 @@ keybindings:
 
   # Close focused window.
   - command: "close"
-    binding: "Alt+Shift+Q"
+    binding: "Alt+W"
 
   # Kill GlazeWM process safely.
   - command: "exit wm"
@@ -154,21 +137,6 @@ keybindings:
   # Re-evaluate configuration file.
   - command: "reload config"
     binding: "Alt+Shift+R"
-
-  # Launch CMD terminal (alternatively `exec wt` or `exec %ProgramFiles%/Git/git-bash.exe`
-  # to start Windows Terminal and Git Bash respectively.
-  - command: "exec cmd"
-    binding: "Alt+Enter"
-
-  # Focus the workspace that last had focus.
-  - command: "focus workspace recent"
-    binding: "Alt+Y"
-
-  # Focus the next/previous workspace defined in `workspaces` config.
-  - command: "focus workspace next"
-    binding: "Alt+T"
-  - command: "focus workspace prev"
-    binding: "Alt+Shift+T"
 
   # Change focus to a workspace defined in `workspaces` config.
   - command: "focus workspace 1"
@@ -189,15 +157,7 @@ keybindings:
     binding: "Alt+8"
   - command: "focus workspace 9"
     binding: "Alt+9"
-
-  # Move focused workspace to a monitor in a given direction.
-  - command: "move workspace left"
-    binding: "Alt+A"
-  - command: "move workspace right"
-    binding: "Alt+F"
-  - command: "move workspace up"
-    binding: "Alt+D"
-  - command: "move workspace down"
+  - command: "focus workspace sd"
     binding: "Alt+S"
 
   # Move focused window to a workspace defined in `workspaces` config.
@@ -219,3 +179,6 @@ keybindings:
     binding: "Alt+Shift+8"
   - commands: ["move to workspace 9", "focus workspace 9"]
     bindings: ["Alt+Shift+9"]
+
+  - command: "exec wt.exe"
+    binding: "Alt+Enter"
