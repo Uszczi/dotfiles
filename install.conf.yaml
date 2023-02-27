@@ -9,7 +9,7 @@
     ~/.config/nvim: nvim
     # ~/.alacritty.yml: alacritty.yml
     ~/wallpapers: wallpapers
-    # #    ~/.bashrc: bashrc
+    ~/.bashrc: bashrc
     ~/.tmux.conf: tmux.conf
     # #    ~/.xinitrc: xinitrc
     # #    ~/.doom.d: doom
@@ -18,4 +18,4 @@
     # #    ~/path-utils: path-utils
     # ~/.config/nnn: nnn
     # ~/.config/pylintrc: pylintrc
-    # C:\Users\mateu\adfads: kitty
+    ~/.config/kitty: kitty

@@ -10,7 +10,9 @@ from text import str_formater_with_const_width
 
 mod = "mod4"
 # terminal = "alacritty"
-terminal = "kitty"
+terminal = "/home/mat/.local/kitty.app/bin/kitty"
+# terminal = "gnome-terminal"
+
 # default_browser = "firefox -p"
 default_browser = "google-chrome"
 
@@ -42,25 +44,9 @@ keys = [
     # Apps
     Key([mod], "b", lazy.spawn(default_browser)),
     Key([mod], "i", lazy.spawn("guake")),
-    Key([mod], "Return", lazy.spawn("/home/mateusz/.local/kitty.app/bin/kitty")),
+    Key([mod], "Return", lazy.spawn(terminal)),
     Key([mod], "r", lazy.spawn("dmenu_run")),
     Key([mod, "shift"], "s", lazy.spawn("flameshot gui")),
-    # KeyChord(
-    #     [mod],
-    #     "o",
-    #     [
-    #         Key(
-    #             [],
-    #             "m",
-    #             lazy.to_layout_index(1),
-    #         ),
-    #         Key(
-    #             [],
-    #             "b",
-    #             lazy.to_layout_index(0),
-    #         ),
-    #     ],
-    # ),
     # Monitors
     Key([mod], "comma", lazy.prev_screen(), desc="Move focus to prev monitor"),
     Key([mod], "period", lazy.next_screen(), desc="Move focus to next monitor"),
@@ -126,6 +112,7 @@ layout_theme = {
 }
 
 layouts = [
+    layout.MonadTall(**layout_theme),  # type: ignore
     layout.Max(
         **{
             "border_focus": "e1acff",
@@ -133,7 +120,6 @@ layouts = [
         }
     ),  # type: ignore
     layout.Columns(**layout_theme),  # type: ignore
-    layout.MonadTall(**layout_theme),  # type: ignore
     layout.RatioTile(**layout_theme),  # type: ignore
     layout.Floating(**layout_theme),  # type: ignore
 ]
@@ -154,7 +140,7 @@ screens = [
                 # Multi window Systray doesn't work
                 widget.Systray(),  # type: ignore
                 widget.Clock(format="%Y-%m-%d %a %H:%M"),  # type: ignore
-                widget.Battery(),  # type: ignore
+                # widget.Battery(),  # type: ignore
                 widget.QuickExit(),  # type: ignore
                 # widget.CPUGraph(),
                 # widget.Memory(),
@@ -170,7 +156,7 @@ screens = [
                 widget.WindowName(),  # type: ignore
                 # widget.Systray(),  # type: ignore
                 widget.Clock(format="%Y-%m-%d %a %H:%M"),  # type: ignore
-                widget.Battery(),  # type: ignore
+                # widget.Battery(),  # type: ignore
                 widget.QuickExit(),  # type: ignore
             ],
             24,
@@ -218,7 +204,7 @@ auto_minimize = True
 wmname = "LG3D"
 
 
-@hook.subscribe.startup_once
-def start_once():
-    home = os.path.expanduser("~")
-    subprocess.call([home + "/.config/qtile/autostart.sh"])
+# @hook.subscribe.startup_once
+# def start_once():
+#     home = os.path.expanduser("~")
+#     subprocess.call([home + "/.config/qtile/autostart.sh"])

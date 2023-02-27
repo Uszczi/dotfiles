@@ -4,7 +4,8 @@ sudo apt update
 sudo apt upgrade
 
 sudo apt install -y curl make cmake ninja-build gettext libtool-bin cmake g++ pkg-config unzip 
-sudo apt install -y thefuck exa
+sudo apt install -y thefuck exa python3-pip suckless-tools fd-find ripgrep tmux
+
 
 if [ ! -e ~/src/neovim ] 
 then
@@ -35,6 +36,17 @@ then
 fi
 
 
+if [ ! -e ~/.local/bin/qtile ]
+then
+    pip install xcffib qtile
+    sudo curl https://raw.githubusercontent.com/qtile/qtile/master/resources/qtile.desktop --output  /usr/share/xsessions/qtile.desktop
+fi
+
+
+if [ ! -e /home/mat/.local/kitty.app/bin/kitty ]
+then
+    curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+fi
+
 cd ~/dotfiles
 python3 dotbot/bin/dotbot -c install.conf.yaml
-
