@@ -4,6 +4,7 @@ sudo apt update
 sudo apt upgrade
 
 sudo apt install -y curl make cmake ninja-build gettext libtool-bin cmake g++ pkg-config unzip 
+sudp apt install -y libssl-dev liblzma-dev # pyenv
 sudo apt install -y thefuck exa python3-pip suckless-tools fd-find ripgrep tmux nitrogen fzf
 
 
