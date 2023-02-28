@@ -5,6 +5,7 @@ sudo apt upgrade
 
 sudo apt install -y curl make cmake ninja-build gettext libtool-bin cmake g++ pkg-config unzip libsqlite3-dev libssl-dev liblzma-dev libffi-dev libreadline-dev
 sudo apt install -y thefuck exa python3-pip suckless-tools fd-find ripgrep tmux nitrogen fzf gh
+sudo apt install -y flameshot guake htop
 
 
 sudo snap install todoist
