@@ -1,7 +1,20 @@
 local set = vim.keymap.set
 local telescope = require("telescope")
 
-telescope.setup {}
+telescope.setup {
+  extensions = {
+    project = {
+      -- base_dirs = {
+      --   {path = '~', max_depth = 8},
+      -- },
+      -- hidden_files = true,
+      -- theme = "dropdown",
+      -- order_by = "asc",
+      -- search_by = "title",
+      -- sync_with_nvim_tree = true,
+    }
+  }
+}
 
 if vim.fn.has("unix") == 1 then
     telescope.load_extension("fzf")
@@ -35,7 +48,7 @@ set(
 
 -- nvim-telescope/telescope-project.nvim
 telescope.load_extension("project")
-set("n", "<leader>fp", ":lua require'telescope'.extensions.project.project{}<CR>", {silent = true})
+set("n", "<leader>fp", ":lua require'telescope'.extensions.project.project{ display_type = 'full' }<CR>", {silent = true})
 
 -- VSCode NeoVim extension
 if vim.g.vscode then
