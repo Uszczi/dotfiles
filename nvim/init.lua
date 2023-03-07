@@ -30,3 +30,7 @@ require("nvim-tree").setup(
 )
 
 vim.keymap.set("n", "<leader>op", ":NvimTreeFindFileToggle<CR>", {silent = false})
+
+
+vim.keymap.set("n", "<leader>dy", ":lua R('nvim-scrapy-debug').debug()<CR>", {silent = false})
+

@@ -81,7 +81,8 @@ require("lazy").setup(
         "hrsh7th/cmp-nvim-lsp-signature-help",
         -- TPope
         "tpope/vim-sleuth", -- This plugin automatically adjusts 'shiftwidth' and 'expandtab' heuristically based on the current file
-        "tpope/vim-repeat"
+        "tpope/vim-repeat",
+        {dir = "$HOME/projects/nvim-scrapy-debug"}
     },
     {}
 )
