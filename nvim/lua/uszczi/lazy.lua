@@ -63,6 +63,7 @@ require("lazy").setup(
         "lewis6991/gitsigns.nvim",
         "mhinz/vim-signify",
         "tpope/vim-fugitive",
+        "sindrets/diffview.nvim",
         -- LSP
         "neovim/nvim-lspconfig",
         "williamboman/mason.nvim",

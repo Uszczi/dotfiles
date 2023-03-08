@@ -8,6 +8,7 @@ alias ...="cd ../.."
 
 export PATH="~/dotfiles/path-utils:$PATH"
 export PATH="~/.local/bin:$PATH"
+export PATH=$PATH:/usr/local/go/bin
 
 # Bug with google chrome and todoist.
 # Without that left down corner is covered by a part of app logo
