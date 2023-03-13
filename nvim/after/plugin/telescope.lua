@@ -21,6 +21,7 @@ if vim.fn.has("unix") == 1 then
 end
 
 telescope.load_extension("dap")
+telescope.load_extension("file_browser")
 
 set("n", "<leader><leader>", require("telescope.builtin").find_files, {silent = false})
 set(
@@ -54,3 +55,6 @@ set("n", "<leader>fp", ":lua require'telescope'.extensions.project.project{ disp
 if vim.g.vscode then
     set("n", "<leader><leader>", "<cmd>call VSCodeNotify('workbench.action.quickOpen')<CR>")
 end
+
+set("n", "<leader>fw", ":lua require'telescope'.extensions.file_browser.file_browser({cwd = '~/work/notes/reg'})<CR>")
+
