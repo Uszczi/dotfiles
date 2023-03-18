@@ -30,6 +30,7 @@ require("lazy").setup(
         {"nvim-telescope/telescope-fzf-native.nvim", build = "make"},
         "nvim-telescope/telescope-project.nvim",
         "nvim-telescope/telescope-dap.nvim",
+        "nvim-telescope/telescope-file-browser.nvim",
         -- Treesitter
         "nvim-treesitter/nvim-treesitter",
         "nvim-treesitter/nvim-treesitter-textobjects",
@@ -45,6 +46,14 @@ require("lazy").setup(
         -- Navigation
         "ThePrimeagen/harpoon",
         "nvim-tree/nvim-tree.lua",
+        {
+            "folke/which-key.nvim",
+            config = function()
+                vim.o.timeout = true
+                vim.o.timeoutlen = 300
+                require("which-key").setup({})
+            end
+        },
         -- Dependencies
         "nvim-lua/plenary.nvim",
         -- Formating
@@ -64,6 +73,17 @@ require("lazy").setup(
         "mhinz/vim-signify",
         "tpope/vim-fugitive",
         "sindrets/diffview.nvim",
+        {
+            "NWVi/octo.nvim",
+            branch = "config-review-use-local-fs",
+            init = function()
+                require "octo".setup(
+                    {
+                        use_local_fs = true
+                    }
+                )
+            end
+        },
         -- LSP
         "neovim/nvim-lspconfig",
         "williamboman/mason.nvim",
@@ -83,7 +103,8 @@ require("lazy").setup(
         -- TPope
         "tpope/vim-sleuth", -- This plugin automatically adjusts 'shiftwidth' and 'expandtab' heuristically based on the current file
         "tpope/vim-repeat",
-        {dir = "$HOME/projects/nvim-scrapy-debug"}
+        -- {dir = "$HOME/projects/nvim-scrapy-debug"}
+        "Uszczi/nvim-scrapy-debug"
     },
     {}
 )
