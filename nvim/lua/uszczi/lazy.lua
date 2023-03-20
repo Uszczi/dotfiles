@@ -66,6 +66,7 @@ require("lazy").setup(
         "mfussenegger/nvim-dap",
         "rcarriga/nvim-dap-ui",
         "theHamsta/nvim-dap-virtual-text",
+        -- Python
         "mfussenegger/nvim-dap-python",
         -- Git
         "TimUntersberger/neogit",
@@ -104,7 +105,17 @@ require("lazy").setup(
         "tpope/vim-sleuth", -- This plugin automatically adjusts 'shiftwidth' and 'expandtab' heuristically based on the current file
         "tpope/vim-repeat",
         -- {dir = "$HOME/projects/nvim-scrapy-debug"}
-        "Uszczi/nvim-scrapy-debug"
+        "Uszczi/nvim-scrapy-debug",
+        {
+            "kiyoon/jupynium.nvim",
+            build = "pip3 install --user ."
+            -- build = "conda run --no-capture-output -n jupynium pip install .",
+            -- enabled = vim.fn.isdirectory(vim.fn.expand "~/miniconda3/envs/jupynium"),
+        },
+        "hrsh7th/nvim-cmp", -- optional, for completion
+        "rcarriga/nvim-notify", -- optional
+        "stevearc/dressing.nvim", -- optional, UI for :JupyniumKernelSelect
+        "dccsillag/magma-nvim"
     },
     {}
 )
