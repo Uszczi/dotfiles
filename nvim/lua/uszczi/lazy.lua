@@ -24,6 +24,7 @@ require("lazy").setup(
         "numToStr/Comment.nvim",
         "mbbill/undotree",
         "ThePrimeagen/refactoring.nvim",
+        "nicwest/vim-camelsnek",
         -- Telescope
         "nvim-telescope/telescope.nvim",
         "nvim-telescope/telescope-symbols.nvim",
@@ -100,6 +101,7 @@ require("lazy").setup(
         "saadparwaiz1/cmp_luasnip",
         "L3MON4D3/LuaSnip",
         "hrsh7th/cmp-nvim-lsp-signature-help",
+        "ray-x/cmp-treesitter",
         -- TPope
         "tpope/vim-sleuth", -- This plugin automatically adjusts 'shiftwidth' and 'expandtab' heuristically based on the current file
         "tpope/vim-repeat",

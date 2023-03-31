@@ -1,4 +1,4 @@
-local cmp = require "cmp"
+local cmp = require("cmp")
 
 cmp.setup(
     {
@@ -21,10 +21,10 @@ cmp.setup(
             {
                 {name = "luasnip"},
                 {name = "nvim_lsp"},
+                {name = "nvim_lsp_signature_help"},
                 {name = "vsnip"},
-                {name = "path"}
-            },
-            {
+                {name = "path"},
+                {name = "treesitter"},
                 {name = "buffer"}
             }
         ),

@@ -5,7 +5,6 @@ set({"n", "v"}, "<Space>", "<Nop>", {silent = true})
 set("n", "k", "v:count == 0 ? 'gk' : 'k'", {expr = true, silent = true})
 set("n", "j", "v:count == 0 ? 'gj' : 'j'", {expr = true, silent = true})
 
-set("n", "<leader>hn", ":Ex $HOME/dotfiles/nvim-new<CR>", {silent = true})
 set("n", "<leader>hh", ":so %<CR>", {silent = false})
 
 set("n", "[d", vim.diagnostic.goto_prev)
