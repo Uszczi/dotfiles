@@ -37,6 +37,8 @@ vim.o.expandtab = true
 vim.o.shiftwidth = 4
 vim.o.tabstop = 4
 
+vim.o.sidescrolloff = 12
+
 vim.o.splitbelow = true
 vim.o.splitright = true
 vim.o.wrap = false
