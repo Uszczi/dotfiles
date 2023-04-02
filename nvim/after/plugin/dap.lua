@@ -6,11 +6,11 @@ local pythonPath = function()
     return "python"
 end
 
-dap.adapters.python = {
-    type = "executable",
-    command = pythonPath(),
-    args = {"-m", "debugpy.adapter"}
-}
+-- dap.adapters.python = {
+--     type = "executable",
+--     command = pythonPath(),
+--     args = {"-m", "debugpy.adapter"}
+-- }
 
 dap.adapters.generic_remote = function(callback, config)
     callback({type = "server", host = "127.0.0.1", port = 5678})
