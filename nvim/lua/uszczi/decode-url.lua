@@ -32,21 +32,21 @@ end
 
 
 
-local unescape_selected_text = function()
+local decode_selected_text = function()
     local text, csrow, cscol, cerow, cecol = get_selected_text()
-    local unescaped_text = {}
+    local decoded_text = {}
     for _, part in ipairs(text) do
         local decoded = unescape(part)
-        table.insert(unescaped_text, decoded)
+        table.insert(decoded_text, decoded)
     end
-    set_selected_text(unescaped_text, csrow, cscol, cerow, cecol )
+    set_selected_text(decoded_text, csrow, cscol, cerow, cecol )
 end
 
 vim.keymap.set(
     {"n", "v"},
     "<leader>ru",
     function()
-        unescape_selected_text()
+        decode_selected_text()
     end,
     {silent = false}
 )
