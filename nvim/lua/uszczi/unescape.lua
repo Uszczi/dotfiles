@@ -24,7 +24,7 @@ end
 
 local function set_selected_text(text, csrow, cscol, cerow, cecol)
     if cecol > 10000 then
-        vim.api.nvim_buf_set_lines(0, csrow - 1, csrow, false, text)
+        vim.api.nvim_buf_set_lines(0, csrow - 1, cerow, false, text)
     else
         vim.api.nvim_buf_set_text(0, csrow - 1, cscol - 1, cerow - 1, cecol, text)
     end
@@ -34,9 +34,12 @@ end
 
 local unescape_selected_text = function()
     local text, csrow, cscol, cerow, cecol = get_selected_text()
-    -- TODO loop through all lines 
-    text = unescape(text[1])
-    set_selected_text({text}, csrow, cscol, cerow, cecol )
+    local unescaped_text = {}
+    for _, part in ipairs(text) do
+        local decoded = unescape(part)
+        table.insert(unescaped_text, decoded)
+    end
+    set_selected_text(unescaped_text, csrow, cscol, cerow, cecol )
 end
 
 vim.keymap.set(
