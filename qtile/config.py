@@ -109,6 +109,7 @@ layout_theme = {
     "margin": 5,
     "border_focus": "e1acff",
     "border_normal": "1D2330",
+    "single_border_width": 0,
 }
 
 layouts = [
