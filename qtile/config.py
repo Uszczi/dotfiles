@@ -106,7 +106,7 @@ for i in groups:
 
 layout_theme = {
     "border_width": 2,
-    "margin": 5,
+    "margin": 10,
     "border_focus": "e1acff",
     "border_normal": "1D2330",
     "single_border_width": 0,
@@ -205,7 +205,7 @@ auto_minimize = True
 wmname = "LG3D"
 
 
-# @hook.subscribe.startup_once
-# def start_once():
-#     home = os.path.expanduser("~")
-#     subprocess.call([home + "/.config/qtile/autostart.sh"])
+@hook.subscribe.startup_once
+def start_once():
+    home = os.path.expanduser("~")
+    subprocess.call([home + "/.config/qtile/autostart.sh"])

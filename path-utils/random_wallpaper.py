@@ -1,5 +1,6 @@
 import os
 import random
+import pathlib
 
 
 def write_new_wallpaper(file, path):
@@ -15,21 +16,21 @@ def write_new_wallpaper(file, path):
 
 
 def main():
-    nitrogen_path = "/home/mateusz/.config/nitrogen/bg-saved.cfg"
-    wallpapers_path = "/home/mateusz/dotfiles/wallpapers/"
+    nitrogen_path = pathlib.Path.home() / ".config/nitrogen/bg-saved.cfg"
+    wallpapers_path = pathlib.Path.home() / "dotfiles/wallpapers/"
 
     with open(nitrogen_path) as f:
-       nitrogen_file = f.readlines()
+        nitrogen_file = f.readlines()
 
     wallpapers = os.listdir(wallpapers_path)
     random_wallpaper = random.choice(wallpapers)
 
-    new_wallpaper = wallpapers_path + random_wallpaper
+    new_wallpaper = f"{wallpapers_path}/{random_wallpaper}"
     write_new_wallpaper(nitrogen_file, new_wallpaper)
-
 
     with open(nitrogen_path, "w") as f:
         f.writelines(nitrogen_file)
+
 
 if __name__ == "__main__":
     main()
