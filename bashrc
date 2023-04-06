@@ -25,3 +25,4 @@ eval "`fnm env`"
 
 fish
 
+. "$HOME/.cargo/env"

@@ -1,12 +1,12 @@
-require "uszczi.set"
-require "uszczi.lazy"
+require("uszczi.set")
+require("uszczi.lazy")
 
-require "uszczi.remap"
-require "uszczi.globals"
+require("uszczi.remap")
+require("uszczi.globals")
 
-require "uszczi.decode-url"
+require("uszczi.decode-url")
 
-local term = require "harpoon.term"
+local term = require("harpoon.term")
 
 local function getBufferText()
     return vim.api.nvim_buf_get_lines(0, 0, -1, false)
@@ -27,9 +27,6 @@ local function filterText(text)
 
     return filtered
 end
-
-
-
 
 local function getSelectedText()
     vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<esc>", true, false, true), "x", false)
@@ -57,7 +54,6 @@ local function sendToTerminalBuffer(idx)
     term.sendCommand(idx, table.concat(text, "\n") .. "\n\n")
 end
 
-
 vim.keymap.set(
     {"n", "v"},
     "<leader>rp",
@@ -75,4 +71,3 @@ vim.keymap.set(
     end,
     {silent = false}
 )
-
