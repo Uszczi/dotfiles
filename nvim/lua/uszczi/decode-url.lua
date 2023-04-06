@@ -6,7 +6,6 @@ local unescape = function(url)
     return url:gsub("%%(%x%x)", hex_to_char)
 end
 
-
 local function get_selected_text()
     vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<esc>", true, false, true), "x", false)
     local _, csrow, cscol, _ = unpack(vim.fn.getpos("'<"))
@@ -30,8 +29,6 @@ local function set_selected_text(text, csrow, cscol, cerow, cecol)
     end
 end
 
-
-
 local decode_selected_text = function()
     local text, csrow, cscol, cerow, cecol = get_selected_text()
     local decoded_text = {}
@@ -39,7 +36,7 @@ local decode_selected_text = function()
         local decoded = unescape(part)
         table.insert(decoded_text, decoded)
     end
-    set_selected_text(decoded_text, csrow, cscol, cerow, cecol )
+    set_selected_text(decoded_text, csrow, cscol, cerow, cecol)
 end
 
 vim.keymap.set(
