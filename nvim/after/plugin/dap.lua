@@ -2,9 +2,9 @@ local dap = require("dap")
 
 require("nvim-dap-virtual-text").setup({})
 
-local pythonPath = function()
-    return "python"
-end
+-- local pythonPath = function()
+--     return "python"
+-- end
 
 -- dap.adapters.python = {
 --     type = "executable",
@@ -16,15 +16,15 @@ dap.adapters.generic_remote = function(callback, config)
     callback({type = "server", host = "127.0.0.1", port = 5678})
 end
 
-dap.configurations.python = {
-    {
-        type = "generic_remote",
-        name = "Generic remote",
-        request = "attach",
-        redirectOutput = true,
-        justMyCode = false
-    }
-}
+-- dap.configurations.python = {
+--     {
+--         type = "generic_remote",
+--         name = "Generic remote",
+--         request = "attach",
+--         redirectOutput = true,
+--         justMyCode = true
+--     }
+-- }
 
 require("dapui").setup({})
 
@@ -69,5 +69,8 @@ vim.keymap.set("n", "<leader>de", ":lua require'dap'.toggle_breakpoint()<CR>", {
 vim.keymap.set("n", "<leader>df", ":lua require'dap'.continue()<CR>", {silent = true})
 vim.keymap.set("n", "<leader>dc", ":lua require'dap'.run_to_cursor()<CR>", {silent = true})
 vim.keymap.set("n", "<leader>do", ":lua require'dap'.step_over()<CR>", {silent = true})
+vim.keymap.set("n", "<leader>di", ":lua require'dap'.step_into()<CR>", {silent = true})
 
-require("dap-python").setup()
+require("dap-python").setup(nil, {justMyCode = false})
+require("dap-python").test_runner = "pytest"
+require("dap").defaults.fallback.exception_breakpoints = {"raised", "uncaught", "userUnhandled"}

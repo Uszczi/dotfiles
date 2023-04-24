@@ -36,7 +36,6 @@ require("lazy").setup(
         "nvim-treesitter/nvim-treesitter",
         "nvim-treesitter/nvim-treesitter-textobjects",
         -- Look
-        "xiyaowong/nvim-transparent",
         "nvim-tree/nvim-web-devicons",
         {
             "navarasu/onedark.nvim",
@@ -92,6 +91,12 @@ require("lazy").setup(
         "williamboman/mason-lspconfig.nvim",
         "j-hui/fidget.nvim",
         "folke/neodev.nvim",
+        {
+            "klen/nvim-test",
+            init = function()
+                require "nvim-test".setup()
+            end
+        },
         -- CMP
         "onsails/lspkind-nvim",
         "hrsh7th/cmp-nvim-lsp",

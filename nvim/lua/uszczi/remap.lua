@@ -12,6 +12,9 @@ set("n", "]d", vim.diagnostic.goto_next)
 set("n", "<leader>e", vim.diagnostic.open_float)
 set("n", "<leader>q", vim.diagnostic.setloclist)
 
+set("n", "<C-u>", "<C-u>zz")
+set("n", "<C-d>", "<C-d>zz")
+
 -- Terminal
 set("t", "jk", "<C-\\><C-N>")
 

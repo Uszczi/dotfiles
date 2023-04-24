@@ -7,3 +7,11 @@ let g:neoformat_python_isort = {
 
 
 au FileType dap-repl lua require('dap.ext.autocompl').attach()
+
+
+augroup uuuuuu
+        autocmd!
+        autocmd BufWritePre *.prisma lua vim.lsp.buf.format()
+augroup END
+
+

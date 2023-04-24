@@ -1,10 +1,17 @@
-require("transparent").setup(
+local ok, transparent = pcall(require, "transparent")
+if not ok then
+    -- https://github.com/xiyaowong/transparent.nvim
+    -- "xiyaowong/nvim-transparent",
+    return
+end
+
+transparent.setup(
     {
-        enable = false,
+        enable = true,
         extra_groups = {
             "NvimTreeNormal",
             "NvimTreeEndOfBuffer"
         },
-        exclude = {}
+        exclude_groups = {}
     }
 )
