@@ -19,3 +19,4 @@ set("n", "<C-d>", "<C-d>zz")
 set("t", "jk", "<C-\\><C-N>")
 
 set("n", "<leader>cr", ":w !python %<CR>")
+set("n", "<leader>rg", ":e ./plan.ignore.md<CR>")
