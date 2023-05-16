@@ -62,3 +62,5 @@ if vim.g.vscode then
 end
 
 set("n", "<leader>fw", ":lua require'telescope'.extensions.file_browser.file_browser({cwd = '~/work/notes/reg'})<CR>")
+
+set("n", "<space>fb", ":Telescope file_browser path=%:p:h select_buffer=true<CR>", {noremap = true})

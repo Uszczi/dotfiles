@@ -9,6 +9,7 @@ echo "$HOME/dotfiles/dotfiles-private" >>/tmp/sesionizer
 
 fdfind . ~/projects --type directory --max-depth 2 >>/tmp/sesionizer
 fdfind . ~/src --type directory --max-depth 2 >>/tmp/sesionizer
+fdfind . ~/work --type directory --max-depth 1 >>/tmp/sesionizer
 
 selected=$(cat /tmp/sesionizer | fzf --preview 'exa -la {}')
 

@@ -51,8 +51,14 @@ keys = [
     Key([mod], "comma", lazy.prev_screen(), desc="Move focus to prev monitor"),
     Key([mod], "period", lazy.next_screen(), desc="Move focus to next monitor"),
     # Media buttons
-    Key([], "XF86AudioPause", lazy.spawn("playerctl pause")),
+    Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -D pulse sset Master '5%-'")),
     Key([], "XF86AudioPlay", lazy.spawn("playerctl play")),
+    Key([], "XF86AudioPause", lazy.spawn("playerctl pause")),
+    Key([], "XF86AudioStop", lazy.spawn("playerctl pause")),
+    Key([mod], "e", lazy.spawn("notify-send -t 1000 '$(playerctl volume)'")),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -D pulse sset Master '5%+'")),
+    Key([], "XF86AudioPrev", lazy.spawn("playerctl previous")),
+    Key([], "XF86AudioNext", lazy.spawn("playerctl next")),
 ]
 
 
@@ -207,5 +213,11 @@ wmname = "LG3D"
 
 @hook.subscribe.startup_once
 def start_once():
-    home = os.path.expanduser("~")
-    subprocess.call([home + "/.config/qtile/autostart.sh"])
+    processes = [
+        [os.path.expanduser("~") + "/.config/qtile/autostart.sh"],
+        ["obsidian"],
+        ["todoist"],
+    ]
+
+    for process in processes:
+        subprocess.Popen(process)

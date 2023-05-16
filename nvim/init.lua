@@ -6,13 +6,14 @@ require "uszczi"
 vim.opt.termguicolors = true
 
 -- empty setup using defaults
-require("nvim-tree").setup({
-    reload_on_bufenter = true,
-      update_focused_file = {
-        enable = true,
+require("nvim-tree").setup(
+    {
+        reload_on_bufenter = true,
+        update_focused_file = {
+            enable = true
+        }
     }
-})
-
+)
 
 vim.keymap.set("n", "<leader>op", ":NvimTreeFindFileToggle<CR>", {silent = false})
 

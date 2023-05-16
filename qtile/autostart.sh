@@ -19,3 +19,5 @@ elif [[ "$os" == "arch" ]]; then
   guake &
   sudo systemctl start docker.service
 fi
+
+# obsidian
