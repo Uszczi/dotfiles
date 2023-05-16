@@ -25,6 +25,10 @@ eval "$(pyenv init -)"
 export PATH="$HOME/.local/share/fnm:$PATH"
 eval "`fnm env`"
 
-fish
-
+# Cargo
 . "$HOME/.cargo/env"
+
+# SSH
+eval $(ssh-agent)
+
+fish
