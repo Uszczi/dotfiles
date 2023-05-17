@@ -66,6 +66,7 @@ require("lazy").setup(
         "mfussenegger/nvim-dap",
         "rcarriga/nvim-dap-ui",
         "theHamsta/nvim-dap-virtual-text",
+        "rcarriga/cmp-dap",
         -- Python
         "mfussenegger/nvim-dap-python",
         -- Git
@@ -113,7 +114,13 @@ require("lazy").setup(
         "tpope/vim-repeat",
         -- {dir = "$HOME/projects/nvim-scrapy-debug"}
         "Uszczi/nvim-scrapy-debug",
-        "rcarriga/nvim-notify"
+        "rcarriga/nvim-notify",
+        {
+            dir = "~/dotfiles/dotfiles-private",
+            init = function()
+                require "nvim-ocd"
+            end
+        }
     },
     {}
 )

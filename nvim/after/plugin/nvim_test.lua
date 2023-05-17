@@ -11,3 +11,5 @@ vim.keymap.set("n", "<leader>tn", ":TestNearest<CR>")
 vim.keymap.set("n", "<leader>tl", ":TestLast<CR>")
 vim.keymap.set("n", "<leader>tf", ":TestFile<CR>")
 vim.keymap.set("n", "<leader>ts", ":TestSuite<CR>")
+
+vim.keymap.set("n", "<leader>dt", ":lua require'dap-python'.test_method()<CR>")

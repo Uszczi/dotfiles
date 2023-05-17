@@ -6,7 +6,7 @@ alias ls='ls --color=auto'
 alias ..="cd .."
 alias ...="cd ../.."
 
-alias docker-compose="docker compose"
+alias 'docker-compose'="docker compose"
 
 export PATH="~/dotfiles/path-utils:$PATH"
 export PATH="~/.local/bin:$PATH"
@@ -29,6 +29,6 @@ eval "`fnm env`"
 . "$HOME/.cargo/env"
 
 # SSH
-eval $(ssh-agent)
+ssh-agent > /dev/null
 
 fish
