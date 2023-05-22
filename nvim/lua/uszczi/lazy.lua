@@ -32,6 +32,7 @@ require("lazy").setup(
         "nvim-telescope/telescope-project.nvim",
         "nvim-telescope/telescope-dap.nvim",
         "nvim-telescope/telescope-file-browser.nvim",
+        "nvim-telescope/telescope-ui-select.nvim",
         -- Treesitter
         "nvim-treesitter/nvim-treesitter",
         "nvim-treesitter/nvim-treesitter-textobjects",

@@ -12,6 +12,10 @@ if vim.fn.has("unix") == 1 then
 end
 
 telescope.load_extension("dap")
+telescope.load_extension("ocd")
+telescope.load_extension("ui-select")
+-- print(vim.inspect(telescope.extensions.ocd.source()))
+
 telescope.load_extension("file_browser")
 
 set("n", "<leader><leader>", require("telescope.builtin").find_files, {silent = false})

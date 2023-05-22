@@ -37,25 +37,9 @@ vim.keymap.set("n", "<leader>do", ":lua require'dap'.step_over()<CR>", {silent =
 vim.keymap.set("n", "<leader>di", ":lua require'dap'.step_into()<CR>", {silent = true})
 
 require("dap-python").setup(nil, {justMyCode = true})
-require("dap-python").test_runner = "pytest"
+-- require("dap-python").test_runner = "pytest"
 
 -- require("dap").defaults.fallback.exception_breakpoints = {"raised", "uncaught", "userUnhandled"}
-
-table.insert(
-    require("dap").configurations.python,
-    {
-        type = "python",
-        request = "launch",
-        name = "Run generator",
-        program = "/home/mat/work/datalake-ioc/dataflow/tools/bin/lakeadm.py",
-        cwd = "/home/mat/work/datalake-ioc/",
-        args = function()
-            local args_string = vim.fn.input("Arguments: ")
-            return vim.split(args_string, " +")
-        end
-        -- ... more options, see https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings
-    }
-)
 
 require("cmp").setup(
     {

@@ -29,6 +29,7 @@ eval "`fnm env`"
 . "$HOME/.cargo/env"
 
 # SSH
-ssh-agent > /dev/null
+eval $(ssh-agent) > /dev/null
+ssh-add ~/.ssh/bitbucket_work 2> /dev/null 
 
 fish
