@@ -130,10 +130,7 @@ require("lazy").setup(
         "Uszczi/nvim-scrapy-debug",
         "rcarriga/nvim-notify",
         {
-            dir = "~/dotfiles/dotfiles-private",
-            init = function()
-                require "nvim-ocd"
-            end
+            dir = "~/dotfiles/dotfiles-private"
         }
     },
     {}

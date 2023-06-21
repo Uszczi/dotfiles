@@ -104,3 +104,20 @@ require("cmp").setup.filetype(
         }
     }
 )
+
+table.insert(
+    require("dap").configurations.python,
+    {
+        type = "generic_remote",
+        name = "Attach to docker",
+        request = "attach",
+        redirectOutput = true,
+        justMyCode = false,
+        pathMappings = {
+            {
+                localRoot = vim.fn.getcwd(),
+                remoteRoot = "/code"
+            }
+        }
+    }
+)
