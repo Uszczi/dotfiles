@@ -3,7 +3,7 @@ local dap = require("dap")
 require("nvim-dap-virtual-text").setup({})
 
 local pythonPath = function()
-    return "python"
+    return ".venv/bin/python"
 end
 
 dap.adapters.python = {
@@ -16,7 +16,40 @@ dap.adapters.generic_remote = function(callback, config)
     callback({type = "server", host = "127.0.0.1", port = 5678})
 end
 
-require("dapui").setup({})
+require("dapui").setup(
+    {
+        layouts = {
+            {
+                elements = {
+                    {
+                        id = "scopes",
+                        size = 0.25 -- Can be float or integer > 1
+                    },
+                    {id = "breakpoints", size = 0.25},
+                    {id = "stacks", size = 0.25},
+                    {id = "watches", size = 0.25}
+                },
+                size = 40,
+                position = "left" -- Can be "left" or "right"
+            },
+            {
+                elements = {
+                    "repl",
+                    "console"
+                },
+                size = 10,
+                position = "bottom" -- Can be "bottom" or "top"
+            },
+            {
+                elements = {
+                    "console"
+                },
+                size = 20,
+                position = "bottom" -- Can be "bottom" or "top"
+            }
+        }
+    }
+)
 
 vim.keymap.set({"n", "v"}, "<leader>dw", ":lua require'dapui'.eval()<CR>", {silent = true})
 vim.keymap.set(
@@ -27,14 +60,28 @@ vim.keymap.set(
     end,
     {silent = true}
 )
+vim.keymap.set(
+    "n",
+    "<leader>d,",
+    function()
+        require "dapui".toggle({layout = 3})
+    end,
+    {silent = true}
+)
 
 vim.keymap.set("v", "<M-k>", ":lua require'dapui'.eval()<CR>", {silent = true})
-
 vim.keymap.set("n", "<leader>de", ":lua require'dap'.toggle_breakpoint()<CR>", {silent = true})
 vim.keymap.set("n", "<leader>df", ":lua require'dap'.continue()<CR>", {silent = true})
 vim.keymap.set("n", "<leader>dc", ":lua require'dap'.run_to_cursor()<CR>", {silent = true})
 vim.keymap.set("n", "<leader>do", ":lua require'dap'.step_over()<CR>", {silent = true})
 vim.keymap.set("n", "<leader>di", ":lua require'dap'.step_into()<CR>", {silent = true})
+vim.keymap.set(
+    "n",
+    "<Leader>dl",
+    function()
+        require("dap").run_last()
+    end
+)
 
 require("dap-python").setup(nil, {justMyCode = true})
 -- require("dap-python").test_runner = "pytest"

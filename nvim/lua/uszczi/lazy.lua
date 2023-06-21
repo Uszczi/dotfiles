@@ -16,6 +16,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup(
     {
+        "dbeniamine/cheat.sh-vim",
         -- Window
         "nvim-lualine/lualine.nvim",
         "lukas-reineke/indent-blankline.nvim",
@@ -38,10 +39,19 @@ require("lazy").setup(
         "nvim-treesitter/nvim-treesitter-textobjects",
         -- Look
         "nvim-tree/nvim-web-devicons",
+        -- {
+        --     "navarasu/onedark.nvim",
+        --     init = function()
+        --         vim.cmd([[colorscheme onedark]])
+        --     end
+        -- },
         {
-            "navarasu/onedark.nvim",
+            "catppuccin/nvim",
+            name = "catppuccin",
+            priority = 1000,
             init = function()
-                vim.cmd([[colorscheme onedark]])
+                -- catppuccin, catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
+                vim.cmd([[colorscheme catppuccin-macchiato]])
             end
         },
         -- Navigation
@@ -91,7 +101,10 @@ require("lazy").setup(
         "neovim/nvim-lspconfig",
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
-        "j-hui/fidget.nvim",
+        {
+            "j-hui/fidget.nvim",
+            tag = "legacy"
+        },
         "folke/neodev.nvim",
         {
             "klen/nvim-test",

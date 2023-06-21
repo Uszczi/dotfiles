@@ -7,9 +7,15 @@ echo "$HOME/dotfiles/" >>/tmp/sesionizer
 echo "$HOME/dotfiles/nvim" >>/tmp/sesionizer
 echo "$HOME/dotfiles/dotfiles-private" >>/tmp/sesionizer
 
+echo "$HOME/Downloads" >>/tmp/sesionizer
+
+echo "$HOME/.local/share/nvim/lazy/" >>/tmp/sesionizer
+
+
 fdfind . ~/projects --type directory --max-depth 2 >>/tmp/sesionizer
 fdfind . ~/src --type directory --max-depth 2 >>/tmp/sesionizer
 fdfind . ~/work --type directory --max-depth 1 >>/tmp/sesionizer
+fdfind . ~/.local/share/nvim/lazy --type directory --max-depth 1 >>/tmp/sesionizer
 
 selected=$(cat /tmp/sesionizer | fzf --preview 'exa -la {}')
 
