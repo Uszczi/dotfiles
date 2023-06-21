@@ -40,7 +40,6 @@ alias nnn "nnn -eH"
 set --export NNN_FIFO "/tmp/nnn.info"
 set -gx NNN_PLUG "p:preview-tui;i:imgview;f:fzopen"
 
-
 function n --wraps nnn --description 'support nnn quit and change directory'
     if test -n "$NNNLVL"
         if [ (expr $NNNLVL + 0) -ge 1 ]
@@ -90,16 +89,12 @@ function rga-fzf
     ) && echo "opening $file" && nvim "$file"
 end
 
-set -gx DENO_INSTALL "/home/mateusz/.deno/"
-fish_add_path $DENO_INSTALL/bin
-
-# TODO some how improve error message about missing thefuck
 thefuck --alias | source
 
 alias anki="~/src/anki-2.1.54-linux-qt6/anki"
 
-bind \cBf -M insert ~/dotfiles/scripts/tmux-sessionizer.sh
-bind \cBe -M insert ~/dotfiles/scripts/tmux-sessionizer-git-worktree.sh
+bind \cbf ~/dotfiles/scripts/tmux-sessionizer.sh
+bind \cbe ~/dotfiles/scripts/tmux-sessionizer-git-worktree.sh
 
 #### Aliases
 alias ..="cd .."
