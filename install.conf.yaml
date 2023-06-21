@@ -6,16 +6,16 @@
 - clean: ["~", "~/.config"]
 
 - link:
-    ~/.config/nvim: nvim
-    # ~/.alacritty.yml: alacritty.yml
-    ~/wallpapers: wallpapers
     ~/.bashrc: bashrc
-    ~/.tmux.conf: tmux.conf
-    # #    ~/.xinitrc: xinitrc
-    # #    ~/.doom.d: doom
     ~/.config/fish: fish
+    ~/.config/kitty: kitty
+    ~/.config/nvim: nvim
     ~/.config/qtile: qtile
-    # #    ~/path-utils: path-utils
+    ~/.tmux.conf: tmux.conf
+    # ~/.alacritty.yml: alacritty.yml
+    # ~/path-utils: path-utils
     # ~/.config/nnn: nnn
     # ~/.config/pylintrc: pylintrc
-    ~/.config/kitty: kitty
+    # ~/.xinitrc: xinitrc
+    # ~/.doom.d: doom
+    # ~/wallpapers2: wallpapers
