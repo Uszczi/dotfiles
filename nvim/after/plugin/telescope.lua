@@ -38,6 +38,13 @@ set(
 
 set("n", "<leader>fg", require("telescope.builtin").live_grep)
 set({"n", "v"}, "<leader>fG", require("telescope.builtin").grep_string)
+set(
+    "n",
+    "<leader>ft",
+    function()
+        require "telescope.builtin".live_grep({additional_args = {"--fixed-strings"}})
+    end
+)
 set("n", "<leader>?", require("telescope.builtin").oldfiles)
 set("n", "<leader>fr", require("telescope.builtin").resume)
 set("n", "<leader>fe", require("telescope.builtin").lsp_references)

@@ -26,6 +26,7 @@ require("lazy").setup(
         "mbbill/undotree",
         "ThePrimeagen/refactoring.nvim",
         "nicwest/vim-camelsnek",
+        {"akinsho/toggleterm.nvim", version = "*", config = true},
         -- Telescope
         "nvim-telescope/telescope.nvim",
         "nvim-telescope/telescope-symbols.nvim",
@@ -106,12 +107,7 @@ require("lazy").setup(
             tag = "legacy"
         },
         "folke/neodev.nvim",
-        {
-            "klen/nvim-test",
-            init = function()
-                require "nvim-test".setup()
-            end
-        },
+        "klen/nvim-test",
         -- CMP
         "onsails/lspkind-nvim",
         "hrsh7th/cmp-nvim-lsp",
