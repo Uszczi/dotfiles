@@ -31,7 +31,7 @@ set(
     "n",
     "<leader>hn",
     function()
-        require("telescope.builtin").find_files({hidden = true, no_ignore = true, cwd = "~/dotfiles/nvim/"})
+        require("telescope.builtin").find_files({hidden = true, no_ignore = true, cwd = "~/dotfiles/"})
     end,
     {silent = false}
 )
