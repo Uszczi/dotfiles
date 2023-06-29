@@ -86,6 +86,8 @@ require("lazy").setup(
         "lewis6991/gitsigns.nvim",
         "mhinz/vim-signify",
         "tpope/vim-fugitive",
+        "junegunn/gv.vim",
+        "rbong/vim-flog",
         "sindrets/diffview.nvim",
         {
             "NWVi/octo.nvim",
