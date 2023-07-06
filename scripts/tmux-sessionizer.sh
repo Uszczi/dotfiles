@@ -4,6 +4,7 @@ rm -f "/tmp/sesionizer"
 
 echo "$HOME/" >>/tmp/sesionizer
 echo "$HOME/dotfiles/" >>/tmp/sesionizer
+echo "$HOME/projects/" >>/tmp/sesionizer
 echo "$HOME/dotfiles/nvim" >>/tmp/sesionizer
 echo "$HOME/dotfiles/dotfiles-private" >>/tmp/sesionizer
 
