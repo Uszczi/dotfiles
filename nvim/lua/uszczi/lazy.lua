@@ -82,10 +82,12 @@ require("lazy").setup(
         -- Python
         "mfussenegger/nvim-dap-python",
         -- Git
-        "TimUntersberger/neogit",
+        "NeogitOrg/neogit",
         "lewis6991/gitsigns.nvim",
         "mhinz/vim-signify",
         "tpope/vim-fugitive",
+        "tpope/vim-rhubarb",
+        "tommcdo/vim-fubitive",
         "junegunn/gv.vim",
         "rbong/vim-flog",
         "sindrets/diffview.nvim",
