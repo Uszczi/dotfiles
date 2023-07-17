@@ -12,6 +12,7 @@
     ~/.config/nvim: nvim
     ~/.config/qtile: qtile
     ~/.tmux.conf: tmux.conf
+    ~/.gitconfig: gitconfig
     # ~/.alacritty.yml: alacritty.yml
     # ~/path-utils: path-utils
     # ~/.config/nnn: nnn
