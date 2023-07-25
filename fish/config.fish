@@ -100,6 +100,8 @@ bind \cbe ~/dotfiles/scripts/tmux-sessionizer-git-worktree.sh
 alias ..="cd .."
 alias ...="cd ../.."
 
+alias gs="git status"
+
 alias ls="exa -la"
 alias la="exa -la"
 alias ll="exa -la"
