@@ -74,10 +74,10 @@ mason_lspconfig.setup_handlers {
         }
     end
 }
-require "lspconfig".ruff_lsp.setup {
-    init_options = {
-        settings = {
-            args = {"--ignore", "E501"}
-        }
-    }
-}
+-- require "lspconfig".ruff_lsp.setup {
+--     init_options = {
+--         settings = {
+--             args = {"--ignore", "E501"}
+--         }
+--     }
+-- }

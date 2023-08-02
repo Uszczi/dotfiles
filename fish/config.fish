@@ -101,6 +101,7 @@ alias ..="cd .."
 alias ...="cd ../.."
 
 alias gs="git status"
+alias gc="git commit"
 
 alias ls="exa -la"
 alias la="exa -la"

@@ -14,6 +14,18 @@ end
 telescope.load_extension("dap")
 telescope.load_extension("ocd")
 telescope.load_extension("ui-select")
+
+require("git-worktree").setup(
+    {
+        change_directory_command = "cd",
+        update_on_change = true,
+        update_on_change_command = "e .",
+        clearjumps_on_change = true,
+        autopush = false
+    }
+)
+
+telescope.load_extension("git_worktree")
 -- print(vim.inspect(telescope.extensions.ocd.source()))
 
 telescope.load_extension("file_browser")

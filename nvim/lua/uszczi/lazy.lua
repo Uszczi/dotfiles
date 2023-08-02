@@ -88,6 +88,7 @@ require("lazy").setup(
         "tpope/vim-fugitive",
         "tpope/vim-rhubarb",
         "tommcdo/vim-fubitive",
+        "Uszczi/git-worktree.nvim",
         "junegunn/gv.vim",
         "rbong/vim-flog",
         "sindrets/diffview.nvim",
