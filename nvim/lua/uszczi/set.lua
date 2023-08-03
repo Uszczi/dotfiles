@@ -12,6 +12,7 @@ vim.o.breakindent = true
 
 -- Save undo history
 vim.o.undofile = true
+vim.g.undotree_WindowLayout = 2
 
 vim.o.ignorecase = true
 vim.o.smartcase = true
