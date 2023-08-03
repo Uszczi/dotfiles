@@ -44,6 +44,7 @@ local on_attach = function(_, bufnr)
 end
 
 local servers = {
+    jsonls = {},
     pyright = {},
     lua_ls = {
         Lua = {
