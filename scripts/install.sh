@@ -17,4 +17,10 @@ else
     echo ""
 fi
 
+echo "Setting git user email and name."
+git config --global user.email "mateuszpapuga24@gmail.com"
+git config --global user.name "Mateusz Papuga"
+echo ""
+
 echo "Computer should be ready."
+
