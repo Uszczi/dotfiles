@@ -13,6 +13,7 @@
     ~/.config/qtile: qtile
     ~/.tmux.conf: tmux.conf
     ~/.gitconfig: gitconfig
+    ~/.ocamlinit: ocamlinit
     # ~/.alacritty.yml: alacritty.yml
     # ~/path-utils: path-utils
     # ~/.config/nnn: nnn
