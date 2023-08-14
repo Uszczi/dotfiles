@@ -12,7 +12,6 @@ if vim.fn.has("unix") == 1 then
 end
 
 telescope.load_extension("dap")
-telescope.load_extension("ocd")
 telescope.load_extension("ui-select")
 
 require("git-worktree").setup(
@@ -30,7 +29,10 @@ telescope.load_extension("git_worktree")
 
 telescope.load_extension("file_browser")
 
-set("n", "<leader><leader>", require("telescope.builtin").find_files, {silent = false})
+pcall(telescope.load_extension, "ocd")
+-- print(vim.inspect(telescope.extensions.ocd.source()))
+
+set("n", "<leader><leader>", require("telescope.builtin").find_files)
 set(
     "n",
     "<leader>ff",

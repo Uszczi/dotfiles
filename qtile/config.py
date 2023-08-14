@@ -8,10 +8,10 @@ from libqtile.lazy import lazy
 
 from text import str_formater_with_const_width
 
+HOME = os.path.expanduser("~")
+
 mod = "mod4"
-# terminal = "alacritty"
-terminal = "/home/mat/.local/kitty.app/bin/kitty"
-# terminal = "gnome-terminal"
+terminal = f"{HOME}/dotfiles/scripts/run-terminal.sh"
 
 # default_browser = "firefox -p"
 default_browser = "google-chrome"
@@ -214,7 +214,7 @@ wmname = "LG3D"
 @hook.subscribe.startup_once
 def start_once():
     processes = [
-        [os.path.expanduser("~") + "/.config/qtile/autostart.sh"],
+        HOME + "/.config/qtile/autostart.sh"],
         ["obsidian"],
         ["todoist"],
     ]
