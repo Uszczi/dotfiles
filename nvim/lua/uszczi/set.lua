@@ -6,7 +6,7 @@ vim.o.hlsearch = true
 vim.wo.number = true
 vim.wo.relativenumber = true
 
-vim.o.mouse = "a"
+vim.o.mouse = "ar"
 
 vim.o.breakindent = true
 

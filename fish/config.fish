@@ -112,6 +112,7 @@ alias vv=". ./.venv/bin/activate.fish & set VIRTUAL_ENV ".venv""
 alias va="ve; vv"
 
 alias vi="nvim"
+alias vic="nvim --clean --cmd ':set nu rnu colorcolumn=100 clipboard=unnamedplus'"
 alias emacs="emacsclient -c -a emacs"
 alias fd="fdfind"
 alias pa="autoflake --in-place --recursive --remove-all-unused-imports --ignore-init-module-imports --remove-duplicate-keys --remove-unused-variables"
