@@ -76,17 +76,6 @@ require("lazy").setup(
         "junegunn/gv.vim",
         "rbong/vim-flog",
         "sindrets/diffview.nvim",
-        {
-            "NWVi/octo.nvim",
-            branch = "config-review-use-local-fs",
-            init = function()
-                require "octo".setup(
-                    {
-                        use_local_fs = true
-                    }
-                )
-            end
-        },
         -- LSP
         "neovim/nvim-lspconfig",
         "williamboman/mason.nvim",
