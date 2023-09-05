@@ -1,9 +1,17 @@
-local set = vim.keymap.set
 local telescope = require("telescope")
+local trouble = require("trouble.providers.telescope")
+
+local set = vim.keymap.set
 
 telescope.setup {
     extensions = {
         project = {}
+    },
+    defaults = {
+        mappings = {
+            i = {["<c-t>"] = trouble.open_with_trouble},
+            n = {["<c-t>"] = trouble.open_with_trouble}
+        }
     }
 }
 
