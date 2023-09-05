@@ -16,6 +16,11 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup(
     {
+        {
+            "folke/trouble.nvim",
+            dependencies = {"nvim-tree/nvim-web-devicons"},
+            opts = {}
+        },
         "dbeniamine/cheat.sh-vim",
         -- Window
         "nvim-lualine/lualine.nvim",
