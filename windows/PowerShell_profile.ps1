@@ -21,3 +21,8 @@ $ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
 if (Test-Path($ChocolateyProfile)) {
   Import-Module "$ChocolateyProfile"
 }
+
+if (Get-Command "oh-my-posh.exe" -ErrorAction SilentlyContinue) 
+{ 
+    oh-my-posh init pwsh  --config "$env:HOME\dotfiles\windows\oh-my-posh-theme.omp.json" | Invoke-Expression
+}
