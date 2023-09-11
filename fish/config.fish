@@ -89,7 +89,9 @@ function rga-fzf
     ) && echo "opening $file" && nvim "$file"
 end
 
-thefuck --alias | source
+if type -q thefuck
+    thefuck --alias; or false | source; or true
+end
 
 alias anki="~/src/anki-2.1.54-linux-qt6/anki"
 
@@ -147,8 +149,5 @@ set -Ux PYENV_ROOT $HOME/.pyenv
 set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
 pyenv init - | source
 
-# Docker
-alias docker-compose "docker compose"
-
 # opam configuration
-source $HOME/.opam/opam-init/init.fish >/dev/null 2>/dev/null; or true
+# source $HOME/.opam/opam-init/init.fish >/dev/null 2>/dev/null; or true
