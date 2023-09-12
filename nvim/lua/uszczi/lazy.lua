@@ -16,13 +16,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup(
     {
-  {
-    "sourcegraph/sg.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
-
-    -- If you have a recent version of lazy.nvim, you don't need to add this!
-    build = "nvim -l build/init.lua",
-  },
         {
           "nvim-neorg/neorg",
           build = ":Neorg sync-parsers",
