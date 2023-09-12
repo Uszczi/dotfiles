@@ -62,9 +62,7 @@ capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 require("mason").setup()
 
 local mason_lspconfig = require "mason-lspconfig"
-mason_lspconfig.setup {
-    ensure_installed = vim.tbl_keys(servers)
-}
+mason_lspconfig.setup {}
 
 mason_lspconfig.setup_handlers {
     function(server_name)
@@ -75,10 +73,3 @@ mason_lspconfig.setup_handlers {
         }
     end
 }
--- require "lspconfig".ruff_lsp.setup {
---     init_options = {
---         settings = {
---             args = {"--ignore", "E501"}
---         }
---     }
--- }
