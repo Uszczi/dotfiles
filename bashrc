@@ -34,4 +34,8 @@ eval $(ssh-agent) > /dev/null
 ssh-add ~/.ssh/bitbucket_work 2> /dev/null
 ssh-add ~/.ssh/id_ed25519 2> /dev/null
 
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH=$BUN_INSTALL/bin:$PATH
+
 fish

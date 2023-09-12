@@ -1,4 +1,5 @@
 function fish_mode_prompt
+     echo -n "$fish_bind_mode "
 end
 
 function fish_right_prompt
@@ -6,6 +7,13 @@ end
 
 function fish_greeting
 end
+
+function fish_user_key_bindings
+  fish_vi_key_bindings
+end
+
+set fish_cursor_insert line blink
+set fish_cursor_visual block blink
 
 set -gx EDITOR nvim
 set -gx VISUAL nvim
@@ -21,7 +29,7 @@ fish_add_path ~/dotfiles/dotfiles-private/bin
 fish_add_path /usr/local/go/bin
 fish_add_path ~/BurpSuiteCommunity
 fish_add_path ~/src/xpdf-tools-linux-4.04/bin64
-
+fish_add_path /usr/local/bin/kafka_2.13-3.5.0/bin/
 
 ###
 set -gx VIRTUAL_ENV_DISABLE_PROMPT false
