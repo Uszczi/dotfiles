@@ -16,6 +16,12 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup(
     {
+    {
+      "epwalsh/obsidian.nvim",
+      config = function()
+        require("obsidian").setup ({ dir = "~/notes"})
+      end,
+    },
         {
           "nvim-neorg/neorg",
           build = ":Neorg sync-parsers",
@@ -30,6 +36,7 @@ require("lazy").setup(
                     workspaces = {
                       notes = "~/notes",
                     },
+                    default_workspace = "notes",
                   },
                 },
               },
