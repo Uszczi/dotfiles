@@ -97,10 +97,6 @@ function rga-fzf
     ) && echo "opening $file" && nvim "$file"
 end
 
-if type -q thefuck
-    thefuck --alias; or false | source; or true
-end
-
 alias anki="~/src/anki-2.1.54-linux-qt6/anki"
 
 bind \cbf ~/dotfiles/scripts/tmux-sessionizer.sh

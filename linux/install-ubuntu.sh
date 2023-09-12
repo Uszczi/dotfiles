@@ -4,7 +4,7 @@ sudo apt update
 sudo apt upgrade
 
 sudo apt install -y curl make cmake ninja-build gettext libtool-bin cmake g++ pkg-config unzip libsqlite3-dev libssl-dev liblzma-dev libffi-dev libreadline-dev
-sudo apt install -y thefuck exa python3-pip suckless-tools fd-find ripgrep tmux nitrogen fzf gh
+sudo apt install -y exa python3-pip suckless-tools fd-find ripgrep tmux nitrogen fzf gh
 sudo apt install -y flameshot guake htop
 
 
@@ -12,7 +12,7 @@ sudo snap install todoist
 sudo snap refresh
 
 
-if [ ! -e ~/src/neovim ] 
+if [ ! -e ~/src/neovim ]
 then
     git clone https://www.github.com/neovim/neovim ~/src/neovim
     cd ~/src/neovim
@@ -20,7 +20,7 @@ then
     sudo make install
 fi
 
-if [ ! -e /usr/bin/1password ] 
+if [ ! -e /usr/bin/1password ]
 then
     curl -sS https://downloads.1password.com/linux/keys/1password.asc | sudo gpg --dearmor --output /usr/share/keyrings/1password-archive-keyring.gpg
     echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/1password-archive-keyring.gpg] https://downloads.1password.com/linux/debian/amd64 stable main' | sudo tee /etc/apt/sources.list.d/1password.list
