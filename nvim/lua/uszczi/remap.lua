@@ -43,6 +43,8 @@ set("n", "<leader>e", vim.diagnostic.open_float)
 
 set("n", "<C-u>", "<C-u>zz")
 set("n", "<C-d>", "<C-d>zz")
+set("n", "n", "nzz", {remap = true})
+set("n", "N", "Nzz", {remap = true})
 
 set("n", "<leader>cr", ":w !python %<CR>")
 set("n", "<leader>rg", ":e ./plan.ignore.md<CR>")

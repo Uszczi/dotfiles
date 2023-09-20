@@ -102,31 +102,34 @@ bind \cbf ~/dotfiles/scripts/tmux-sessionizer.sh
 bind \cbe ~/dotfiles/scripts/tmux-sessionizer-git-worktree.sh
 
 #### Aliases
-alias ..="cd .."
-alias ...="cd ../.."
+alias .. "cd .."
+alias ... "cd ../.."
 
-alias gs="git status"
-alias gc="git commit"
+alias gs "git status"
+alias gc "git commit"
 
-alias ls="exa -la"
-alias la="exa -la"
-alias ll="exa -la"
+alias ls "exa -la"
+alias la "exa -la"
+alias ll "exa -la"
 
-alias ve="source .env_fish"
-alias vv=". ./.venv/bin/activate.fish & set VIRTUAL_ENV ".venv""
-alias va="ve; vv"
+alias dc "docker compose "
 
-alias vi="nvim"
-alias vic="nvim --clean --cmd ':set nu rnu colorcolumn=100 clipboard=unnamedplus'"
-alias emacs="emacsclient -c -a emacs"
-alias fd="fdfind"
-alias pa="autoflake --in-place --recursive --remove-all-unused-imports --ignore-init-module-imports --remove-duplicate-keys --remove-unused-variables"
-alias lg="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(red)%h%C(r) —— %C(bold blue)%an%C(r): %C(white)%s%C(r) %C(dim white) %C(bold green)(%ar)%C(r) %C(bold yellow)%d%C(r)' --all"
-alias icat="/home/mateusz/.local/kitty.app/bin/kitty +kitten icat"
-alias kittydiff="/home/mateusz/.local/kitty.app/bin/kitty +kitten diff"
+alias ve "source .env_fish"
+alias vv ". ./.venv/bin/activate.fish & set VIRTUAL_ENV ".venv""
+alias va "ve; vv"
+
+alias vi "nvim"
+alias vic "nvim --clean --cmd ':set nu rnu colorcolumn=100"
+
+alias emacs "emacsclient -c -a emacs"
+alias fd "fdfind"
+alias pa "autoflake --in-place --recursive --remove-all-unused-imports --ignore-init-module-imports --remove-duplicate-keys --remove-unused-variables"
+
+alias icat "/home/mateusz/.local/kitty.app/bin/kitty +kitten icat"
+alias kittydiff "/home/mateusz/.local/kitty.app/bin/kitty +kitten diff"
 
 # WSL
-alias wsln="/mnt/c/MinGW/bin/wsl-notify-send.exe "
+alias wsln "/mnt/c/MinGW/bin/wsl-notify-send.exe "
 
 
 
