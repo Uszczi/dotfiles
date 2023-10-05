@@ -104,6 +104,7 @@ bind \cbe ~/dotfiles/scripts/tmux-sessionizer-git-worktree.sh
 #### Aliases
 alias ..="cd .."
 alias ...="cd ../.."
+alias sd="cd ~ && cd (find * -type d | fzf)"
 
 alias gs="git status"
 alias gc="git commit"
