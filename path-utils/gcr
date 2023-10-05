@@ -3,5 +3,4 @@
 service=$(grep 'services:' docker-compose.yml -A 1)
 service=$(echo $service | awk '{print$2}' | tr -d ':')
 
-echo docker compose run --no-deps --rm $service $@ sh -c "su -c 'poetry lock --no-update'"
-docker compose run --no-deps --rm $service $@ sh -c "su -c 'poetry lock --no-update'"
+docker compose run --no-deps --rm $service sh -c "su -c 'poetry lock --no-update'"
