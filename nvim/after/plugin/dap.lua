@@ -50,8 +50,8 @@ vim.keymap.set(
     end
 )
 
-require("dap-python").setup(nil, {justMyCode = true})
--- require("dap-python").test_runner = "pytest"
+require("dap-python").setup(nil, {justMyCode = false})
+require("dap-python").test_runner = "pytest"
 
 -- require("dap").defaults.fallback.exception_breakpoints = {"raised", "uncaught", "userUnhandled"}
 

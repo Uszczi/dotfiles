@@ -1,8 +1,9 @@
-vim.opt.list = true
-vim.opt.listchars:append "eol:↴"
+local ok, ibl = pcall(require, "ibl")
+if not ok then
+    return
+end
 
-require("indent_blankline").setup {
-    char = "┊",
-    show_trailing_blankline_indent = true,
-    show_end_of_line = true
+require("ibl").setup {
+    indent = {char = "┊"},
+    scope = {enabled = false}
 }

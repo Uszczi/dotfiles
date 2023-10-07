@@ -1,0 +1,16 @@
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.isort]
+profile = "black"
+skip_gitignore = true
+
+[tool.pytest.ini_options]
+addopts = """
+    -n auto
+    --cov
+"""
+pythonpath = ["."]
+testpaths = ["tests"]
+

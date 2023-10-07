@@ -7,6 +7,13 @@ end
 function fish_greeting
 end
 
+function fish_user_key_bindings
+  fish_vi_key_bindings
+end
+
+set fish_cursor_insert line blink
+set fish_cursor_visual block blink
+
 set -gx EDITOR nvim
 set -gx VISUAL nvim
 
@@ -21,7 +28,7 @@ fish_add_path ~/dotfiles/dotfiles-private/bin
 fish_add_path /usr/local/go/bin
 fish_add_path ~/BurpSuiteCommunity
 fish_add_path ~/src/xpdf-tools-linux-4.04/bin64
-
+fish_add_path /usr/local/bin/kafka_2.13-3.5.0/bin/
 
 ###
 set -gx VIRTUAL_ENV_DISABLE_PROMPT false
@@ -89,8 +96,6 @@ function rga-fzf
     ) && echo "opening $file" && nvim "$file"
 end
 
-thefuck --alias | source
-
 alias anki="~/src/anki-2.1.54-linux-qt6/anki"
 
 bind \cbf ~/dotfiles/scripts/tmux-sessionizer.sh
@@ -99,18 +104,23 @@ bind \cbe ~/dotfiles/scripts/tmux-sessionizer-git-worktree.sh
 #### Aliases
 alias ..="cd .."
 alias ...="cd ../.."
+alias sd="cd ~ && cd (find * -type d | fzf)"
 
 alias gs="git status"
+alias gc="git commit"
 
 alias ls="exa -la"
 alias la="exa -la"
 alias ll="exa -la"
+
+alias dc="docker compose "
 
 alias ve="source .env_fish"
 alias vv=". ./.venv/bin/activate.fish & set VIRTUAL_ENV ".venv""
 alias va="ve; vv"
 
 alias vi="nvim"
+alias vic="nvim --clean --cmd ':set nu rnu colorcolumn=100 clipboard=unnamedplus'"
 alias emacs="emacsclient -c -a emacs"
 alias fd="fdfind"
 alias pa="autoflake --in-place --recursive --remove-all-unused-imports --ignore-init-module-imports --remove-duplicate-keys --remove-unused-variables"
@@ -145,5 +155,5 @@ set -Ux PYENV_ROOT $HOME/.pyenv
 set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
 pyenv init - | source
 
-# Docker
-alias docker-compose "docker compose"
+# opam configuration
+# source $HOME/.opam/opam-init/init.fish >/dev/null 2>/dev/null; or true

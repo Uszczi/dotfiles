@@ -16,6 +16,17 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup(
     {
+    {
+      "epwalsh/obsidian.nvim",
+      config = function()
+        require("obsidian").setup ({ dir = "~/notes"})
+      end,
+    },
+        {
+            "folke/trouble.nvim",
+            dependencies = {"nvim-tree/nvim-web-devicons"},
+            opts = {}
+        },
         "dbeniamine/cheat.sh-vim",
         -- Window
         "nvim-lualine/lualine.nvim",
@@ -88,6 +99,7 @@ require("lazy").setup(
         "tpope/vim-fugitive",
         "tpope/vim-rhubarb",
         "tommcdo/vim-fubitive",
+        "Uszczi/git-worktree.nvim",
         "junegunn/gv.vim",
         "rbong/vim-flog",
         "sindrets/diffview.nvim",

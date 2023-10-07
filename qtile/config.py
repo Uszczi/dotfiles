@@ -5,7 +5,6 @@ from typing import List  # noqa: F401
 from libqtile import bar, hook, layout, widget
 from libqtile.config import Click, Drag, Group, Key, KeyChord, Match, Screen
 from libqtile.lazy import lazy
-
 from text import str_formater_with_const_width
 
 HOME = os.path.expanduser("~")
@@ -214,7 +213,7 @@ wmname = "LG3D"
 @hook.subscribe.startup_once
 def start_once():
     processes = [
-        HOME + "/.config/qtile/autostart.sh"],
+        [HOME + "/.config/qtile/autostart.sh"],
         ["obsidian"],
         ["todoist"],
     ]

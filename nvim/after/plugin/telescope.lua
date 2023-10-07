@@ -1,9 +1,18 @@
-local set = vim.keymap.set
 local telescope = require("telescope")
+local trouble = require("trouble.providers.telescope")
+
+local set = vim.keymap.set
 
 telescope.setup {
     extensions = {
         project = {}
+    },
+    defaults = {
+        mappings = {
+            i = {["<c-t>"] = trouble.open_with_trouble},
+            n = {["<c-t>"] = trouble.open_with_trouble}
+        },
+        layout_strategy = "vertical"
     }
 }
 
@@ -13,7 +22,16 @@ end
 
 telescope.load_extension("dap")
 telescope.load_extension("ui-select")
-telescope.load_extension("file_browser")
+
+require("git-worktree").setup(
+    {
+        change_directory_command = "cd",
+        update_on_change = true,
+        update_on_change_command = "e .",
+        clearjumps_on_change = true,
+        autopush = false
+    }
+)
 
 pcall(telescope.load_extension, "ocd")
 -- print(vim.inspect(telescope.extensions.ocd.source()))

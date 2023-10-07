@@ -1,17 +1,18 @@
 -- [[ Setting options ]]
 -- See `:help vim.o`
 
-vim.o.hlsearch = true
+vim.opt.hlsearch = false
 
 vim.wo.number = true
 vim.wo.relativenumber = true
 
-vim.o.mouse = "a"
+vim.o.mouse = "ar"
 
 vim.o.breakindent = true
 
 -- Save undo history
 vim.o.undofile = true
+vim.g.undotree_WindowLayout = 2
 
 vim.o.ignorecase = true
 vim.o.smartcase = true
