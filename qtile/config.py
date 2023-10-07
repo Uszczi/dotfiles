@@ -146,7 +146,7 @@ screens = [
                 # Multi window Systray doesn't work
                 widget.Systray(),  # type: ignore
                 widget.Clock(format="%Y-%m-%d %a %H:%M"),  # type: ignore
-                # widget.Battery(),  # type: ignore
+                widget.Battery(),  # type: ignore
                 widget.QuickExit(),  # type: ignore
                 # widget.CPUGraph(),
                 # widget.Memory(),
