@@ -3,7 +3,7 @@
 sudo apt -y update & sudo apt -y upgrade
 sudo apt-get -y update & sudo apt-get -y upgrade
 
-sudo apt install fish exa ripgrep fd-find
+sudo apt install fish exa ripgrep fd-find flameshot
 
 echo "Installing oh-my-fish."
 if [[ ! -d "$HOME/.local/share/omf" ]]; then
