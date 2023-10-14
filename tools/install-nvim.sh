@@ -4,6 +4,9 @@ set -e
 
 sudo apt install -y cmake make gettext
 
+mkdir -p ~/src
+cd ~/src
+
 if [[ ! -d neovim ]];
 then
 	git clone https://github.com/neovim/neovim
