@@ -1,13 +1,20 @@
 [[ $- != *i* ]] && return
 
-PS1='[\u@\h \W]\$ '
-
-alias ls='ls --color=auto'
+#### Aliases
 alias ..="cd .."
 alias ...="cd ../.."
+alias sd="cd ~ && cd (find * -type d | fzf)"
 
-alias 'docker-compose'="docker compose"
-alias 'fd'="fdfind"
+alias gs="git status"
+alias gc="git commit"
+
+alias ls="exa"
+alias la="exa -la"
+alias ll="exa -la"
+
+alias dc="docker compose"
+alias fd="fdfind"
+####
 
 export PATH="~/dotfiles/path-utils:$PATH"
 export PATH="~/.local/bin:$PATH"
@@ -15,6 +22,7 @@ export PATH=$PATH:/usr/local/go/bin
 
 # Bug with google chrome and todoist.
 # Without that left down corner is covered by a part of app logo
+# TODO fix this
 export DESKTOPINTEGRATION=false
 
 # pyenv

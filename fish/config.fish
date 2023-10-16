@@ -43,7 +43,6 @@ set -ge _OLD_VIRTUAL_PATH
 
 ### nnn
 alias nnn "nnn -eH"
-# alias ls "nnn -edH"
 set --export NNN_FIFO "/tmp/nnn.info"
 set -gx NNN_PLUG "p:preview-tui;i:imgview;f:fzopen"
 
@@ -109,11 +108,13 @@ alias sd="cd ~ && cd (find * -type d | fzf)"
 alias gs="git status"
 alias gc="git commit"
 
-alias ls="exa -la"
+alias ls="exa"
 alias la="exa -la"
 alias ll="exa -la"
 
-alias dc="docker compose "
+alias dc="docker compose"
+alias fd="fdfind"
+####
 
 alias ve="source .env_fish"
 alias vv=". ./.venv/bin/activate.fish & set VIRTUAL_ENV ".venv""
@@ -154,6 +155,3 @@ bind \eq switch_make
 set -Ux PYENV_ROOT $HOME/.pyenv
 set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
 pyenv init - | source
-
-# opam configuration
-# source $HOME/.opam/opam-init/init.fish >/dev/null 2>/dev/null; or true
