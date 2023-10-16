@@ -18,7 +18,7 @@ if [[ ! -d "$HOME/.local/share/fnm" ]]; then
 fi
 
 # Cargo and rust has to be run by hand
-echo "Rust and Cargo has to be install by hand"
+echo "Rust and Cargo has to be installed by hand"
 echo "curl https://sh.rustup.rs -sSf | sh"
 
 
