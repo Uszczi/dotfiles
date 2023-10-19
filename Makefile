@@ -1,5 +1,5 @@
 install-dotbot:
-	python3 dotbot/bin/dotbot -c install.conf.yaml
+	python3 -m dotbot -c install.conf.yaml
 
 install-root-deps:
 	./scripts/root-install.sh
