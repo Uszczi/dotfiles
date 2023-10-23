@@ -47,4 +47,6 @@ ssh-add ~/.ssh/id_ed25519 2> /dev/null
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
 
+setxkbmap pl
+
 fish
