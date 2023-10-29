@@ -1,6 +1,0 @@
-#! /bin/bash
-
-service=$(grep 'services:' docker-compose.yml -A 1)
-service=$(echo $service | awk '{print$2}' | tr -d ':')
-
-docker compose run --no-deps --rm $service sh -c "su -c 'poetry lock --no-update'"

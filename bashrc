@@ -16,7 +16,6 @@ alias dc="docker compose"
 alias fd="fdfind"
 ####
 
-export PATH="~/dotfiles/path-utils:$PATH"
 export PATH="~/.local/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
 export PATH="$HOME/dotfiles/tools:$PATH"
