@@ -43,8 +43,8 @@ keys = [
     # Apps
     Key([mod], "b", lazy.spawn(default_browser)),
     Key([mod], "i", lazy.spawn("guake")),
-    Key([mod], "Return", lazy.spawn(terminal)),
     Key([mod], "r", lazy.spawn("dmenu_run")),
+    Key([mod], "Return", lazy.spawn(terminal)),
     Key([mod, "shift"], "s", lazy.spawn("flameshot gui")),
     # Monitors
     Key([mod], "comma", lazy.prev_screen(), desc="Move focus to prev monitor"),
@@ -54,10 +54,11 @@ keys = [
     Key([], "XF86AudioPlay", lazy.spawn("playerctl play")),
     Key([], "XF86AudioPause", lazy.spawn("playerctl pause")),
     Key([], "XF86AudioStop", lazy.spawn("playerctl pause")),
-    Key([mod], "e", lazy.spawn("notify-send -t 1000 '$(playerctl volume)'")),
     Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -D pulse sset Master '5%+'")),
     Key([], "XF86AudioPrev", lazy.spawn("playerctl previous")),
     Key([], "XF86AudioNext", lazy.spawn("playerctl next")),
+    #
+    Key([mod], "e", lazy.spawn(f"{HOME}/dotfiles/tools/hah")),
 ]
 
 
