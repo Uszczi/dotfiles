@@ -16,12 +16,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup(
     {
-    {
-      "epwalsh/obsidian.nvim",
-      config = function()
-        require("obsidian").setup ({ dir = "~/notes"})
-      end,
-    },
         {
             "folke/trouble.nvim",
             dependencies = {"nvim-tree/nvim-web-devicons"},
@@ -46,23 +40,16 @@ require("lazy").setup(
         "nvim-telescope/telescope-dap.nvim",
         "nvim-telescope/telescope-file-browser.nvim",
         "nvim-telescope/telescope-ui-select.nvim",
-        -- Treesitter
+        -- Treesitte
         "nvim-treesitter/nvim-treesitter",
         "nvim-treesitter/nvim-treesitter-textobjects",
         -- Look
         "nvim-tree/nvim-web-devicons",
-        -- {
-        --     "navarasu/onedark.nvim",
-        --     init = function()
-        --         vim.cmd([[colorscheme onedark]])
-        --     end
-        -- },
         {
             "catppuccin/nvim",
             name = "catppuccin",
             priority = 1000,
             init = function()
-                -- catppuccin, catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
                 vim.cmd([[colorscheme catppuccin-macchiato]])
             end
         },
@@ -81,6 +68,7 @@ require("lazy").setup(
         "nvim-lua/plenary.nvim",
         -- Formating
         "sbdchd/neoformat",
+        "mhartington/formatter.nvim",
         -- Debug
         {
             "dstein64/vim-startuptime",
@@ -115,6 +103,12 @@ require("lazy").setup(
             end
         },
         -- LSP
+        {
+            "AckslD/nvim-pytrize.lua",
+            init = function()
+                require("pytrize").setup()
+            end
+        },
         "neovim/nvim-lspconfig",
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
@@ -135,10 +129,8 @@ require("lazy").setup(
         "L3MON4D3/LuaSnip",
         "hrsh7th/cmp-nvim-lsp-signature-help",
         "ray-x/cmp-treesitter",
-        -- TPope
-        "tpope/vim-sleuth", -- This plugin automatically adjusts 'shiftwidth' and 'expandtab' heuristically based on the current file
+        "tpope/vim-sleuth",
         "tpope/vim-repeat",
-        -- {dir = "$HOME/projects/nvim-scrapy-debug"}
         "Uszczi/nvim-scrapy-debug",
         "rcarriga/nvim-notify",
         {
