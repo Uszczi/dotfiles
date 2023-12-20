@@ -19,6 +19,7 @@ alias fd="fdfind"
 export PATH="~/.local/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
 export PATH="$HOME/dotfiles/tools:$PATH"
+export PATH="$HOME/dotfiles/dotfiles-private/tools:$PATH"
 
 # Bug with google chrome and todoist.
 # Without that left down corner is covered by a part of app logo

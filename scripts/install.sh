@@ -21,4 +21,3 @@ fi
 echo "Rust and Cargo has to be installed by hand"
 echo "curl https://sh.rustup.rs -sSf | sh"
 
-
