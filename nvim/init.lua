@@ -22,3 +22,5 @@ vim.keymap.set("v", "csx", ":Kebab<cr>")
 
 vim.keymap.set("n", "cse", ":CamelB<cr>bgUle")
 vim.keymap.set("v", "cse", ":CamelB<cr>bgUle")
+
+vim.api.nvim_command("Copilot disable")

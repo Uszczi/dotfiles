@@ -21,6 +21,7 @@ require("lazy").setup(
             dependencies = {"nvim-tree/nvim-web-devicons"},
             opts = {}
         },
+        "github/copilot.vim",
         "dbeniamine/cheat.sh-vim",
         -- Window
         "nvim-lualine/lualine.nvim",
