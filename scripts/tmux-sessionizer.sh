@@ -1,4 +1,6 @@
 #!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
 
 rm -f "/tmp/sesionizer"
 
@@ -13,10 +15,11 @@ echo "$HOME/Downloads" >>/tmp/sesionizer
 echo "$HOME/.local/share/nvim/lazy/" >>/tmp/sesionizer
 
 
-fdfind . ~/projects --type directory --max-depth 2 >>/tmp/sesionizer
-fdfind . ~/src --type directory --max-depth 2 >>/tmp/sesionizer
-fdfind . ~/work --type directory --max-depth 1 >>/tmp/sesionizer
 fdfind . ~/.local/share/nvim/lazy --type directory --max-depth 1 >>/tmp/sesionizer
+fdfind . ~/p --type directory --max-depth 2 >>/tmp/sesionizer
+fdfind . ~/src --type directory --max-depth 2 >>/tmp/sesionizer
+fdfind . ~/studia --type directory --max-depth 2 >>/tmp/sesionizer
+fdfind . ~/work --type directory --max-depth 1 >>/tmp/sesionizer
 
 selected=$(cat /tmp/sesionizer | fzf --preview 'exa -la {}')
 
@@ -34,11 +37,6 @@ fi
 
 if ! tmux has-session -t=$selected_name 2>/dev/null; then
   tmux new-session -ds $selected_name -c $selected
-fi
-
-if [[ -z $TMUX ]]; then
-  tmux attach -t $selected_name
-  exit 0
 fi
 
 tmux switch-client -t $selected_name
