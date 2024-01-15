@@ -73,7 +73,7 @@ set("n", "<leader>v", require("telescope.builtin").git_files)
 
 -- nvim-telescope/telescope-symbols.nvim
 set(
-    "n",
+    {"n", "i"},
     "<C-y>",
     function()
         require("telescope.builtin").symbols {sources = {"gitmoji"}}
