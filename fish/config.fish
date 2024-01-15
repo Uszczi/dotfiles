@@ -132,6 +132,10 @@ alias kittydiff="/home/mateusz/.local/kitty.app/bin/kitty +kitten diff"
 alias wsln="/mnt/c/MinGW/bin/wsl-notify-send.exe "
 
 
+# https://github.com/nvbn/thefuck
+if command -v thefuck &> /dev/null;
+    thefuck --alias | source
+end
 
 function switch_make
     set -l cmd (commandline -b)
