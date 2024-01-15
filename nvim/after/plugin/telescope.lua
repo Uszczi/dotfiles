@@ -55,9 +55,23 @@ set(
 )
 
 set("n", "<leader>fg", require("telescope.builtin").live_grep)
-set("n", "<leader>,", require("telescope.builtin").live_grep)
+set(
+    "n",
+    "<leader>gf",
+    function()
+        require("telescope.builtin").live_grep({additional_args = {"--no-ignore", "--hidden"}})
+    end
+)
 set({"n", "v"}, "<leader>m", require("telescope.builtin").grep_string)
 set({"n", "v"}, "<leader>fG", require("telescope.builtin").grep_string)
+set(
+    {"n", "v"},
+    "<leader>fc",
+    function()
+        require("telescope.builtin").live_grep {default_text = "class "}
+    end
+)
+
 set(
     "n",
     "<leader>ft",
