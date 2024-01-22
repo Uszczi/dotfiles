@@ -16,7 +16,49 @@ dap.adapters.generic_remote = function(callback, config)
     callback({type = "server", host = "127.0.0.1", port = 5678})
 end
 
-require("dapui").setup({})
+require("neodev").setup(
+    {
+        library = {plugins = {"nvim-dap-ui"}, types = true}
+    }
+)
+require("dapui").setup(
+    {
+        layouts = {
+            {
+                elements = {
+                    {
+                        id = "scopes",
+                        size = 0.25
+                    },
+                    {
+                        id = "breakpoints",
+                        size = 0.25
+                    },
+                    {
+                        id = "stacks",
+                        size = 0.25
+                    },
+                    {
+                        id = "watches",
+                        size = 0.25
+                    }
+                },
+                position = "left",
+                size = 40
+            },
+            {
+                elements = {
+                    {
+                        id = "repl",
+                        size = 1
+                    }
+                },
+                position = "bottom",
+                size = 10
+            }
+        }
+    }
+)
 
 vim.keymap.set({"n", "v"}, "<leader>dw", ":lua require'dapui'.eval()<CR>", {silent = true})
 vim.keymap.set(
