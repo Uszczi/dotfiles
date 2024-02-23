@@ -1,4 +1,4 @@
-vim.g.neoformat_enabled_lua = {"luafmt"}
+-- vim.g.neoformat_enabled_lua = {"luafmt"}
 vim.g.neoformat_enabled_python = {"black"}
 vim.g.neoformat_enabled_javascript = {"prettierd"}
 

@@ -1,4 +1,7 @@
 local dap = require("dap")
+local dapui = require("dapui")
+
+local set = vim.keymap.set
 
 require("nvim-dap-virtual-text").setup({})
 
@@ -16,75 +19,48 @@ dap.adapters.generic_remote = function(callback, config)
     callback({type = "server", host = "127.0.0.1", port = 5678})
 end
 
-require("neodev").setup(
-    {
-        library = {plugins = {"nvim-dap-ui"}, types = true}
-    }
-)
-require("dapui").setup(
+require("neodev").setup({library = {plugins = {"nvim-dap-ui"}, types = true}})
+dapui.setup(
     {
         layouts = {
             {
                 elements = {
-                    {
-                        id = "scopes",
-                        size = 0.25
-                    },
-                    {
-                        id = "breakpoints",
-                        size = 0.25
-                    },
-                    {
-                        id = "stacks",
-                        size = 0.25
-                    },
-                    {
-                        id = "watches",
-                        size = 0.25
-                    }
+                    {id = "scopes", size = 0.25},
+                    {id = "breakpoints", size = 0.25},
+                    {id = "stacks", size = 0.25},
+                    {id = "watches", size = 0.25}
                 },
                 position = "left",
                 size = 40
             },
-            {
-                elements = {
-                    {
-                        id = "repl",
-                        size = 1
-                    }
-                },
-                position = "bottom",
-                size = 10
-            }
+            {elements = {{id = "repl", size = 1}}, position = "bottom", size = 10}
         }
     }
 )
 
-vim.keymap.set({"n", "v"}, "<leader>dw", ":lua require'dapui'.eval()<CR>", {silent = true})
-vim.keymap.set(
+set({"n", "v"}, "<leader>dw", ":lua require'dapui'.eval()<CR>")
+set(
     "n",
     "<leader>dd",
     function()
-        require "dapui".toggle()
-    end,
-    {silent = true}
+        dapui.toggle()
+    end
 )
-vim.keymap.set(
+set(
     "n",
-    "<leader>d,",
+    "<leader>da",
     function()
-        require "dapui".toggle({layout = 3})
-    end,
-    {silent = true}
+        dapui.toggle({layout = 2})
+    end
 )
 
-vim.keymap.set("v", "<M-k>", ":lua require'dapui'.eval()<CR>", {silent = true})
-vim.keymap.set("n", "<leader>de", ":lua require'dap'.toggle_breakpoint()<CR>", {silent = true})
-vim.keymap.set("n", "<leader>df", ":lua require'dap'.continue()<CR>", {silent = true})
-vim.keymap.set("n", "<leader>dc", ":lua require'dap'.run_to_cursor()<CR>", {silent = true})
-vim.keymap.set("n", "<leader>do", ":lua require'dap'.step_over()<CR>", {silent = true})
-vim.keymap.set("n", "<leader>di", ":lua require'dap'.step_into()<CR>", {silent = true})
-vim.keymap.set(
+set("v", "<M-k>", ":lua require'dapui'.eval()<CR>")
+set("n", "<leader>de", ":lua require'dap'.toggle_breakpoint()<CR>")
+set("n", "<leader>df", ":lua require'dap'.continue()<CR>")
+set("n", "<leader>dc", ":lua require'dap'.run_to_cursor()<CR>")
+set("n", "<leader>do", ":lua require'dap'.step_over()<CR>")
+set("n", "<leader>di", ":lua require'dap'.step_into()<CR>")
+set(
     "n",
     "<Leader>dl",
     function()
@@ -105,14 +81,7 @@ require("cmp").setup(
     }
 )
 
-require("cmp").setup.filetype(
-    {"dap-repl", "dapui_watches", "dapui_hover"},
-    {
-        sources = {
-            {name = "dap"}
-        }
-    }
-)
+require("cmp").setup.filetype({"dap-repl", "dapui_watches", "dapui_hover"}, {sources = {{name = "dap"}}})
 
 table.insert(
     require("dap").configurations.python,
@@ -122,11 +91,6 @@ table.insert(
         request = "attach",
         redirectOutput = true,
         justMyCode = false,
-        pathMappings = {
-            {
-                localRoot = vim.fn.getcwd(),
-                remoteRoot = "/code"
-            }
-        }
+        pathMappings = {{localRoot = vim.fn.getcwd(), remoteRoot = "/code"}}
     }
 )

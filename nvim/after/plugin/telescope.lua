@@ -55,6 +55,7 @@ set(
 )
 
 set("n", "<leader>fg", require("telescope.builtin").live_grep)
+set("n", "<leader>l", require("telescope.builtin").live_grep)
 set(
     "n",
     "<leader>gf",
