@@ -96,8 +96,8 @@ end
 
 alias anki="~/src/anki-2.1.54-linux-qt6/anki"
 
-bind \cbf ~/dotfiles/scripts/tmux-sessionizer.sh
-bind \cbe ~/dotfiles/scripts/tmux-sessionizer-git-worktree.sh
+bind \cbf ~/dotfiles/tools/tmux-sessionizer.sh
+bind \cbe ~/dotfiles/tools/tmux-sessionizer-git-worktree.sh
 
 #### Aliases
 alias ..="cd .."
