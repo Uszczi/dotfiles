@@ -10,7 +10,7 @@ from text import str_formater_with_const_width
 HOME = os.path.expanduser("~")
 
 mod = "mod4"
-terminal = f"{HOME}/dotfiles/scripts/run-terminal.sh"
+terminal = f"{HOME}/dotfiles/tools/run-terminal.sh"
 
 # default_browser = "firefox -p"
 default_browser = "google-chrome"
