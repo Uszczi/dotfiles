@@ -94,7 +94,7 @@ function rga-fzf
     ) && echo "opening $file" && nvim "$file"
 end
 
-alias anki="~/src/anki-2.1.54-linux-qt6/anki"
+alias anki="~/src/anki-23.12.1-linux-qt6/anki"
 
 bind \cbf ~/dotfiles/tools/tmux-sessionizer.sh
 bind \cbe ~/dotfiles/tools/tmux-sessionizer-git-worktree.sh

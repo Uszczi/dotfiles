@@ -56,6 +56,7 @@ set(
 
 set("v", "<M-k>", ":lua require'dapui'.eval()<CR>")
 set("n", "<leader>de", ":lua require'dap'.toggle_breakpoint()<CR>")
+set("n", "<leader>db", ":lua require'dap'.toggle_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>")
 set("n", "<leader>df", ":lua require'dap'.continue()<CR>")
 set("n", "<leader>dc", ":lua require'dap'.run_to_cursor()<CR>")
 set("n", "<leader>do", ":lua require'dap'.step_over()<CR>")
