@@ -113,6 +113,7 @@ alias ll="exa -la"
 
 alias dc="docker compose"
 alias fd="fdfind"
+alias cdf="cd (fd -t d | fzf)"
 ####
 
 alias ve="source .env_fish"
