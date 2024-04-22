@@ -16,6 +16,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup(
     {
+        "nvim-neotest/nvim-nio",
         "folke/neodev.nvim",
         {
             "folke/trouble.nvim",
@@ -46,6 +47,7 @@ require("lazy").setup(
         "nvim-treesitter/nvim-treesitter",
         "nvim-treesitter/nvim-treesitter-textobjects",
         -- Look
+        "jlcrochet/vim-razor",
         "nvim-tree/nvim-web-devicons",
         {
             "catppuccin/nvim",

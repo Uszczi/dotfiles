@@ -11,36 +11,6 @@ set("n", "]Q", ":clast<CR>")
 set("n", "[w", ":cprevious<CR>")
 set("n", "]e", ":cnext<CR>")
 
-set(
-    "n",
-    "]q",
-    function()
-        require("trouble").next({skip_groups = true, jump = true})
-    end
-)
-set(
-    "n",
-    "[q",
-    function()
-        require("trouble").previous({skip_groups = true, jump = true})
-    end
-)
-
-set(
-    "n",
-    "[Q",
-    function()
-        require("trouble").first({skip_groups = true, jump = true})
-    end
-)
-set(
-    "n",
-    "]Q",
-    function()
-        require("trouble").last({skip_groups = true, jump = true})
-    end
-)
-
 set("n", "<leader>e", vim.diagnostic.open_float)
 
 set("n", "<C-u>", "<C-u>zz")
