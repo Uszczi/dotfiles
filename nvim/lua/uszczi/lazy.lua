@@ -139,7 +139,8 @@ require("lazy").setup(
         "rcarriga/nvim-notify",
         {
             dir = "~/dotfiles/dotfiles-private"
-        }
+        },
+        "ggandor/leap.nvim"
     },
     {}
 )
