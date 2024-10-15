@@ -16,6 +16,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup(
     {
+        "stevearc/oil.nvim", -- file explorer
         "nvim-neotest/nvim-nio",
         "folke/neodev.nvim",
         {
