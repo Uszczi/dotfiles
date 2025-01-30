@@ -3,7 +3,7 @@
 sudo apt -y update & sudo apt -y upgrade
 sudo apt-get -y update & sudo apt-get -y upgrade
 
-sudo apt install -y fish exa ripgrep fd-find flameshot blueman tmux guake fzf nnn gh cmake
+sudo apt install -y fish ripgrep fd-find flameshot blueman tmux guake fzf nnn gh cmake dmenu
 
 if [[ ! -d "$HOME/.local/share/omf" ]]; then
     curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
