@@ -76,7 +76,7 @@ groups = [
     ),
     MyGroup(name="2", key="2"),
     MyGroup(name="3", key="3"),
-    MyGroup(name="4", key="4"),
+    MyGroup(name="4", key="4", matches=[Match(wm_class=["slack", "Slack"])]),
     MyGroup(name="5", key="5", matches=[Match(wm_class=["spotify", "Spotify"])]),
     MyGroup(name="6", key="6"),
     MyGroup(name="7", key="7"),

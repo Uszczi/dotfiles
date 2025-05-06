@@ -24,7 +24,7 @@ require("lazy").setup(
             dependencies = {"nvim-tree/nvim-web-devicons"},
             opts = {}
         },
-        "github/copilot.vim",
+        -- "github/copilot.vim",
         "dbeniamine/cheat.sh-vim",
         -- Window
         "nvim-lualine/lualine.nvim",
@@ -87,6 +87,7 @@ require("lazy").setup(
         "mfussenegger/nvim-dap-python",
         -- Git
         "NeogitOrg/neogit",
+        "ibhagwan/fzf-lua", -- for neogit
         "lewis6991/gitsigns.nvim",
         "mhinz/vim-signify",
         "tpope/vim-fugitive",
@@ -141,7 +142,14 @@ require("lazy").setup(
         {
             dir = "~/dotfiles/dotfiles-private"
         },
-        "ggandor/leap.nvim"
+        "ggandor/leap.nvim",
+        {
+            'windwp/nvim-autopairs',
+            event = "InsertEnter",
+            config = true
+            -- use opts = {} for passing setup options
+            -- this is equivalent to setup({}) function
+        }
     },
     {}
 )

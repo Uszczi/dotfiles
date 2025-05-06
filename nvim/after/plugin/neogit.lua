@@ -6,28 +6,20 @@ neogit.setup(
             recent_commit_count = 30
         },
         integrations = {
-            -- Neogit only provides inline diffs. If you want a more traditional way to look at diffs, you can use `sindrets/diffview.nvim`.
-            -- The diffview integration enables the diff popup, which is a wrapper around `sindrets/diffview.nvim`.
-            --
-            -- Requires you to have `sindrets/diffview.nvim` installed.
-            -- use {
-            --   'TimUntersberger/neogit',
-            --   requires = {
-            --     'nvim-lua/plenary.nvim',
-            --     'sindrets/diffview.nvim'
-            --   }
-            -- }
-            --
-            diffview = true
+            telescope = true,
+            diffview = true,
+            fzf_lua = true,
         }
     }
 )
 
-vim.keymap.set("n", "<leader>gg", require "neogit".open)
+vim.keymap.set("n", "<leader>gg", neogit.open)
 vim.keymap.set(
     "n",
-    "<C-M>",
+    "<C-i>",
     function()
         require "neogit".open {kind = "replace"}
     end
 )
+
+
