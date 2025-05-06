@@ -53,6 +53,7 @@ keys = [
     Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -D pulse sset Master '5%-'")),
     Key([], "XF86AudioPlay", lazy.spawn("playerctl play")),
     Key([], "XF86AudioPause", lazy.spawn("playerctl pause")),
+    Key([], "XF86AudioMute", lazy.spawn("amixer -D pulse sset Master '0%'")),
     Key([], "XF86AudioStop", lazy.spawn("playerctl pause")),
     Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -D pulse sset Master '5%+'")),
     Key([], "XF86AudioPrev", lazy.spawn("playerctl previous")),
