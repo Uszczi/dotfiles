@@ -14,6 +14,7 @@
     ~/.tmux.conf: tmux.conf
     ~/.gitconfig: gitconfig
     ~/.ocamlinit: ocamlinit
+    ~/.Xmodmap: Xmodmap
     # ~/.alacritty.yml: alacritty.yml
     # ~/.config/nnn: nnn
     # ~/.config/pylintrc: pylintrc
