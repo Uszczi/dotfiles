@@ -1,0 +1,22 @@
+#! /bin/bash
+
+set -euo pipefail
+
+old_version=$(nvim -v | tr '\n' ' '| awk -F' ' '{print $2}')
+
+cd ~/src/neovim
+
+git_pull=$(git pull)
+if [[ $git_pull == 'Already up to date.' ]]; then
+    echo $git_pull
+    exit 0
+fi
+
+sudo rm -rf .deps build
+
+make CMAKE_BUILD_TYPE=RelWithDebInfo
+sudo make install
+
+new_version=$(nvim -v | tr '\n' ' '| awk -F' ' '{print $2}')
+echo 'Previous version: ' $old_version
+echo 'New version:      ' $new_version
