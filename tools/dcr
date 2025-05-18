@@ -1,5 +1,8 @@
 #! /bin/bash
 
+
+set -euo pipefail
+
 service=$(grep 'services:' docker-compose.yml -A 1)
 service=$(echo $service | awk '{print$2}' | tr -d ':')
 
