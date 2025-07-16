@@ -38,12 +38,14 @@ require("lazy").setup(
         {"akinsho/toggleterm.nvim", version = "*", config = true},
         -- Telescope
         "nvim-telescope/telescope.nvim",
+        "https://git.myzel394.app/Myzel394/jsonfly.nvim", -- to test
         "nvim-telescope/telescope-symbols.nvim",
         {"nvim-telescope/telescope-fzf-native.nvim", build = "make"},
         "nvim-telescope/telescope-project.nvim",
         "nvim-telescope/telescope-dap.nvim",
         "nvim-telescope/telescope-file-browser.nvim",
         "nvim-telescope/telescope-ui-select.nvim",
+        "nvim-telescope/telescope-smart-history.nvim",
         -- Treesitte
         "nvim-treesitter/nvim-treesitter",
         "nvim-treesitter/nvim-treesitter-textobjects",
