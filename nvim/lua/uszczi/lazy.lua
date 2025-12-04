@@ -86,7 +86,7 @@ require("lazy").setup(
         "theHamsta/nvim-dap-virtual-text",
         "rcarriga/cmp-dap",
         -- Python
-        "mfussenegger/nvim-dap-python",
+        -- "mfussenegger/nvim-dap-python",
         -- Git
         "NeogitOrg/neogit",
         "ibhagwan/fzf-lua", -- for neogit

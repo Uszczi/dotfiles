@@ -56,6 +56,6 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH="$PATH:$HOME/.dotnet/tools"
 
-xmodmap ~/.Xmodmap
+# xmodmap ~/.Xmodmap
 
 fish

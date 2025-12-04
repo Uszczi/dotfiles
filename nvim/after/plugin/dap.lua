@@ -69,8 +69,8 @@ set(
     end
 )
 
-require("dap-python").setup(nil, {justMyCode = false})
-require("dap-python").test_runner = "pytest"
+-- require("dap-python").setup({ rocks = {hererocks = false, enabled = false} }, {justMyCode = false, rocks = {hererocks = false, enabled = false})
+-- require("dap-python").test_runner = "pytest"
 
 -- require("dap").defaults.fallback.exception_breakpoints = {"raised", "uncaught", "userUnhandled"}
 
@@ -84,14 +84,14 @@ require("cmp").setup(
 
 require("cmp").setup.filetype({"dap-repl", "dapui_watches", "dapui_hover"}, {sources = {{name = "dap"}}})
 
-table.insert(
-    require("dap").configurations.python,
-    {
-        type = "generic_remote",
-        name = "Attach to docker",
-        request = "attach",
-        redirectOutput = true,
-        justMyCode = false,
-        pathMappings = {{localRoot = vim.fn.getcwd(), remoteRoot = "/code"}}
-    }
-)
+-- table.insert(
+--     require("dap").configurations.python,
+--     {
+--         type = "generic_remote",
+--         name = "Attach to docker",
+--         request = "attach",
+--         redirectOutput = true,
+--         justMyCode = false,
+--         pathMappings = {{localRoot = vim.fn.getcwd(), remoteRoot = "/code"}}
+--     }
+-- )

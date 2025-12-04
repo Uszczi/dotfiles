@@ -13,7 +13,8 @@ mod = "mod4"
 terminal = f"{HOME}/dotfiles/tools/run-terminal.sh"
 
 # default_browser = "firefox -p"
-default_browser = "google-chrome"
+default_browser = "firefox"
+# default_browser = "google-chrome"
 
 keys = [
     # Layouts
