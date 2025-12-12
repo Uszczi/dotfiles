@@ -27,11 +27,6 @@ export PATH="$HOME/dotfiles/dotfiles-private/tools:$PATH"
 # Without that left down corner is covered by a part of app logo
 export DESKTOPINTEGRATION=false
 
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
 # fnm
 # export PATH="$HOME/.local/share/fnm:$PATH"
 # eval "`fnm env`"
