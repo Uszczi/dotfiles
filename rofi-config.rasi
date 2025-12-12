@@ -1,0 +1,76 @@
+configuration {
+    font: "Sans 15";
+    disable-history: true;
+    sort: true;
+    matching: "fuzzy";
+}
+
+*{
+    my-bg:          #24273a;
+    my-fg:          #cad3f5;
+    my-pink:        #ed8796;
+    my-gold:        #eed49f;
+
+    background:                  @my-bg;
+    background-color:            @background;
+    foreground:                  @my-fg;
+    border-color:                @my-gold;
+    separatorcolor:              @my-bg;
+    scrollbar-handle:            @my-gold;
+
+    normal-background:           @my-bg;
+    normal-foreground:           @my-fg;
+    alternate-normal-background: @my-bg;
+    alternate-normal-foreground: @my-fg;
+
+    selected-normal-background:  @my-bg;
+    selected-normal-foreground:  @my-gold;
+
+    active-background:           @my-bg;
+    active-foreground:           @my-gold;
+    urgent-background:           @my-bg;
+    urgent-foreground:           @my-pink;
+}
+
+window {
+    width:        40%;
+    border:       2px;
+    padding:      10;
+    background-color: @background;
+}
+
+listview {
+    lines:        20;
+    fixed-height: true;
+    scrollbar:    false;
+    spacing:      0px;
+    padding:      0px;
+    background-color: @background;
+}
+
+inputbar {
+    padding:      10px;
+    children:     [ entry ];
+    background-color: @background;
+}
+
+entry {
+    text-color:   @my-pink; /* Pink input text */
+    background-color: @background;
+}
+
+element {
+    padding:      5px;
+    background-color: @background;
+    text-color:       @foreground;
+}
+
+element selected {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
+}
