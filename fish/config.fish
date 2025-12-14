@@ -107,10 +107,6 @@ alias sd="cd ~ && cd (find * -type d | fzf)"
 alias gs="git status"
 alias gc="git commit"
 
-alias ls="exa"
-alias la="exa -la"
-alias ll="exa -la"
-
 alias dc="docker compose"
 alias fd="fdfind"
 alias cdf="cd (fd -t d | fzf)"
@@ -155,4 +151,3 @@ function switch_make
 end
 
 bind \eq switch_make
-
