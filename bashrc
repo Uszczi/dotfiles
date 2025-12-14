@@ -8,9 +8,9 @@ alias sd="cd ~ && cd (find * -type d | fzf)"
 alias gs="git status"
 alias gc="git commit"
 
-alias ls="exa"
-alias la="exa -la"
-alias ll="exa -la"
+alias ls="eza"
+alias la="eza -la"
+alias ll="eza -la"
 
 alias dc="docker compose"
 alias fd="fdfind"
