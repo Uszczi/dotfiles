@@ -212,6 +212,7 @@ floating_layout = layout.Floating(  # type: ignore
         Match(wm_class="DBeaver"),  # DBeaver
         Match(wm_class="guake"),
         Match(wm_class="1password"),
+        Match(wm_class="steam_app_1604030"), # VRising
     ]
 )
 auto_fullscreen = False
