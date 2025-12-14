@@ -2,6 +2,8 @@
 
 set -euo pipefail
 
+mkdir -p "$HOME/p"
+
 APT_PACKAGES=(
 	fish
 	curl
