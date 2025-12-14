@@ -44,13 +44,13 @@ vim.o.splitbelow = true
 vim.o.splitright = true
 vim.o.wrap = false
 
-vim.cmd [[ :set noswapfile ]]
+vim.cmd([[ :set noswapfile ]])
 vim.o.backup = false
 vim.o.writebackup = false
 vim.o.undofile = true
 
 vim.o.ff = "unix"
-vim.cmd [[ :set ff=unix ]]
+vim.cmd([[ :set ff=unix ]])
 
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"

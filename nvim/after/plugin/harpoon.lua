@@ -1,14 +1,14 @@
 local harpoon = require("harpoon")
 local set = vim.keymap.set
 
-harpoon.setup {
-    menu = {
-        width = 100
-    },
-    global_settings = {
-        enter_on_sendcmd = true
-    }
-}
+harpoon.setup({
+	menu = {
+		width = 100,
+	},
+	global_settings = {
+		enter_on_sendcmd = true,
+	},
+})
 
 set("n", "<C-e>", ":lua require('harpoon.ui').toggle_quick_menu()<CR>")
 set("n", "<leader>tt", ":lua require('harpoon.cmd-ui').toggle_quick_menu()<CR>")

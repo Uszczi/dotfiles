@@ -1,9 +1,9 @@
 local ok, ibl = pcall(require, "ibl")
 if not ok then
-    return
+	return
 end
 
-require("ibl").setup {
-    indent = {char = "┊"},
-    scope = {enabled = false}
-}
+require("ibl").setup({
+	indent = { char = "┊" },
+	scope = { enabled = false },
+})
