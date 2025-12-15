@@ -28,11 +28,11 @@ export PATH="$HOME/dotfiles/dotfiles-private/tools:$PATH"
 export DESKTOPINTEGRATION=false
 
 # fnm
-# export PATH="$HOME/.local/share/fnm:$PATH"
-# eval "`fnm env`"
-
-# Cargo
-. "$HOME/.cargo/env"
+FNM_PATH="/home/mat/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "`fnm env`"
+fi
 
 # SSH
 eval $(ssh-agent) > /dev/null
