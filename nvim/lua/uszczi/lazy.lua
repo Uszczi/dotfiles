@@ -13,7 +13,23 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	"stevearc/oil.nvim", -- file explorer
+	{ -- quick jump to sequence of two letters
+		url = "https://codeberg.org/andyg/leap.nvim",
+		init = function()
+			vim.keymap.set({ "n", "x", "o" }, "s", "<Plug>(leap-forward)")
+			vim.keymap.set({ "n", "x", "o" }, "S", "<Plug>(leap-backward)")
+			vim.keymap.set("n", "gs", "<Plug>(leap-from-window)")
+		end,
+	},
+	"stevearc/oil.nvim", -- file explorer with text base modifications
+	--------
+	{
+		"napmn/react-extract.nvim",
+		opts = {},
+		init = function()
+			require("react-extract").setup()
+		end,
+	},
 	"nvim-neotest/nvim-nio",
 	"folke/neodev.nvim",
 	{
@@ -28,15 +44,6 @@ require("lazy").setup({
 	"lukas-reineke/indent-blankline.nvim",
 	-- Typing
 	"kylechui/nvim-surround",
-
-	{
-		url = "https://codeberg.org/andyg/leap.nvim",
-		init = function()
-			vim.keymap.set({ "n", "x", "o" }, "s", "<Plug>(leap-forward)")
-			vim.keymap.set({ "n", "x", "o" }, "S", "<Plug>(leap-backward)")
-			vim.keymap.set("n", "gs", "<Plug>(leap-from-window)")
-		end,
-	},
 	"numToStr/Comment.nvim",
 	"mbbill/undotree",
 	"ThePrimeagen/refactoring.nvim",
