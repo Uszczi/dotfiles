@@ -28,6 +28,15 @@ require("lazy").setup({
 	"lukas-reineke/indent-blankline.nvim",
 	-- Typing
 	"kylechui/nvim-surround",
+
+	{
+		url = "https://codeberg.org/andyg/leap.nvim",
+		init = function()
+			vim.keymap.set({ "n", "x", "o" }, "s", "<Plug>(leap-forward)")
+			vim.keymap.set({ "n", "x", "o" }, "S", "<Plug>(leap-backward)")
+			vim.keymap.set("n", "gs", "<Plug>(leap-from-window)")
+		end,
+	},
 	"numToStr/Comment.nvim",
 	"mbbill/undotree",
 	"ThePrimeagen/refactoring.nvim",
@@ -139,7 +148,6 @@ require("lazy").setup({
 	{
 		dir = "~/dotfiles/dotfiles-private",
 	},
-	"ggandor/leap.nvim",
 	{
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
