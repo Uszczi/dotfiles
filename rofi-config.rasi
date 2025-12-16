@@ -3,6 +3,7 @@ configuration {
     disable-history: true;
     sort: true;
     matching: "fuzzy";
+    sorting-method: "fzf";
 }
 
 *{
