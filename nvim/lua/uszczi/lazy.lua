@@ -23,13 +23,6 @@ require("lazy").setup({
 	},
 	"stevearc/oil.nvim", -- file explorer with text base modifications
 	--------
-	{
-		"napmn/react-extract.nvim",
-		opts = {},
-		init = function()
-			require("react-extract").setup()
-		end,
-	},
 	"nvim-neotest/nvim-nio",
 	"folke/neodev.nvim",
 	{
