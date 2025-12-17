@@ -24,6 +24,7 @@ SNAP_PACKAGES=(
 	astral-uv
 	obsidian
 	todoist
+	spotify
 )
 
 sudo apt -y update & sudo apt -y upgrade
