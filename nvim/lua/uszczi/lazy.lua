@@ -167,6 +167,37 @@ require("lazy").setup({
 		---@module 'avante'
 		---@type avante.Config
 		opts = {
+			provider = "openai-gpt-5-nano",
+
+			providers = {
+				openrouter = {
+					__inherited_from = "openai",
+					endpoint = "https://openrouter.ai/api/v1",
+					api_key_name = "AVANTE_OPENROUTER_API_KEY",
+					model = "qwen/qwen3-coder:free",
+				},
+
+				openai = {
+					endpoint = "https://api.openai.com/v1",
+					model = "gpt-4o",
+					timeout = 30000,
+					max_tokens = 8192,
+				},
+
+				["openai-gpt-5"] = {
+					__inherited_from = "openai",
+					model = "gpt-5",
+				},
+				["openai-gpt-5-mini"] = {
+					__inherited_from = "openai",
+					model = "gpt-5-mini",
+				},
+				["openai-gpt-5-nano"] = {
+					__inherited_from = "openai",
+					model = "gpt-5-nano",
+				},
+			},
+
 			behavior = {
 				auto_apply_diff_after_generation = false,
 				auto_suggestions = false,
