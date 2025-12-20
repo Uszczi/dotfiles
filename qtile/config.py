@@ -12,8 +12,8 @@ HOME = os.path.expanduser("~")
 mod = "mod4"
 terminal = f"{HOME}/dotfiles/tools/run-terminal.sh"
 
-# default_browser = "firefox -p"
 default_browser = "firefox"
+# default_browser = "firefox -p"
 # default_browser = "google-chrome"
 
 keys = [
@@ -23,7 +23,8 @@ keys = [
     Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
     Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
-    Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
+    # I don't think I've ever used it.
+    # Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
     # Position
     Key([mod, "shift"], "h", lazy.layout.shuffle_left()),
     Key([mod, "shift"], "l", lazy.layout.shuffle_right()),
@@ -121,16 +122,16 @@ layout_theme = {
 }
 
 layouts = [
-    layout.MonadTall(**layout_theme),  # type: ignore
+    layout.Columns(**layout_theme),  # type: ignore
     layout.Max(
         **{
             "border_focus": "e1acff",
             "border_normal": "1D2330",
         }
     ),  # type: ignore
-    layout.Columns(**layout_theme),  # type: ignore
-    layout.RatioTile(**layout_theme),  # type: ignore
     layout.Floating(**layout_theme),  # type: ignore
+    layout.MonadTall(**layout_theme),  # type: ignore
+    layout.RatioTile(**layout_theme),  # type: ignore
 ]
 
 widget_defaults = dict(
@@ -205,14 +206,14 @@ floating_layout = layout.Floating(  # type: ignore
         Match(wm_class="confirmreset"),  # gitk
         Match(wm_class="makebranch"),  # gitk
         Match(wm_class="maketag"),  # gitk
-        Match(wm_class="ssh-askpass"),  # ssh-askpass
+        Match(wm_class="ssh-askpass"),
         Match(title="branchdialog"),  # gitk
         Match(title="pinentry"),  # GPG key password entry
-        Match(title="Tip of the day "),  # DBeaver
-        Match(wm_class="DBeaver"),  # DBeaver
+        Match(title="Tip of the day "),
+        Match(wm_class="DBeaver"),
         Match(wm_class="guake"),
         Match(wm_class="1password"),
-        Match(wm_class="steam_app_1604030"), # VRising
+        Match(wm_class="steam_app_1604030"),  # VRising
     ]
 )
 auto_fullscreen = False

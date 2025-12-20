@@ -1,6 +1,9 @@
-require("nvim-test").setup({
-	term = "toggleterm",
-	termOpts = {
-		go_back = true,
-	},
-})
+return {
+  "klen/nvim-test",
+  opts = {
+    term = "toggleterm",
+    termOpts = {
+      go_back = true,
+    },
+  },
+}
