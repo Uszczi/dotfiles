@@ -1,0 +1,40 @@
+#!/bin/bash
+
+set -euo pipefail
+
+backlight_dir=$(find /sys/class/backlight/ -maxdepth 1 -mindepth 1 | head -n 1)
+max_val=$(cat "$backlight_dir/max_brightness")
+current_val=$(cat "$backlight_dir/brightness")
+
+if [[ $# -eq 0 ]]; then
+    percent=$(( current_val * 100 / max_val ))
+    echo "Current brightness: ${percent}% (${current_val}/${max_val})"
+    exit 0
+fi
+
+case "$1" in
+    max)
+        echo "Setting brightness to maximum: $max_val."
+        echo "$max_val" | tee "$backlight_dir/brightness" > /dev/null
+        ;;
+
+    half)
+        half_value=$(( max_val / 2 ))
+        echo "Setting brightness to half: $half_value."
+        echo "$half_value" | tee "$backlight_dir/brightness" > /dev/null
+        ;;
+    *)
+        if [[ "$1" =~ \. ]]; then
+            new_val=$(echo "$1 * $max_val" | bc | cut -d'.' -f1)
+            echo "Setting brightness to $1 ($new_val)."
+            echo "$new_val" | tee "$backlight_dir/brightness" > /dev/null
+
+        elif [[ "$1" =~ ^[0-9]+$ ]]; then
+            echo "Setting brightness to $1."
+            echo "$1" | tee "$backlight_dir/brightness" > /dev/null
+        else
+            echo "Error: Invalid input. Use 'max', an integer, or a decimal (e.g., 0.5)."
+            exit 1
+        fi
+        ;;
+esac
