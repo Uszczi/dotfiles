@@ -18,6 +18,7 @@ APT_PACKAGES=(
 	gh
 	cmake
 	playerctl
+	vlc
 )
 
 SNAP_PACKAGES=(
