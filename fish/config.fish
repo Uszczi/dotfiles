@@ -151,3 +151,7 @@ function switch_make
 end
 
 bind \eq switch_make
+bind -M insert \ck forward-char
+bind -M insert \cj forward-word
+bind -M insert \ek forward-char
+bind -M insert \ej forward-word
