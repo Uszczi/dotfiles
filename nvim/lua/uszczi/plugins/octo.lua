@@ -1,6 +1,7 @@
 return {
   {
     "NWVi/octo.nvim",
+    enabled = false,
     branch = "config-review-use-local-fs",
     init = function()
       require("octo").setup({
