@@ -46,6 +46,7 @@ keys = [
     Key([mod], "b", lazy.spawn(default_browser)),
     Key([mod], "i", lazy.spawn("guake")),
     Key([mod], "r", lazy.spawn("rofi -show run")),
+    Key([mod], "s", lazy.spawn("select-window")),
     Key([mod], "Return", lazy.spawn(terminal)),
     Key([mod, "shift"], "s", lazy.spawn("flameshot gui")),
     # Monitors

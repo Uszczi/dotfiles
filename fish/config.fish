@@ -129,6 +129,7 @@ alias kittydiff="/home/mateusz/.local/kitty.app/bin/kitty +kitten diff"
 # WSL
 alias wsln="/mnt/c/MinGW/bin/wsl-notify-send.exe "
 
+alias brightnesscli="sudo /home/mat/dotfiles/tools/brightnesscli"
 
 # https://github.com/nvbn/thefuck
 if command -v thefuck &> /dev/null;

@@ -17,6 +17,7 @@ echo "$HOME/.local/share/nvim/lazy/" >>/tmp/sesionizer
 fdfind . ~/.local/share/nvim/lazy --type directory --max-depth 1 >>/tmp/sesionizer
 fdfind . ~/p --type directory --max-depth 2 >>/tmp/sesionizer
 fdfind . ~/src --type directory --max-depth 2 >>/tmp/sesionizer
+fdfind . ~/my-github --type directory --max-depth 2 >>/tmp/sesionizer
 # fdfind . ~/studia --type directory --max-depth 2 >>/tmp/sesionizer
 # fdfind . ~/work --type directory --max-depth 2 >>/tmp/sesionizer
 # fdfind . ~/tmp --type directory --max-depth 2 >>/tmp/sesionizer
