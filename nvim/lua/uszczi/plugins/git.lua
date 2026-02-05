@@ -1,4 +1,4 @@
 return {
-  "rbong/vim-flog",
+  "rbong/vim-flog", -- Git branch viewer
   "sindrets/diffview.nvim",
 }
