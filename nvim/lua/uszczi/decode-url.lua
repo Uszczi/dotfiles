@@ -35,4 +35,4 @@ local decode_selected_text = function()
   set_selected_text(decoded_text, csrow, cscol, cerow, cecol)
 end
 
-vim.keymap.set({ "n", "v" }, "<leader>ru", function() decode_selected_text() end, { silent = false })
+vim.keymap.set({ "n", "v" }, "<leader>ru", function() decode_selected_text() end)

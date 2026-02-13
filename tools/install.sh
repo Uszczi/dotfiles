@@ -19,6 +19,7 @@ APT_PACKAGES=(
 	cmake
 	playerctl
 	vlc
+	ffmmpeg
 )
 
 SNAP_PACKAGES=(
