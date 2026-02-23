@@ -130,9 +130,6 @@ layouts = [
             "border_normal": "1D2330",
         }
     ),  # type: ignore
-    layout.Floating(**layout_theme),  # type: ignore
-    layout.MonadTall(**layout_theme),  # type: ignore
-    layout.RatioTile(**layout_theme),  # type: ignore
 ]
 
 widget_defaults = dict(
