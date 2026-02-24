@@ -1,6 +1,23 @@
 local set = vim.keymap.set
 
-set("n", "<leader>hh", ":so %<CR>")
+local function run_file()
+    local mappings = {
+        python= '!python3 %',
+        lua='so %'
+    }
+
+    local ft = vim.api.nvim_buf_get_option(0, "filetype")
+
+    local command = mappings[ft]
+    if  command ~= nil then
+        print("Running '" .. command .. "'.")
+        vim.api.nvim_command(mappings[ft])
+    else
+        print("Unknown filetype.")
+    end
+end
+
+set("n", "<leader>hh", run_file)
 
 set("n", "[d", vim.diagnostic.goto_prev)
 set("n", "]d", vim.diagnostic.goto_next)
