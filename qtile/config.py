@@ -138,24 +138,24 @@ widget_defaults = dict(
     padding=3,
 )
 extension_defaults = widget_defaults.copy()
+
+bottom = bar.Bar(
+    [
+        widget.CurrentLayout(),  # type: ignore
+        widget.GroupBox(),  # type: ignore
+        widget.WindowName(),  # type: ignore
+        # Multi window Systray doesn't work
+        widget.Systray(),  # type: ignore
+        widget.Clock(format="%Y-%m-%d %a %H:%M"),  # type: ignore
+        widget.Battery(),  # type: ignore
+        widget.QuickExit(),  # type: ignore
+        # widget.CPUGraph(),
+        # widget.Memory(),
+    ],
+    24,
+)
 screens = [
-    Screen(
-        bottom=bar.Bar(
-            [
-                widget.CurrentLayout(),  # type: ignore
-                widget.GroupBox(),  # type: ignore
-                widget.WindowName(),  # type: ignore
-                # Multi window Systray doesn't work
-                widget.Systray(),  # type: ignore
-                widget.Clock(format="%Y-%m-%d %a %H:%M"),  # type: ignore
-                widget.Battery(),  # type: ignore
-                widget.QuickExit(),  # type: ignore
-                # widget.CPUGraph(),
-                # widget.Memory(),
-            ],
-            24,
-        ),
-    ),
+    Screen(bottom=bottom),
     Screen(
         bottom=bar.Bar(
             [
@@ -228,6 +228,8 @@ wmname = "LG3D"
 
 @hook.subscribe.startup_once
 def start_once():
+    bottom.show(False)
+
     processes = [
         [HOME + "/.config/qtile/autostart.sh"],
         ["obsidian"],
