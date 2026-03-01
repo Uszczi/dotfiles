@@ -3,7 +3,8 @@ local set = vim.keymap.set
 local function run_file()
     local mappings = {
         python= '!python3 %',
-        lua='so %'
+        lua='so %',
+        sh='! %'
     }
 
     local ft = vim.api.nvim_buf_get_option(0, "filetype")
