@@ -23,8 +23,8 @@ keys = [
     Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
     Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
-    # I don't think I've ever used it.
-    # Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
+    # Groups
+    Key([mod], "space", lazy.screen.toggle_group(), desc="Toggle to last active group"),
     # Position
     Key([mod, "shift"], "h", lazy.layout.shuffle_left()),
     Key([mod, "shift"], "l", lazy.layout.shuffle_right()),
