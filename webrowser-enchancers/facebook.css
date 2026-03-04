@@ -1,0 +1,12 @@
+/*
+==UserCSS==
+@name             facebook
+@match            *://*.facebook.com/*
+@version          1.0
+==/UserCSS==
+*/
+
+
+div[role='main'] {
+  display: none;
+}

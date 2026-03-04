@@ -1,0 +1,17 @@
+/*
+==UserCSS==
+@name             instagram
+@match            *://*.instagram.com/*
+@version          1.0
+==/UserCSS==
+*/
+
+
+div[style*='max-width:630px'] {
+  display: none;
+}
+
+
+div[style*='max-width:630px'] + div {
+  display: none;
+}
