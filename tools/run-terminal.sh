@@ -1,3 +1,3 @@
 #! /bin/bash
 
-~/.local/kitty.app/bin/kitty || gnome-terminal
+kitty || xterm || gnome-terminal
