@@ -19,8 +19,9 @@ alias nvim-big="nvim -u $HOME/dotfiles/nvim/large-file.vim"
 
 ####
 
-export PATH="~/.local/bin:$PATH"
-export PATH=$PATH:/usr/local/go/bin
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="/usr/local/go/bin:$PATH"
+export PATH="$HOME/.dotnet/tools:$PATH"
 export PATH="$HOME/dotfiles/tools:$PATH"
 export PATH="$HOME/dotfiles/dotfiles-private/tools:$PATH"
 
