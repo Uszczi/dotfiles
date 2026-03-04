@@ -3,7 +3,7 @@
 #### Aliases
 alias ..="cd .."
 alias ...="cd ../.."
-alias sd="cd ~ && cd (find * -type d | fzf)"
+alias sd='cd ~ && cd $(find * -type d | fzf)'
 
 alias gs="git status"
 alias gc="git commit"
