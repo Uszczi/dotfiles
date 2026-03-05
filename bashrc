@@ -20,5 +20,6 @@ export PATH="/usr/local/go/bin:$PATH"
 export PATH="$HOME/.dotnet/tools:$PATH"
 export PATH="$HOME/dotfiles/tools:$PATH"
 export PATH="$HOME/dotfiles/dotfiles-private/tools:$PATH"
+export PATH="$HOME/.local/share/nvim/mason/bin/:$PATH"
 
 fish
