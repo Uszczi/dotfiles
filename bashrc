@@ -12,7 +12,6 @@ alias la="eza -la"
 alias ll="eza -la"
 
 alias dc="docker compose"
-alias fd="fdfind"
 
 alias nvim-big="nvim -u $HOME/dotfiles/nvim/large-file.vim"
 

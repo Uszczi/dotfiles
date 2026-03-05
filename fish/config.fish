@@ -94,8 +94,6 @@ function rga-fzf
     ) && echo "opening $file" && nvim "$file"
 end
 
-alias anki="~/src/anki-23.12.1-linux-qt6/anki"
-
 bind \cbf ~/dotfiles/tools/tmux-sessionizer.sh
 bind \cbe ~/dotfiles/tools/tmux-sessionizer-git-worktree.sh
 
@@ -108,7 +106,6 @@ alias gs="git status"
 alias gc="git commit"
 
 alias dc="docker compose"
-alias fd="fdfind"
 alias cdf="cd (fd -t d | fzf)"
 ####
 
@@ -120,7 +117,6 @@ alias vi="nvim"
 alias vic="nvim --clean --cmd ':set nu rnu colorcolumn=100 clipboard=unnamedplus'"
 alias nvim-big="nvim -u $HOME/dotfiles/nvim/large-file.vim"
 alias emacs="emacsclient -c -a emacs"
-alias fd="fdfind"
 alias pa="autoflake --in-place --recursive --remove-all-unused-imports --ignore-init-module-imports --remove-duplicate-keys --remove-unused-variables"
 alias lg="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(red)%h%C(r) —— %C(bold blue)%an%C(r): %C(white)%s%C(r) %C(dim white) %C(bold green)(%ar)%C(r) %C(bold yellow)%d%C(r)' --all"
 alias icat="/home/mateusz/.local/kitty.app/bin/kitty +kitten icat"
