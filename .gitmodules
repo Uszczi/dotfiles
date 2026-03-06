@@ -5,3 +5,6 @@
 [submodule "dotfiles-private"]
 	path = dotfiles-private
 	url = git@github.com:Uszczi/dotfiles-private.git
+[submodule "tmux-sessionizer"]
+	path = tmux-sessionizer
+	url = https://github.com/ThePrimeagen/tmux-sessionizer
