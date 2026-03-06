@@ -231,11 +231,11 @@ wmname = "LG3D"
 def start_once():
     bottom.show(False)
 
-    processes = [
-        [HOME + "/.config/qtile/autostart.sh"],
-        ["obsidian"],
-        ["todoist"],
-    ]
-
-    for process in processes:
-        subprocess.Popen(process)
+    # processes = [
+    #     [HOME + "/.config/qtile/autostart.sh"],
+    #     ["obsidian"],
+    #     ["todoist"],
+    # ]
+    #
+    # for process in processes:
+    #     subprocess.Popen(process)
