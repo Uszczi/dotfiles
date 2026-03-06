@@ -1,0 +1,7 @@
+#/usr/bin/env bash
+
+DEV_ENV=$(pwd) ./install/dev
+DEV_ENV=$(pwd) ./install/neovim
+DEV_ENV=$(pwd) ./install/zsh
+DEV_ENV=$(pwd) ./install/tmux
+DEV_ENV=$(pwd) ./install/desktop
