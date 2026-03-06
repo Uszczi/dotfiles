@@ -1,3 +1,3 @@
 return {
-  { dir = "~/dotfiles/dotfiles-private" },
+  { dir = "~/personal/dev/dotfiles-private" },
 }

@@ -1,4 +1,5 @@
-local builtin = pcall(require("telescope.builtin"))
+local ok, builtin = pcall(require, "telescope.builtin")
+if not ok then return {} end
 
 return {
   {
