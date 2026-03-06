@@ -27,21 +27,14 @@ return {
         function() require("telescope.builtin").find_files({ hidden = true, no_ignore = true, cwd = "~/dotfiles/" }) end,
         desc = "Find Dotfiles",
       },
-      { "<leader>fg", function() require("telescope.builtin").live_grep() end, desc = "Live Grep" },
       { "<leader>l", function() require("telescope.builtin").live_grep() end, desc = "Live Grep" },
       {
-        "<leader>gf",
+        "<leader>fl",
         function() require("telescope.builtin").live_grep({ additional_args = { "--no-ignore", "--hidden" } }) end,
         desc = "Grep All",
       },
       {
         "<leader>m",
-        function() require("telescope.builtin").grep_string() end,
-        mode = { "n", "v" },
-        desc = "Grep String",
-      },
-      {
-        "<leader>fG",
         function() require("telescope.builtin").grep_string() end,
         mode = { "n", "v" },
         desc = "Grep String",
