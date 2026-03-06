@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+
+sudo pacman -S --needed --noconfirm hyprpaper
+sudo pacman -S --needed --noconfirm waybar

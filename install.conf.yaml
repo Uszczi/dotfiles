@@ -8,6 +8,7 @@
 - link:
     ~/.bashrc: bashrc
     ~/.config/hypr: hypr
+    ~/.config/waybar: waybar
     ~/.config/fish: fish
     ~/.config/kitty: kitty
     ~/.config/nvim: nvim
