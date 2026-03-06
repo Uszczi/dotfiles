@@ -1,6 +1,3 @@
-local ok, builtin = pcall(require, "telescope.builtin")
-if not ok then return {} end
-
 return {
   {
     "nvim-telescope/telescope.nvim",
