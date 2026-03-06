@@ -44,13 +44,12 @@ done
 selected=$(cat /tmp/sesionizer | fzf --preview 'exa -la {}')
 
 selected_name=$(basename "$selected" | tr . _)
-tmux_running=$(pgrep tmux)
 
 if [[ -z $selected ]]; then
     exit 0
 fi
 
-if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
+if [[ -z "${TMUX:-}" ]]; then
     tmux new-session -s $selected_name -c $selected
     exit 0
 fi
