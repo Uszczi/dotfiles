@@ -1,0 +1,27 @@
+export XDG_CONFIG_HOME=$HOME/.config
+
+addToPath() {
+    if [[ "$PATH" != *"$1"* ]]; then
+        export PATH=$PATH:$1
+    fi
+}
+
+addToPathFront() {
+    if [[ ! -z "$2" ]] || [[ "$PATH" != *"$1"* ]]; then
+        export PATH=$1:$PATH
+    fi
+}
+
+bindkey -s ^f "tmux-sessionizer\n"
+bindkey -s '\ef' "tmux-sessionizer\n"
+
+bindkey -s '\eq' "tmux-sessionizer -s 0\n"
+bindkey -s '\ew' "tmux-sessionizer -s 1\n"
+bindkey -s '\ee' "tmux-sessionizer -s 2\n"
+bindkey -s '\er' "tmux-sessionizer -s 3\n"
+
+
+addToPathFront $HOME/dotfiles/tools
+
+alias vi='nvim'
+alias vim='nvim'
