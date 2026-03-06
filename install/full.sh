@@ -12,6 +12,8 @@ else
     echo "Paru installed, skipped."
 fi
 
+sudo pacman -S --needed --noconfirm tmux
+
 paru -S --noconfirm --needed fzf
 paru -S --noconfirm --needed btop
 paru -S --noconfirm --needed bc
