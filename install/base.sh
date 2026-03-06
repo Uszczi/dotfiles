@@ -1,8 +1,5 @@
 #!/usr/bin/bash
 
-# 1. Install git
-# 2. Run this script
-
 set -euo pipefail
 
 if [[ ! -d "$HOME/paru" ]]; then
