@@ -24,3 +24,4 @@ paru -S --noconfirm --needed nodejs npm bun
 paru -S --noconfirm --needed go
 paru -S --noconfirm --needed gimp
 paru -S --noconfirm --needed stylua
+paru -S --noconfirm --needed ghostty
