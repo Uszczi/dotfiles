@@ -7,6 +7,7 @@
 
 - link:
     ~/.bashrc: bashrc
+    ~/.config/hypr: hypr
     ~/.config/fish: fish
     ~/.config/kitty: kitty
     ~/.config/nvim: nvim
