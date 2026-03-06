@@ -36,10 +36,6 @@ set -ge _OLD_VIRTUAL_PYTHONHOME
 set -ge _OLD_VIRTUAL_PATH
 ####
 
-#### Load functions that have to run automatically.
-. ~/.config/fish/functions/autoenv.fish
-
-
 ### nnn
 alias nnn "nnn -eH"
 set --export NNN_FIFO "/tmp/nnn.info"
