@@ -1,0 +1,1 @@
+- [] set keyboard layout without Hyprland

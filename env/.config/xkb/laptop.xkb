@@ -1,0 +1,28 @@
+xkb_keymap {
+    xkb_keycodes "evdev" {
+        include "evdev+aliases(qwerty)"
+    };
+
+    xkb_types "complete" {
+        include "complete"
+    };
+
+    xkb_compatibility "complete" {
+        include "complete"
+    };
+
+    xkb_geometry "my_geometry" {
+        include "pc(pc105)"
+    };
+
+    xkb_symbols "perfect-laptop" {
+        include "pc+us+inet(evdev)"
+
+        name[Group1]= "My perfect laptop layout";
+
+        override key <SPCE> { [ space ] };
+        override key <CAPS> { [ Control_L ] };
+
+        modifier_map Control { <CAPS> };
+    };
+};
