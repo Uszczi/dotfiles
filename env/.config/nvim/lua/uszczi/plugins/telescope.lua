@@ -71,6 +71,7 @@ return {
       },
       { "<space>fb", ":Telescope file_browser path=%:p:h select_buffer=true<CR>", desc = "File Browser" },
       { "<space>tb", ":Telescope buffers<CR>", desc = "Buffers" },
+      { "<space>tk", ":Telescope keymaps<CR>", desc = "Keymaps" },
     },
     config = function()
       local telescope = require("telescope")

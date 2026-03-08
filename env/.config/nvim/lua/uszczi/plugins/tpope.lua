@@ -1,7 +1,11 @@
 return {
   "tpope/vim-fugitive",
-  "tommcdo/vim-fubitive",
-  "tpope/vim-repeat",
-  "tpope/vim-rhubarb",
-  "tpope/vim-sleuth",
+  dependencies = {
+    "tommcdo/vim-fubitive",
+    "tpope/vim-repeat",
+    "tpope/vim-rhubarb",
+    "tpope/vim-sleuth",
+  },
+
+  config = function() vim.keymap.set("n", "<Space>gg", ":Git<CR>") end,
 }
