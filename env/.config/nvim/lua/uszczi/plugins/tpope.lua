@@ -21,6 +21,8 @@ return {
         local opts = { buffer = buffnr }
 
         vim.keymap.set({ "n" }, "q", ":q<CR>", opts)
+        vim.keymap.set({ "n" }, "<leader>p", ":Git push<CR>", opts)
+        vim.keymap.set({ "n" }, "<leader>P", ":Git pull<CR>", opts)
       end,
     })
   end,
