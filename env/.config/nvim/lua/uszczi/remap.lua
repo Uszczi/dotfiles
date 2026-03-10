@@ -19,6 +19,7 @@ local function run_file()
 end
 
 set("n", "<leader>hh", run_file)
+set("n", "-", ":Ex<CR>")
 
 set("n", "[d", vim.diagnostic.goto_prev)
 set("n", "]d", vim.diagnostic.goto_next)
