@@ -1,0 +1,6 @@
+#! /bin/bash
+
+set -euo pipefail
+
+rm -rf ~/.config/nvim
+cp -r ~/git/dotfiles/prod/nvim ~/.config/nvim

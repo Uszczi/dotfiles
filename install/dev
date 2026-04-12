@@ -2,26 +2,25 @@
 
 set -euo pipefail
 
-if [[ ! -d "$HOME/paru" ]]; then
-    sudo pacman -S --needed base-devel
-    git clone https://aur.archlinux.org/paru.git ~/paru
-    pushd ~/paru
+if [[ ! -d "$HOME/git/yay-bin" ]]; then
+    pushd git
+    sudo pacman -S --needed git base-devel
+    git clone https://aur.archlinux.org/yay-bin.git
+    pushd yay-bin
     makepkg -si
     popd
+    popd
 else
-    echo "Paru installed, skipped."
+    echo "yay installed, skipped."
 fi
 
 sudo pacman -S --needed --noconfirm tmux
+sudo pacman -S --needed --noconfirm fd
+sudo pacman -S --needed --noconfirm go
 
-paru -S --noconfirm --needed fzf
-paru -S --noconfirm --needed btop
-paru -S --noconfirm --needed bc
-paru -S --noconfirm --needed tldr
-paru -S --noconfirm --needed rofi-wayland
+yay -S --noconfirm --needed fzf
 # Switch to nvm
-paru -S --noconfirm --needed nodejs npm bun
-paru -S --noconfirm --needed go
-paru -S --noconfirm --needed gimp
-paru -S --noconfirm --needed stylua
-paru -S --noconfirm --needed ghostty
+yay -S --noconfirm --needed nodejs npm bun
+yay -S --noconfirm --needed go
+yay -S --noconfirm --needed gimp
+yay -S --noconfirm --needed stylua

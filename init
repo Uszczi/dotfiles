@@ -1,9 +1,5 @@
 git submodule init
 git submodule update
-pushd env/.config/nvim
-git checkout master
+pushd dotfiles-private
+git checkout main
 popd
-cd tmux-sessionizer
-git checkout master
-cd ..
-

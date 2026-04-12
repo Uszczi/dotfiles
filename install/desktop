@@ -1,5 +1,5 @@
 #!/usr/bin/bash
 
-sudo pacman -S --needed --noconfirm hyprpaper
+sudo pacman -S --needed --noconfirm
 
-paru -S --needed --noconfirm ttf-font-awesome waybar ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols
+yay -S --needed --noconfirm
