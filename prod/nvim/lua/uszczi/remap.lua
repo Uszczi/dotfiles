@@ -40,6 +40,6 @@ set("n", "N", "Nzz", { remap = true })
 set("n", "<leader>cr", ":w !python %<CR>")
 set("n", "<leader>rg", ":e ./plan.ignore.md<CR>")
 
-set("t", "jk", "<C-\\><C-N>")
+set("t", "<C-o>", "<C-\\><C-N>")
 
 set("n", "<leader>gd", ":DiffviewOpen<CR>")
