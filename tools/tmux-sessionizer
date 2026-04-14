@@ -4,6 +4,7 @@ IFS=$'\n\t'
 
 RAW_DIRECTORIES=(
     "$HOME/"
+    "$HOME/git"
     "$HOME/git/dotfiles/"
     "$HOME/projects/"
     "$HOME/dotfiles/nvim"
