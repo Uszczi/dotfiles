@@ -1,7 +1,5 @@
 [[ $- != *i* ]] && return
 
-alias ..="cd .."
-alias ...="cd ../.."
 alias sd='cd ~ && cd $(find * -type d | fzf)'
 
 alias gs="git status"
@@ -22,4 +20,23 @@ export PATH="$HOME/dotfiles/tools:$PATH"
 export PATH="$HOME/dotfiles/dotfiles-private/tools:$PATH"
 export PATH="$HOME/.local/share/nvim/mason/bin/:$PATH"
 
-fish
+##########################################
+
+run-help() {
+    local cmd="${READLINE_LINE%% *}"
+    if [[ -n "$cmd" ]]; then
+        man "$cmd"
+    fi
+}
+
+export PATH="/home/mat/git/dotfiles/tools:$PATH"
+
+alias ..="cd .."
+alias ...="cd ../.."
+
+alias vi='nvim'
+
+bind -x '"\eh": run-help'
+bind -x '"\C-f": tmux-sessionizer'
+
+##########################################

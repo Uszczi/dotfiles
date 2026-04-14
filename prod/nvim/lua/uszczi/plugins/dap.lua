@@ -1,5 +1,6 @@
 return {
   "mfussenegger/nvim-dap",
+  lazy = "false",
   dependencies = {
     "rcarriga/nvim-dap-ui",
     "theHamsta/nvim-dap-virtual-text",
@@ -61,12 +62,32 @@ return {
 
     require("nvim-dap-virtual-text").setup({})
 
-    local pythonPath = function() return ".venv/bin/python" end
+    local pythonPath = function()
+      local _a = ".venv/bin/python"
+
+      return "/usr/bin/python"
+    end
 
     dap.adapters.python = {
       type = "executable",
       command = pythonPath(),
       args = { "-m", "debugpy.adapter" },
+    }
+
+    dap.adapters.debugpy = {
+      type = "executable",
+      command = "/usr/bin/python",
+      args = { "-m", "debugpy.adapter" },
+    }
+
+    dap.configurations.python = {
+      {
+        type = "debugpy",
+        request = "launch",
+        name = "Launch file",
+        program = "${file}",
+        pythonPath = function() return "/usr/bin/python" end,
+      },
     }
 
     dap.adapters.generic_remote = function(callback, config)
@@ -75,21 +96,21 @@ return {
 
     require("neodev").setup({ library = { plugins = { "nvim-dap-ui" }, types = true } })
 
-    dapui.setup({
-      layouts = {
-        {
-          elements = {
-            { id = "scopes", size = 0.25 },
-            { id = "breakpoints", size = 0.25 },
-            { id = "stacks", size = 0.25 },
-            { id = "watches", size = 0.25 },
-          },
-          position = "left",
-          size = 40,
-        },
-        { elements = { { id = "repl", size = 1 } }, position = "bottom", size = 10 },
-      },
-    })
+    -- dapui.setup({
+    --   layouts = {
+    --     {
+    --       elements = {
+    --         { id = "scopes", size = 0.25 },
+    --         { id = "breakpoints", size = 0.25 },
+    --         { id = "stacks", size = 0.25 },
+    --         { id = "watches", size = 0.25 },
+    --       },
+    --       position = "left",
+    --       size = 40,
+    --     },
+    --     { elements = { { id = "repl", size = 1 } }, position = "bottom", size = 10 },
+    --   },
+    -- })
 
     require("cmp").setup({
       enabled = function()
