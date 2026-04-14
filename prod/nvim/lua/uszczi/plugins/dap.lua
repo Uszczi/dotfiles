@@ -60,6 +60,11 @@ return {
     local dap = require("dap")
     local dapui = require("dapui")
 
+    dap.defaults.fallback.external_terminal = {
+      command = "/usr/bin/kitty",
+      args = { "-e" },
+    }
+
     require("nvim-dap-virtual-text").setup({})
 
     local pythonPath = function()
@@ -88,6 +93,15 @@ return {
         program = "${file}",
         pythonPath = function() return "/usr/bin/python" end,
       },
+
+      {
+        type = "debugpy",
+        request = "launch",
+        name = "Launch file (External Terminal)",
+        program = "${file}",
+        console = "externalTerminal",
+        pythonPath = function() return "/usr/bin/python" end,
+      },
     }
 
     dap.adapters.generic_remote = function(callback, config)
@@ -96,21 +110,21 @@ return {
 
     require("neodev").setup({ library = { plugins = { "nvim-dap-ui" }, types = true } })
 
-    -- dapui.setup({
-    --   layouts = {
-    --     {
-    --       elements = {
-    --         { id = "scopes", size = 0.25 },
-    --         { id = "breakpoints", size = 0.25 },
-    --         { id = "stacks", size = 0.25 },
-    --         { id = "watches", size = 0.25 },
-    --       },
-    --       position = "left",
-    --       size = 40,
-    --     },
-    --     { elements = { { id = "repl", size = 1 } }, position = "bottom", size = 10 },
-    --   },
-    -- })
+    dapui.setup({
+      layouts = {
+        {
+          elements = {
+            { id = "scopes", size = 0.25 },
+            { id = "breakpoints", size = 0.25 },
+            { id = "stacks", size = 0.25 },
+            { id = "watches", size = 0.25 },
+          },
+          position = "left",
+          size = 40,
+        },
+        { elements = { { id = "repl", size = 1 } }, position = "bottom", size = 10 },
+      },
+    })
 
     require("cmp").setup({
       enabled = function()
