@@ -29,7 +29,7 @@ run-help() {
     fi
 }
 
-export PATH="/home/mat/git/dotfiles/tools:$PATH"
+export PATH="/home/mat/dotfiles/tools:$PATH"
 
 alias ..="cd .."
 alias ...="cd ../.."

@@ -22,9 +22,7 @@ return {
       },
       {
         "<leader>hn",
-        function()
-          require("telescope.builtin").find_files({ hidden = true, no_ignore = true, cwd = "~/git/dotfiles/" })
-        end,
+        function() require("telescope.builtin").find_files({ hidden = true, no_ignore = true, cwd = "~/dotfiles/" }) end,
         desc = "Find Dotfiles",
       },
       { "<leader>l", function() require("telescope.builtin").live_grep() end, desc = "Live Grep" },

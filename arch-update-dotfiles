@@ -3,5 +3,5 @@
 mkdir -p ~/.config
 rm -rf ~/.config/nvim
 
-cp -r ~/git/dotfiles/prod/nvim ~/.config/
-cp -r ~/git/dotfiles/prod/tmux ~/.config/
+cp -r ~/dotfiles/prod/nvim ~/.config/
+cp -r ~/dotfiles/prod/tmux ~/.config/

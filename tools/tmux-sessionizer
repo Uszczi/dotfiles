@@ -4,8 +4,7 @@ IFS=$'\n\t'
 
 RAW_DIRECTORIES=(
     "$HOME/"
-    "$HOME/git"
-    "$HOME/git/dotfiles/"
+    "$HOME/dotfiles/"
     "$HOME/projects/"
     "$HOME/dotfiles/nvim"
     "$HOME/dotfiles/dotfiles-private"
@@ -15,6 +14,7 @@ RAW_DIRECTORIES=(
 )
 
 SEARCH_DIRECTORIES=(
+    "$HOME/git/"
     "$HOME/.local/share/nvim/lazy"
     "$HOME/p"
     "$HOME/src"
