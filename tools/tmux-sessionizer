@@ -11,6 +11,7 @@ RAW_DIRECTORIES=(
     "$HOME/tmp"
     "$HOME/Downloads"
     "$HOME/.local/share/nvim/lazy/"
+    "$HOME/zetel"
 )
 
 SEARCH_DIRECTORIES=(
@@ -24,6 +25,7 @@ SEARCH_DIRECTORIES=(
     "$HOME/studia"
     "$HOME/work"
     "$HOME/tmp"
+    "$HOME/zetel"
 )
 
 search_directory() {
