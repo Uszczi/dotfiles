@@ -5,3 +5,4 @@ rm -rf ~/.config/nvim
 
 cp -r ~/dotfiles/prod/nvim ~/.config/
 cp -r ~/dotfiles/prod/tmux ~/.config/
+cp -r ~/dotfiles/prod/tmux-sessionizer ~/.config/
