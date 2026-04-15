@@ -7,22 +7,21 @@ local function run_file()
     sh = "! %",
   }
 
-  local ft = vim.api.nvim_buf_get_option(0, "filetype")
+  local ft = vim.api.nvim_get_option_value("filetype", { scope = "local" })
 
   local command = mappings[ft]
   if command ~= nil then
     print("Running '" .. command .. "'.")
     vim.api.nvim_command(mappings[ft])
   else
-    print("Unknown filetype.")
+    print("Running '" .. "! %.")
+    vim.api.nvim_command("! %")
   end
 end
 
 set("n", "<leader>hh", run_file)
 set("n", "-", ":Ex<CR>")
 
-set("n", "[d", vim.diagnostic.goto_prev)
-set("n", "]d", vim.diagnostic.goto_next)
 set("n", "[q", ":cprevious<CR>")
 set("n", "]q", ":cnext<CR>")
 set("n", "[Q", ":cfirst<CR>")
