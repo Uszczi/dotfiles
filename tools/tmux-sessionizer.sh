@@ -1,1 +1,0 @@
-/home/mat/dotfiles/tmux-sessionizer/tmux-sessionizer
