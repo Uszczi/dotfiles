@@ -2,8 +2,6 @@
 
 alias sd='cd ~ && cd $(find * -type d | fzf)'
 
-alias gs="git status"
-alias gc="git commit"
 
 alias ls="eza"
 alias la="eza -la"
@@ -33,6 +31,11 @@ export PATH="/home/mat/dotfiles/tools:$PATH"
 
 alias ..="cd .."
 alias ...="cd ../.."
+
+alias gs="git status"
+alias gc="git commit"
+
+alias vv=". .venv/bin/activate"
 
 alias vi='nvim'
 
