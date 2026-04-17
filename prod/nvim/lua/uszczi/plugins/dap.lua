@@ -93,7 +93,11 @@ return {
         program = "${file}",
         pythonPath = function() return "/usr/bin/python" end,
       },
-
+      {
+        type = "generic_remote",
+        request = "attach",
+        name = "Attach to local server 5678",
+      },
       {
         type = "debugpy",
         request = "launch",
