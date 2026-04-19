@@ -6,3 +6,7 @@ rm -rf ~/.config/nvim
 cp -r ~/dotfiles/prod/nvim ~/.config/
 cp -r ~/dotfiles/prod/tmux ~/.config/
 cp -r ~/dotfiles/prod/tmux-sessionizer ~/.config/
+cp -r ~/dotfiles/prod/i3 ~/.config/
+cp -r ~/dotfiles/prod/i3status ~/.config/
+
+cp ~/dotfiles/prod/.bashrc ~/.bashrc
