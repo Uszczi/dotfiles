@@ -1,5 +1,7 @@
 #/usr/bin/env bash
 
+set -euo pipefail
+
 DEV_ENV=$(pwd) ./install/dev
 DEV_ENV=$(pwd) ./install/neovim
 DEV_ENV=$(pwd) ./install/zsh
