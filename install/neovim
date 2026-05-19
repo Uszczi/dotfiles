@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 
 sudo pacman -S --noconfirm neovim lua51 luarocks
+
+sudo pacman -S --noconfirm gcc
+
 sudo luarocks install luacheck
