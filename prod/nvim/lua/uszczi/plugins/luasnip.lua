@@ -15,6 +15,21 @@ return {
       updateevents = "TextChanged,TextChangedI",
     })
 
+    ls.add_snippets("cs", {
+      s("CW", {
+        t("Console.Write("),
+        i(1),
+        t(");"),
+        i(0),
+      }),
+      s("CWL", {
+        t("Console.WriteLine("),
+        i(1),
+        t(");"),
+        i(0),
+      }),
+    })
+
     ls.add_snippets("all", {
       s("ternary", {
         i(1, "cond"),
