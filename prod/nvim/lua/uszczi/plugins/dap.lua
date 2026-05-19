@@ -73,6 +73,12 @@ return {
       return "/usr/bin/python"
     end
 
+    dap.adapters.netcoredbg = {
+      type = "executable",
+      command = "netcoredbg",
+      args = { "--interpreter=vscode" },
+    }
+
     dap.adapters.python = {
       type = "executable",
       command = pythonPath(),
@@ -105,6 +111,16 @@ return {
         program = "${file}",
         console = "externalTerminal",
         pythonPath = function() return "/usr/bin/python" end,
+      },
+    }
+
+    dap.configurations.cs = {
+      {
+        type = "netcoredbg",
+        request = "launch",
+        name = "Launch file (External Terminal)",
+        program = function() return vim.fn.input("Path to dll: ", vim.fn.getcwd() .. "/bin/Debug/", "file") end,
+        console = "externalTerminal",
       },
     }
 
