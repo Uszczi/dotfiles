@@ -10,7 +10,6 @@ return {
     "L3MON4D3/LuaSnip",
     "saadparwaiz1/cmp_luasnip",
     "onsails/lspkind-nvim",
-    -- { dir = "~/p/cmp-brotab" },
   },
   config = function()
     local cmp = require("cmp")
@@ -35,7 +34,6 @@ return {
         { name = "path" },
         { name = "treesitter" },
         { name = "buffer" },
-        { name = "brotab" },
       }),
       formatting = {
         format = lspkind.cmp_format({

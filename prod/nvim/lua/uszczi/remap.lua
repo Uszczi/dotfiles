@@ -26,8 +26,6 @@ set("n", "[q", ":cprevious<CR>")
 set("n", "]q", ":cnext<CR>")
 set("n", "[Q", ":cfirst<CR>")
 set("n", "]Q", ":clast<CR>")
-set("n", "[w", ":cprevious<CR>")
-set("n", "]e", ":cnext<CR>")
 
 set("n", "<leader>e", vim.diagnostic.open_float)
 

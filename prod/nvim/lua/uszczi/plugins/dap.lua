@@ -1,6 +1,6 @@
 return {
   "mfussenegger/nvim-dap",
-  lazy = "false",
+  lazy = false,
   dependencies = {
     "rcarriga/nvim-dap-ui",
     "theHamsta/nvim-dap-virtual-text",
