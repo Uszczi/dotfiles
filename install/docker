@@ -1,7 +1,10 @@
 #! /usr/bin/bash
 
-sudo pacman -S docker
+set -euo pipefail
 
-sudo groupadd docker
+sudo pacman -S --noconfirm docker
+
+sudo groupadd docker || echo "Already group exist."
 sudo usermod -aG docker $USER
-newgrp docker
+
+sudo systemctl enable docker.service
