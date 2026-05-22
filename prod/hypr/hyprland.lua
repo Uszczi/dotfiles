@@ -27,8 +27,10 @@ hl.monitor({
 
 -- Set programs that you use
 local terminal = "kitty"
+local lock = "hyprlock"
 local fileManager = "dolphin"
-local menu = "hyprlauncher"
+-- local menu = "hyprlauncher"
+local menu = "rofi -show run"
 
 -------------------
 ---- AUTOSTART ----
@@ -251,6 +253,7 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
+hl.bind(mainMod .. " + O", hl.dsp.exec_cmd(lock))
 local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
 -- closeWindowBind:set_enabled(false)
 hl.bind(
