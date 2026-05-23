@@ -1,7 +1,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-PS1='[\u@\h \W]\$ '
+source ~/.local/share/omarchy/default/bash/rc
 
 run-help() {
     local cmd="${READLINE_LINE%% *}"
@@ -11,6 +11,7 @@ run-help() {
 }
 
 export PATH="$HOME/dotfiles/tools:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
@@ -23,7 +24,4 @@ alias gc="git commit"
 
 alias vv=". .venv/bin/activate"
 
-alias vi='nvim'
-
-bind -x '"\eh": run-help'
 bind -x '"\C-f": tmux-sessionizer'
