@@ -18,6 +18,7 @@ alias grep='grep --color=auto'
 
 alias ..="cd .."
 alias ...="cd ../.."
+alias cdf='cd $(find . -type d | fzf)'
 
 alias gs="git status"
 alias gc="git commit"
