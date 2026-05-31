@@ -25,7 +25,7 @@ return {
         function() require("telescope.builtin").find_files({ hidden = true, no_ignore = true, cwd = "~/dotfiles/" }) end,
         desc = "Find Dotfiles",
       },
-      { "<leader>l", function() require("telescope.builtin").live_grep() end, desc = "Live Grep" },
+      { "<leader>/", function() require("telescope.builtin").live_grep() end, desc = "Live Grep" },
       {
         "<leader>fl",
         function() require("telescope.builtin").live_grep({ additional_args = { "--no-ignore", "--hidden" } }) end,
