@@ -1,3 +1,5 @@
 #!/usr/bin/bash
 
 sudo pacman -S --needed --noconfirm i3 i3status
+
+sudo pacman -S --needed --noconfirm hyprland hyprlock ghostty
