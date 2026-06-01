@@ -31,6 +31,7 @@ local lock = "hyprlock"
 local fileManager = "dolphin"
 -- local menu = "hyprlauncher"
 local menu = "rofi -show run"
+local browser = "firefox"
 
 -------------------
 ---- AUTOSTART ----
@@ -46,6 +47,11 @@ local menu = "rofi -show run"
 --   hl.exec_cmd("nm-applet")
 --   hl.exec_cmd("waybar & hyprpaper & firefox")
 -- end)
+
+hl.on("hyprland.start", function()
+	hl.exec_cmd("hyprpaper &")
+	hl.exec_cmd("bash ~/dotfiles/tools/set-random-wallpaper")
+end)
 
 -------------------------------
 ---- ENVIRONMENT VARIABLES ----
@@ -216,7 +222,7 @@ hl.config({
 
 hl.config({
 	input = {
-		kb_layout = "us",
+		kb_layout = "pl",
 		kb_variant = "",
 		kb_model = "",
 		kb_options = "",
@@ -264,6 +270,8 @@ hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
+
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only

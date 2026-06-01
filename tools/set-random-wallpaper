@@ -1,3 +1,16 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-nitrogen --restore &
+WALLPAPER_DIR="$HOME/dotfiles/wallpapers"
+
+mapfile -t wallpapers < <(find "$WALLPAPER_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) 2>/dev/null)
+
+if [ ${#wallpapers[@]} -eq 0 ]; then
+    echo "No wallpapers found in $WALLPAPER_DIR"
+    exit 1
+fi
+
+selected_wallpaper="${wallpapers[RANDOM % ${#wallpapers[@]}]}"
+
+echo "Selected wallpaper: $selected_wallpaper"
+
+swaybg -i "$selected_wallpaper" -m fill &
