@@ -32,7 +32,7 @@ vim.g.netrw_banner = 1
 vim.g.netrw_winsize = 50
 
 vim.o.clipboard = "unnamedplus"
-vim.opt.colorcolumn = "120"
+vim.opt.colorcolumn = "80"
 
 vim.o.expandtab = true
 vim.o.shiftwidth = 4
