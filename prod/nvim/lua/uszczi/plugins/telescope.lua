@@ -54,12 +54,6 @@ return {
       { "<leader>fd", function() require("telescope.builtin").diagnostics() end, desc = "Diagnostics" },
       { "<leader>v", function() require("telescope.builtin").git_files() end, desc = "Git Files" },
       {
-        "<C-y>",
-        function() require("telescope.builtin").symbols({ sources = { "gitmoji" } }) end,
-        mode = { "n", "i" },
-        desc = "Gitmoji",
-      },
-      {
         "<leader>fp",
         function() require("telescope").extensions.project.project({ display_type = "full" }) end,
         desc = "Projects",
