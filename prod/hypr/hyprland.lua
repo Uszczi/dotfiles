@@ -1,5 +1,6 @@
 -- https://wiki.hypr.land/Configuring/Start/
 require("keymaps-utilities")
+require("discord")
 
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
 hl.monitor({
