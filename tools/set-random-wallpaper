@@ -13,4 +13,4 @@ selected_wallpaper="${wallpapers[RANDOM % ${#wallpapers[@]}]}"
 
 echo "Selected wallpaper: $selected_wallpaper"
 
-swaybg -i "$selected_wallpaper" -m fill &
+swaybg -i "$selected_wallpaper" -m fit &
