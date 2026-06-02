@@ -19,6 +19,8 @@ local function run_file()
   end
 end
 
+set("n", "<leader>rd", function() vim.api.nvim_command("!arch-update-dotfiles") end, {}, "Arch update dotfiles")
+
 set("n", "<leader>hh", run_file)
 set("n", "-", ":Ex<CR>")
 
