@@ -1,5 +1,6 @@
 -- https://wiki.hypr.land/Configuring/Start/
 require("keymaps-utilities")
+require("lookandfell")
 require("discord")
 
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
@@ -265,53 +266,3 @@ hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
-
---------------------------------
----- WINDOWS AND WORKSPACES ----
---------------------------------
-
--- See https://wiki.hypr.land/Configuring/Basics/Window-Rules/
--- and https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
-
--- Example window rules that are useful
-
-local suppressMaximizeRule = hl.window_rule({
-	-- Ignore maximize requests from all apps. You'll probably like this.
-	name = "suppress-maximize-events",
-	match = { class = ".*" },
-
-	suppress_event = "maximize",
-})
--- suppressMaximizeRule:set_enabled(false)
-
-hl.window_rule({
-	-- Fix some dragging issues with XWayland
-	name = "fix-xwayland-drags",
-	match = {
-		class = "^$",
-		title = "^$",
-		xwayland = true,
-		float = true,
-		fullscreen = false,
-		pin = false,
-	},
-
-	no_focus = true,
-})
-
--- Layer rules also return a handle.
--- local overlayLayerRule = hl.layer_rule({
---     name  = "no-anim-overlay",
---     match = { namespace = "^my-overlay$" },
---     no_anim = true,
--- })
--- overlayLayerRule:set_enabled(false)
-
--- Hyprland-run windowrule
-hl.window_rule({
-	name = "move-hyprland-run",
-	match = { class = "hyprland-run" },
-
-	move = "20 monitor_h-120",
-	float = true,
-})
