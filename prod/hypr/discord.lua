@@ -1,8 +1,8 @@
-hl.bind(MainMod .. " + D", hl.dsp.workspace.toggle_special("discord"))
-hl.bind(MainMod .. " + SHIFT + D", hl.dsp.window.move({ workspace = "special:discord" }))
+hl.bind(MainMod .. " + D", hl.dsp.focus({ workspace = 9 }))
+hl.bind(MainMod .. " + SHIFT + D", hl.dsp.window.move({ workspace = 9 }))
 
 hl.window_rule({
-	name = "discord-to-special",
+	name = "discord-to-workspace",
 	match = { class = "discord" },
-	workspace = "special:discord",
+	workspace = 9,
 })
