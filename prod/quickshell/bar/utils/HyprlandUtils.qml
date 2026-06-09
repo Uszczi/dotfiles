@@ -8,10 +8,31 @@ Singleton {
     id: hyprland
 
     property list<HyprlandWorkspace> workspaces: sortWorkspaces(Hyprland.workspaces.values)
+    property list<HyprlandWorkspace> activeWorkspaces: filterActiveWorkspaces()
     property int maxWorkspace: findMaxId()
 
     function sortWorkspaces(ws) {
         return [...ws].sort((a, b) => a?.id - b?.id);
+    }
+
+    function filterActiveWorkspaces() {
+        let focusedId = Hyprland.focusedMonitor?.activeWorkspace?.id;
+
+        let filtered = hyprland.workspaces.filter(ws => {
+            if (ws.id === focusedId) return true;
+
+            if (ws.toplevels && ws.toplevels.values.length > 0) return true;
+
+            if (ws.id === 1) return true;
+
+            return false;
+        });
+
+        if (filtered.length === 0 && hyprland.workspaces.length > 0) {
+            return [hyprland.workspaces[0]];
+        }
+
+        return filtered;
     }
 
     function switchWorkspace(w: int): void {
@@ -29,6 +50,18 @@ Singleton {
         return maxId;
     }
 
+    // Recompute deferred so Quickshell's Hyprland model (focusedMonitor,
+    // activeWorkspace, toplevels) is fully updated before we read it.
+    function scheduleUpdate(rebuildList: bool): void {
+        Qt.callLater(() => {
+            if (rebuildList) {
+                hyprland.workspaces = hyprland.sortWorkspaces(Hyprland.workspaces.values);
+                hyprland.maxWorkspace = hyprland.findMaxId();
+            }
+            hyprland.activeWorkspaces = hyprland.filterActiveWorkspaces();
+        });
+    }
+
     Connections {
         target: Hyprland
         function onRawEvent(event) {
@@ -37,17 +70,20 @@ Singleton {
 
             switch (eventName) {
             case "createworkspacev2":
-                {
-                    console.log("Workspace created, updating workspace list");
-                    hyprland.workspaces = hyprland.sortWorkspaces(Hyprland.workspaces.values);
-                    hyprland.maxWorkspace = findMaxId();
-                }
             case "destroyworkspacev2":
-                {
-                    console.log("Workspace destroyed, updating workspace list");
-                    hyprland.workspaces = hyprland.sortWorkspaces(Hyprland.workspaces.values);
-                    hyprland.maxWorkspace = findMaxId();
-                }
+                console.log("Workspace created/destroyed, updating workspace list");
+                hyprland.scheduleUpdate(true);
+                break;
+            case "workspacev2":
+            case "moveworkspacev2":
+            case "focusedmonv2":
+            case "activespecialv2":
+            case "openwindow":
+            case "closewindow":
+            case "movewindow":
+                console.log("Focus/window event, updating active workspaces");
+                hyprland.scheduleUpdate(false);
+                break;
             }
         }
     }
