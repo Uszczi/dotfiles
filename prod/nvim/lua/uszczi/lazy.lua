@@ -14,15 +14,17 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
   { import = "uszczi.plugins" },
-  "numToStr/Comment.nvim",
+  {
+    "numToStr/Comment.nvim",
+    opts = {},
+  },
   "rcarriga/nvim-notify",
   "dbeniamine/cheat.sh-vim",
 }
 
 require("lazy").setup(plugins, {
-      change_detection = {
-        enabled = true,
-        notify = false,
-      },
-
+  change_detection = {
+    enabled = true,
+    notify = false,
+  },
 })
