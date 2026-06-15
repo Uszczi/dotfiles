@@ -31,7 +31,7 @@ vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 1
 vim.g.netrw_winsize = 50
 
-vim.o.clipboard = "unnamedplus"
+-- vim.o.clipboard = "unnamedplus"
 vim.opt.colorcolumn = "80"
 
 vim.o.expandtab = true

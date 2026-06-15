@@ -14,6 +14,9 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
   { import = "uszczi.plugins" },
+  { dir = "~/Git/zettelkasten.nvim", opts = {
+    vault = "~/zetel/Zettelkasten",
+  } },
   {
     "numToStr/Comment.nvim",
     opts = {},
