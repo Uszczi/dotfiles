@@ -26,6 +26,7 @@ return {
         desc = "Find Dotfiles",
       },
       { "<leader>/", function() require("telescope.builtin").live_grep() end, desc = "Live Grep" },
+      { "<leader>fg", function() require("telescope.builtin").grep_string() end, desc = "Grep string" },
       {
         "<leader>fl",
         function() require("telescope.builtin").live_grep({ additional_args = { "--no-ignore", "--hidden" } }) end,

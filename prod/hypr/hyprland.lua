@@ -7,9 +7,16 @@ require("mouse")
 require("discord")
 
 hl.monitor({
-	output = "",
+	output = "eDP-1",
 	mode = "preferred",
-	position = "auto",
+	position = "2560x0",
+	scale = "auto",
+})
+
+hl.monitor({
+	output = "DP-1",
+	mode = "preferred",
+	position = "0x0",
 	scale = "auto",
 })
 

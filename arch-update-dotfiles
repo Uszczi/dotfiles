@@ -14,3 +14,4 @@ cp -r ~/dotfiles/prod/quickshell/ ~/.config/
 # cp -r ~/dotfiles/prod/i3status ~/.config/
 
 cp ~/dotfiles/prod/.bashrc ~/.bashrc
+cp ~/dotfiles/prod/.zshrc ~/.zshrc
