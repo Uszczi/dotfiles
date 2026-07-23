@@ -5,6 +5,8 @@ return {
     vim.g.neoformat_enabled_python = { "black" }
     vim.g.neoformat_enabled_javascript = { "prettierd", "prettier" }
     vim.g.neoformat_enabled_typescript = { "prettierd", "prettier" }
+    vim.g.neoformat_enabled_tsx = { "prettierd", "prettier" }
+    vim.g.neoformat_enabled_typescriptreact = { "prettierd", "prettier" }
     vim.g.neoformat_verbose = 0
 
     vim.api.nvim_create_autocmd("BufWritePre", {
