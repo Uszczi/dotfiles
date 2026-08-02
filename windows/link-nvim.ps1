@@ -1,0 +1,1 @@
+New-Item -ItemType SymbolicLink -Target "C:\Users\mateu\dotfiles\prod\nvim" -Path "C:\Users\mateu\AppData\Local\nvim"
