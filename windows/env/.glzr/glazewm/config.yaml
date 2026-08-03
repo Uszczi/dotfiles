@@ -49,9 +49,9 @@ gaps:
 
   # Gap between windows and the screen edge.
   outer_gap:
-    top: '42px'
+    top: '2px'
     right: '2px'
-    bottom: '2px'
+    bottom: '42px'
     left: '2px'
 
 window_effects:
