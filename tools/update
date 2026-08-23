@@ -3,6 +3,9 @@
 set -euo pipefail
 set -x
 
-update-apt
-update-neovim
-
+if [[ $(uname -a) == *"Arch"* ]]; then
+    sudo pacman -Syu
+elif [[ $(uname -a) == *"Ubuntu"* ]]; then
+    sudo apt update
+    sudo apt upgrade
+fi
