@@ -2,7 +2,8 @@
 
 set -euo pipefail
 
-if [[ ! -d "$HOME/git/yay-bin" ]]; then
+mkdir -p ~/git
+if [[ ! "command -v yay" ]]; then
     pushd ~/git
     sudo pacman -S --needed --noconfirm git base-devel
     git clone https://aur.archlinux.org/yay-bin.git
@@ -18,9 +19,13 @@ sudo pacman -S --needed --noconfirm tmux
 sudo pacman -S --needed --noconfirm fd
 sudo pacman -S --needed --noconfirm go
 
+
 yay -S --noconfirm --needed fzf
-# Switch to nvm
+
+# TODO Switch to nvm
 yay -S --noconfirm --needed nodejs npm bun
+sudo pacman -S --needed --noconfirm pnpm
+
 yay -S --noconfirm --needed go
 yay -S --noconfirm --needed gimp
 yay -S --noconfirm --needed stylua
