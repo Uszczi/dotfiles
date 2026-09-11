@@ -1,7 +1,6 @@
 #!/bin/bash
 
 set -euo pipefail
-set -x
 
 if [[ $(uname -a) == *"arch"* ]]; then
     echo "Running pacman -Syu"
