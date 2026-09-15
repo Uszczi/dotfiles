@@ -3,10 +3,10 @@
 set -euo pipefail
 
 if [[ $(uname -a) == *"arch"* ]]; then
-    echo "Running pacman -Syu"
+    echo "## Running pacman -Syu"
     sudo pacman -Syu
 elif [[ $(uname -a) == *"ubuntu"* ]]; then
-    echo "Running apt update and upgrade"
+    echo "## Running apt update and upgrade"
     sudo apt update
     sudo apt upgrade
 fi
