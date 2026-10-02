@@ -64,9 +64,11 @@ return {
         function() require("telescope").extensions.file_browser.file_browser({ cwd = "~/work/notes/reg" }) end,
         desc = "Work Notes",
       },
-      { "<space>fb", ":Telescope file_browser path=%:p:h select_buffer=true<CR>", desc = "File Browser" },
-      { "<space>tb", ":Telescope buffers<CR>", desc = "Buffers" },
-      { "<space>tk", ":Telescope keymaps<CR>", desc = "Keymaps" },
+      { "<leader>fb", ":Telescope file_browser path=%:p:h select_buffer=true<CR>", desc = "File Browser" },
+      { "<leader>tb", ":Telescope buffers<CR>", desc = "Buffers" },
+      { "<leader>tk", ":Telescope keymaps<CR>", desc = "Keymaps" },
+      { "gd", ":Telescope lsp_definitions<CR>", desc = "Telescope lsp_definitions" },
+      { "<leader>ca", ":lua vim.lsp.buf.code_action()<CR>", desc = "Telescope code actions" },
     },
     config = function()
       local telescope = require("telescope")
