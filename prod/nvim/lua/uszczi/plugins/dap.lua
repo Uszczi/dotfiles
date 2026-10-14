@@ -91,6 +91,15 @@ return {
       args = { "-m", "debugpy.adapter" },
     }
 
+    dap.adapters.codelldb = {
+      type = "server",
+      port = "${port}",
+      executable = {
+        command = "codelldb",
+        args = { "--port", "${port}" },
+      },
+    }
+
     dap.configurations.python = {
       {
         type = "debugpy",
@@ -121,6 +130,30 @@ return {
         name = "Launch file (External Terminal)",
         program = function() return vim.fn.input("Path to dll: ", vim.fn.getcwd() .. "/bin/Debug/", "file") end,
         console = "externalTerminal",
+      },
+    }
+
+    dap.configurations.cpp = {
+      {
+        name = "Launch executable",
+        type = "codelldb",
+        request = "launch",
+        program = function()
+          local default_program = vim.fn.getcwd() .. "/a.out"
+          if vim.fn.filereadable(default_program) == 1 then return default_program end
+
+          return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+        end,
+        cwd = "${workspaceFolder}",
+        stopOnEntry = false,
+        args = {},
+      },
+      {
+        name = "Attach to process",
+        type = "codelldb",
+        request = "attach",
+        pid = require("dap.utils").pick_process,
+        cwd = "${workspaceFolder}",
       },
     }
 
