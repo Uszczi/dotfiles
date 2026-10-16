@@ -42,3 +42,6 @@ set("n", "<leader>rg", ":e ./plan.ignore.md<CR>")
 set("t", "<C-o>", "<C-\\><C-N>")
 
 set("n", "<leader>gd", ":DiffviewOpen<CR>")
+
+set("n", "<leader>cp", function() vim.fn.setreg("+", vim.fn.expand("%")) end, { desc = "Copy relative file path" })
+set("n", "<leader>cP", function() vim.fn.setreg("+", vim.fn.expand("%:p")) end, { desc = "Copy absolute file path" })
