@@ -7,7 +7,7 @@ return {
   lazy = false,
   keys = {
     {
-      "<leader>cp",
+      "<leader>it",
       function()
         local image = require("image")
         if image.is_enabled() then

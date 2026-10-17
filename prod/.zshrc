@@ -105,7 +105,13 @@ source $ZSH/oh-my-zsh.sh
 export PATH="$HOME/dotfiles/tools/:$PATH"
 export PATH="$HOME/.local/bin/:$PATH"
 
+export PATH="/home/wi/.kimi-code/bin:$PATH"
+
+export EDITOR='nvim'
+
 alias vv="source .venv/bin/activate"
+
+alias cdf='cd $(find . -type d | fzf)'
 
 bindkey -s ^f "tmux-sessionizer\n"
 bindkey -s '\eh' "tmux-sessionizer -s 0\n"
