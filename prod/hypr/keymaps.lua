@@ -5,6 +5,7 @@ local menu = "rofi -show run"
 local browser = "firefox"
 local quitHyprLand = "command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"
 local quickshellToggle = "pkill quickshell || quickshell &"
+local screenshotPlusEdit = 'grim -g "$(slurp)" - | swappy -f -'
 
 hl.bind(MainMod .. " + Q", hl.dsp.exec_cmd(terminal))
 hl.bind(MainMod .. " + O", hl.dsp.exec_cmd(lock))
@@ -35,5 +36,5 @@ for i = 1, 10 do
 	hl.bind(MainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
-hl.bind(MainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
-hl.bind(MainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
+-- hl.bind(MainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
+hl.bind(MainMod .. " + SHIFT + S", hl.dsp.exec_cmd(screenshotPlusEdit))
