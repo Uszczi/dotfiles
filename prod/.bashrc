@@ -11,17 +11,9 @@ run-help() {
 export PATH="$HOME/dotfiles/tools:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
-
-alias n='nvim'
-
 alias ..="cd .."
 alias ...="cd ../.."
 alias cdf='cd $(find . -type d | fzf)'
-
-alias gs="git status"
-alias gc="git commit"
 
 alias vv=". .venv/bin/activate"
 
