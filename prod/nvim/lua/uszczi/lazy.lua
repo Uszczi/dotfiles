@@ -24,19 +24,6 @@ local plugins = {
     },
   },
   {
-    "klen/nvim-test",
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-    },
-    config = function()
-      require("nvim-test").setup({})
-
-      vim.keymap.set({ "n" }, "<leader>tf", ":TestFile<CR>")
-      vim.keymap.set({ "n" }, "<leader>tl", ":TestLast<CR>")
-      vim.keymap.set({ "n" }, "<leader>tn", ":TestNearest<CR>")
-    end,
-  },
-  {
     "nvim-neotest/neotest",
     dependencies = {
       "nvim-neotest/neotest-python",
@@ -51,6 +38,11 @@ local plugins = {
           require("neotest-python"),
         },
       })
+
+      local neotest = require("neotest")
+      vim.keymap.set("n", "<leader>tf", function() neotest.run.run(vim.fn.expand("%")) end, { desc = "Test file" })
+      vim.keymap.set("n", "<leader>tn", function() neotest.run.run() end, { desc = "Test nearest" })
+      vim.keymap.set("n", "<leader>tl", function() neotest.run.run_last() end, { desc = "Test last" })
     end,
   },
   {
