@@ -1,0 +1,17 @@
+#!/usr/bin/bash
+
+mkdir -p ~/.config
+rm -rf ~/.config/nvim
+
+cp -r ~/dotfiles/prod/nvim ~/.config/
+cp -r ~/dotfiles/prod/tmux ~/.config/
+cp -r ~/dotfiles/prod/tmux-sessionizer ~/.config/
+
+# cp -r ~/dotfiles/prod/hypr ~/.config/
+# cp -r ~/dotfiles/prod/quickshell/ ~/.config/
+# cp -r ~/dotfiles/prod/sway ~/.config/
+# cp -r ~/dotfiles/prod/i3 ~/.config/
+# cp -r ~/dotfiles/prod/i3status ~/.config/
+
+# cp ~/dotfiles/prod/.bashrc ~/.bashrc
+# cp ~/dotfiles/prod/.zshrc ~/.zshrc
