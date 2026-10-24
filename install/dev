@@ -2,15 +2,14 @@
 
 set -euo pipefail
 
-mkdir -p ~/git
-if [[ ! "command -v yay" ]]; then
-    pushd ~/git
+if ! command -v yay &>/dev/null; then
     sudo pacman -S --needed --noconfirm git base-devel
-    git clone https://aur.archlinux.org/yay-bin.git
-    pushd yay-bin
-    makepkg -si
-    popd
-    popd
+    yay_tmp="$(mktemp -d)"
+    trap 'rm -rf "$yay_tmp"' EXIT
+    git clone https://aur.archlinux.org/yay-bin.git "$yay_tmp/yay-bin"
+    (cd "$yay_tmp/yay-bin" && makepkg -si --noconfirm)
+    rm -rf "$yay_tmp"
+    trap - EXIT
 else
     echo "yay installed, skipped."
 fi
@@ -18,7 +17,7 @@ fi
 sudo pacman -S --needed --noconfirm tmux
 sudo pacman -S --needed --noconfirm fd
 sudo pacman -S --needed --noconfirm go
-
+sudo pacman -S --needed --noconfirm just
 
 yay -S --noconfirm --needed fzf
 
