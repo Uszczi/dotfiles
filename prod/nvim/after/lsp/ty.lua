@@ -1,5 +1,5 @@
 return {
   cmd = { "ty", "server" },
   filetypes = { "python" },
-  root_dir = vim.fs.root(0, { ".git/", "pyproject.toml" }),
+  root_dir = function(bufnr, on_dir) on_dir(vim.fs.root(bufnr, { { "pyproject.toml", ".git/" } })) end,
 }
