@@ -14,6 +14,10 @@ else
     echo "yay installed, skipped."
 fi
 
+if ! command -v uv &>/dev/null; then
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+fi
+
 sudo pacman -S --needed --noconfirm tmux
 sudo pacman -S --needed --noconfirm fd
 sudo pacman -S --needed --noconfirm go
@@ -24,6 +28,8 @@ yay -S --noconfirm --needed fzf
 # TODO Switch to nvm
 yay -S --noconfirm --needed nodejs npm bun
 sudo pacman -S --needed --noconfirm pnpm
+
+sudo pacman -S --noconfirm --needed jre-openjdk
 
 yay -S --noconfirm --needed go
 yay -S --noconfirm --needed gimp
