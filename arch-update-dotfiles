@@ -15,3 +15,13 @@ cp -r ~/dotfiles/prod/quickshell/ ~/.config/
 
 cp ~/dotfiles/prod/.bashrc ~/.bashrc
 cp ~/dotfiles/prod/.zshrc ~/.zshrc
+
+mkdir -p ~/.agents/skills ~/.claude/skills
+for skill in ~/dotfiles/prod/agents/skills/*/; do
+    name=$(basename "$skill")
+    mkdir -p ~/.agents/skills/"$name"
+    cp -rT "$skill" ~/.agents/skills/"$name"
+    if [ ! -e ~/.claude/skills/"$name" ] && [ ! -L ~/.claude/skills/"$name" ]; then
+        ln -s ../../.agents/skills/"$name" ~/.claude/skills/"$name"
+    fi
+done
