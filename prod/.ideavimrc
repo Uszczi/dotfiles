@@ -1,0 +1,152 @@
+" ============================================================================
+let mapleader = " "
+let maplocalleader = " "
+
+" ---------------------------------------------------------------------------
+" Options (nvim: lua/uszczi/set.lua)
+" ---------------------------------------------------------------------------
+set number                 " vim.wo.number = true
+set relativenumber         " vim.wo.relativenumber = true
+set ignorecase             " vim.o.ignorecase = true
+set smartcase              " vim.o.smartcase = true
+set nohlsearch             " vim.opt.hlsearch = false
+set incsearch              " sensible pair for smartcase
+set scrolloff=12           " vim.o.sidescrolloff = 12 (IdeaVim only exposes scrolloff)
+set nowrap                 " vim.o.wrap = false
+set expandtab              " vim.o.expandtab = true
+set shiftwidth=4           " vim.o.shiftwidth = 4
+set tabstop=4              " vim.o.tabstop = 4
+set softtabstop=4          " keeps backspace/deletes consistent with 4-space tabs
+set splitbelow             " vim.o.splitbelow = true
+set splitright             " vim.o.splitright = true
+set clipboard+=unnamedplus " vim.o.clipboard = "unnamedplus" (IdeaVim default also has ideaput/ideadelete)
+
+" vim.o.colorcolumn = "80" -> no IdeaVim option; set the right margin in
+" Settings > Editor > Code Style > Hard wrap / visual guides = 80 instead.
+
+" ---------------------------------------------------------------------------
+" Cursor stays centered when scrolling / searching (nvim: remap.lua)
+" ---------------------------------------------------------------------------
+nnoremap <C-u> <C-u>zz
+nnoremap <C-d> <C-d>zz
+nnoremap n nzz
+nnoremap N Nzz
+
+" ---------------------------------------------------------------------------
+" File / buffer / navigation (nvim: remap.lua, plugins/telescope.lua)
+" ---------------------------------------------------------------------------
+nnoremap - :action ActivateProjectToolWindow<CR>   " netrw :Ex
+
+nnoremap <leader><leader> :action SearchEverywhere<CR>  " find_files
+nnoremap <leader>ff :action GotoFile<CR>                 " find all files
+nnoremap <leader>fc :action GotoClass<CR>                " find class
+nnoremap <leader>v  :action GotoFile<CR>                 " git_files
+nnoremap <leader>?  :action RecentFiles<CR>              " oldfiles
+nnoremap <leader>tb :action RecentFiles<CR>              " buffers
+nnoremap <leader>fb :action ActivateProjectToolWindow<CR>" file_browser
+nnoremap <leader>fp :action ManageRecentProjects<CR>     " telescope projects
+nnoremap <leader>/  :action FindInPath<CR>               " live_grep
+nnoremap <leader>fg :action FindInPath<CR>               " grep_string
+nnoremap <leader>fl :action FindInPath<CR>               " grep all (no-ignore)
+nnoremap <leader>m  :action FindInPath<CR>               " grep_string (v)
+nnoremap <leader>ft :action FindInPath<CR>               " fixed-string grep
+
+" LSP / diagnostics
+nnoremap gd         :action GotoDeclaration<CR>          " lsp_definitions
+nnoremap <leader>fe :action FindUsages<CR>               " lsp_references
+nnoremap gR         :action FindUsages<CR>               " trouble lsp_references
+nnoremap <leader>e  :action ShowErrorDescription<CR>     " diagnostic.open_float
+nnoremap <leader>ca :action ShowIntentionActions<CR>     " lsp code_action
+nnoremap <leader>fd :action GotoNextError<CR>            " diagnostics
+nnoremap [q :action GotoPreviousError<CR>                " :cprevious
+nnoremap ]q :action GotoNextError<CR>                    " :cnext
+
+" ---------------------------------------------------------------------------
+" Editing / formatting (nvim: plugins/neoformat.lua, remap.lua)
+" ---------------------------------------------------------------------------
+nnoremap <leader>cc :action ReformatCode<CR>            " Neoformat
+nnoremap <leader>hh :action RunClass<CR>                " run_file (python/lua/sh)
+nnoremap <leader>cr :action RunClass<CR>                " :w !python %
+
+" Copy paths (nvim: remap.lua)
+nnoremap <leader>cp :action CopyPaths<CR>               " copy relative path
+nnoremap <leader>cP :action CopyAbsolutePath<CR>        " copy absolute path
+
+" ---------------------------------------------------------------------------
+" Git (nvim: plugins/gitsigns.lua, plugins/tpope.lua, plugins/git.lua)
+" ---------------------------------------------------------------------------
+nnoremap [c :action VcsShowPrevChangeMarker<CR>         " Gitsigns prev_hunk
+nnoremap ]c :action VcsShowNextChangeMarker<CR>         " Gitsigns next_hunk
+nnoremap <leader>gs :action Git.Stage<CR>               " stage_hunk
+nnoremap <leader>gu :action Git.Rollback<CR>            " reset_hunk
+nnoremap <leader>go :action ShowDiff<CR>                " preview_hunk_inline
+nnoremap <leader>gg :action Git.Branches<CR>            " fugitive :Git
+nnoremap <leader>p  :action Git.Push<CR>                " :Git push
+nnoremap <leader>P  :action Vcs.UpdateProject<CR>       " :Git pull
+nnoremap <leader>gd :action Compare.FileWithEditor<CR>  " DiffviewOpen
+
+" ---------------------------------------------------------------------------
+" Harpoon -> IntelliJ bookmarks (nvim: plugins/harpoon.lua)
+" ---------------------------------------------------------------------------
+nnoremap <leader>a  :action ToggleBookmark<CR>          " harpoon add file
+nnoremap <C-e>      :action ShowBookmarks<CR>           " harpoon quick menu (overrides scroll-down)
+nnoremap <leader>rq :action GotoBookmark0<CR>           " select 1
+nnoremap <leader>rw :action GotoBookmark1<CR>           " select 2
+nnoremap <leader>re :action GotoBookmark2<CR>           " select 3
+nnoremap <leader>rr :action GotoBookmark3<CR>           " select 4
+nnoremap <leader>rn :action GotoNextBookmark<CR>        " harpoon next
+nnoremap <leader>rp :action GotoPreviousBookmark<CR>    " harpoon prev
+nnoremap <leader>te :action ActivateTerminalToolWindow<CR> " term 1
+nnoremap <leader>tu :action ActivateTerminalToolWindow<CR> " term 2
+
+" ---------------------------------------------------------------------------
+" Trouble -> Problems tool window (nvim: plugins/trouble.lua)
+" ---------------------------------------------------------------------------
+nnoremap <leader>xx :action ActivateProblemsViewToolWindow<CR> " trouble open
+nnoremap <leader>xw :action ActivateProblemsViewToolWindow<CR> " workspace diagnostics
+nnoremap <leader>xd :action ShowErrorDescription<CR>           " document diagnostics
+nnoremap <leader>xq :action ActivateProblemsViewToolWindow<CR> " quickfix
+
+" ---------------------------------------------------------------------------
+" Zen mode (nvim: plugins/zen.lua)
+" ---------------------------------------------------------------------------
+nnoremap <leader>zz :action ToggleDistractionFreeMode<CR> " zen-mode (90w)
+nnoremap <leader>zZ :action ToggleDistractionFreeMode<CR> " zen-mode (80w)
+
+" ---------------------------------------------------------------------------
+" Debugger (nvim: plugins/dap.lua)
+" ---------------------------------------------------------------------------
+nnoremap <leader>de :action ToggleLineBreakpoint<CR>    " toggle_breakpoint
+nnoremap <leader>db :action ToggleLineBreakpoint<CR>    " conditional breakpoint
+nnoremap <leader>df :action Resume<CR>                  " dap continue
+nnoremap <leader>dc :action RunToCursor<CR>             " run_to_cursor
+nnoremap <leader>do :action StepOver<CR>                " step_over
+nnoremap <leader>di :action StepInto<CR>                " step_into
+nnoremap <leader>dl :action Rerun<CR>                   " run_last
+nnoremap <leader>dw :action EvaluateExpression<CR>      " dapui eval
+
+" ---------------------------------------------------------------------------
+" Surround (nvim: plugins/surround.lua) — IdeaVim has surround built in.
+" ys / cs / ds / S  all work out of the box.
+" ---------------------------------------------------------------------------
+
+" ============================================================================
+" Not directly reproducible in IdeaVim (no stock equivalent) — notes:
+" ----------------------------------------------------------------------------
+"  * <leader>ru  decode-url           -> needs a plugin/macro (URI decoding)
+"  * s / S       leap.nvim            -> try the IdeaVim-Sneak / AceJump plugin
+"  * gs          leap-from-window     -> AceJump plugin
+"  * css/csc/csx/cse  camelsnek       -> "String Manipulation" plugin provides
+"                                        snake/camel/kebab case conversions
+"  * af/if/ac/ic treesitter-textobjects (function/class) -> no built-in textobj
+"  * <F5>        UndotreeToggle       -> IntelliJ Local History (no undo tree)
+"  * <leader>9*  99/opencode AI agent -> needs an AI plugin (or map to the
+"                                        built-in AI Assistant actions)
+"  * <leader>at/ac/aT  ng.nvim (Angular) -> JetBrains Angular support is
+"                                        file-structure based, no direct map
+"  * <leader>rg  :e ./plan.ignore.md  -> project-specific scratch file; add a
+"                                        per-project mapping if you still use it
+"  * <leader>rd  !arch-update-dotfiles -> external shell command, not portable
+"  * <leader>fw  work notes           -> project-specific telescope cwd
+"  * <leader>hn  find dotfiles        -> project-specific telescope cwd
+" ============================================================================

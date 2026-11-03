@@ -15,6 +15,7 @@ cp -r ~/dotfiles/prod/quickshell/ ~/.config/
 
 cp ~/dotfiles/prod/.bashrc ~/.bashrc
 cp ~/dotfiles/prod/.zshrc ~/.zshrc
+cp ~/dotfiles/prod/.ideavimrc ~/.ideavimrc
 
 mkdir -p ~/.agents/skills ~/.claude/skills
 for skill in ~/dotfiles/prod/agents/skills/*/; do
